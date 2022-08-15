@@ -13,8 +13,8 @@ const get = () => {
 };
 
 const register = (nameUser, lastname, email, pass, confirmPass) => {
-  console.log(nameUser, lastname);
-  return ApiRequest.post("/users/register", {
+  console.log(nameUser, lastname, email, pass, confirmPass);
+  return ApiRequest.post("/users/signup", {
     nameUser,
     lastname,
     email,
@@ -35,7 +35,7 @@ const deleteAccessToken = () => {
   Cookies.remove("userLogged");
 };
 
-export {
+export default {
   login,
   register,
   get,

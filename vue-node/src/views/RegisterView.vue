@@ -2,18 +2,29 @@
 import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
 import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
 import HeaderItem from "@/Components/HeaderItem.vue";
-// import {AuthService} from '../service/auth.service';
-// import { ref } from "vue";
+import AuthService from "../service/auth.service";
+import { ref } from "vue";
+
+const name = ref("");
+const lastname = ref("");
+const password = ref("");
+const confirmPass = ref("");
+const email = ref("");
 
 function handleSubmit() {
-  // console.log(email,password);
-  // AuthService.register(name, lastname,email, password, confirmPass)
-  //   .then(response => {
-  //     console.log(response);
-  //   })
-  //   .catch(error => {
-  //     console.log(error);
-  //   });
+  AuthService.register(
+    name.value,
+    lastname.value,
+    email.value,
+    password.value,
+    confirmPass.value
+  )
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.log(error);
+    });
 }
 </script>
 <template>
@@ -101,7 +112,7 @@ function handleSubmit() {
       </template>
       <template #content>Registrarse con Google </template>
     </ButtonGoogle>
-    {{name}}
+    {{ name }}
   </form>
 </template>
 <style scoped>
