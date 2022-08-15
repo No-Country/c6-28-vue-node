@@ -16,13 +16,19 @@
   background-color: var(--bg-button-google);
   display: flex;
   align-items: center;
-  padding: 2em;
+  padding: 0.6em;
   color: white;
+  position: relative;
+  width: 100%;
+  row-gap: 1.5em;
+  justify-content: center;
+  border-radius: 5px;
 }
 
 .button__content{
   width: 100%;
   height: 100%;
+  font-size: 1.4rem;
 }
 
 .button__icon{
