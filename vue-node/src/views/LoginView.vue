@@ -1,29 +1,37 @@
 <template>
-
   <div class="container">
     <form @submit.prevent="handleSubmit">
       <h2 class="titulo mb-5">Iniciar sesion</h2>
 
       <div class="row">
         <div class="col-md-12 form-group">
-          <input type="text" class="email form-control" placeholder="email" v-model="email" />
+          <input
+            type="text"
+            class="email form-control"
+            placeholder="email"
+            v-model="email"
+          />
         </div>
       </div>
 
       <div class="row">
         <div class="col-md-12 form-group">
-          <input type="password" placeholder="contraseña" class="form-control" v-model="password" />
+          <input
+            type="password"
+            placeholder="contraseña"
+            class="form-control"
+            v-model="password"
+          />
         </div>
       </div>
-      
+
       <input type="checkbox" class="checkbox" value="" /> recordarme
-      
 
       <div v-if="message" style="color: red; margin-top 5%">
         Credenciales Invalidas
       </div>
       <div class="row">
-        <button class=" iniciar sesion btn btn-primary">Iniciar sesion</button>
+        <button class="iniciar sesion btn btn-primary">Iniciar sesion</button>
       </div>
 
       <div class="hr">
@@ -37,54 +45,43 @@
       </div>
     </form>
 
-    <FooterView/>
-
+    <FooterView />
   </div>
 </template>
 
 <script>
-
-
-
-
-
 import AuthService from "@/service/auth.service";
-import FooterView from '../Components/FooterView.vue';
-
+import FooterView from "../Components/FooterView.vue";
 
 export default {
-
   name: "LoginView",
-   components: {
-      FooterView
-    
+  components: {
+    FooterView,
   },
   data() {
     return {
       email: "",
       password: "",
-    }
-      ;
-  }
-  ,
+    };
+  },
   methods: {
     handleSubmit() {
-      AuthService.login(this.email, this.password).then((response) => {
-        console.log(response.data.token)
-        AuthService.setAccessToken(response.data.token);
-        this.$router.push("/");
-
-      }).catch((error) => {
-        console.log(error);
-      });
-    }
-  }
-}
+      AuthService.login(this.email, this.password)
+        .then((response) => {
+          console.log(response.data.token);
+          AuthService.setAccessToken(response.data.token);
+          this.$router.push("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+};
 </script>
 
 
 <style scoped>
-
 /* .container{
   background-color: #F2EDD7;
 } */
@@ -96,13 +93,7 @@ export default {
 
   text-align: center;
 
-  Line-height: 22px;
-}
-
-.iniciar{
-
-
-
+  line-height: 22px;
 }
 
 .titulo {
@@ -137,10 +128,9 @@ export default {
 
   margin-top: 15px;
 }
-p{
+p {
   float: right;
   margin-top: 10px;
-  color: #18A0FB;
-
+  color: #18a0fb;
 }
 </style>
