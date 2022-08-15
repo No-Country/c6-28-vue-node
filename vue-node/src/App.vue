@@ -1,22 +1,17 @@
 <template>
-  <div class="container">
-    <LoginView/>
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 
+
 <script>
-import LoginView from './views/LoginView.vue'
-
-export default {
-  name: "App",
-  components: {LoginView},
-
-
-};
+export default {};
 </script>
-
 <style>
-
+#app {
+  /* font-family:'Poppins', sans-serif; */
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
 </style>

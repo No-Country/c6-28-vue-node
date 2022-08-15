@@ -1,31 +1,22 @@
 <template>
-  <div class="container">
-    <h2 class="titulo">Iniciar sesion</h2>
-    <div class="row">
-      <div class="col-md-12 form-group">
-        <input type="text" class=" email form-control" placeholder="email">
+
+
+  <div>
+    <form @submit.prevent="handleSubmit">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+      <div class="form-floating">
+        <input type="email" class="form-control" name="email" placeholder="name@example.com" v-model="email" />
+        <label>Email</label>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 form-group">
-        <input type="password" placeholder="contraseña" class="form-control">
+
+      <div class="form-floating">
+        <input type="password" class="form-control" name="password" placeholder="Password" v-model="password" />
+        <label>Password</label>
       </div>
-    </div>
-    <input type="checkbox" class="checkbox" value=""> recordarme
-    <div class="row">
-      <button class=" sesion btn  btn-primary">Iniciar sesion</button>
-    </div>
 
-
-    <div class="hr">
-      <hr class="hrLinea"> o inicia sesion con
-      <hr class="hrLinea">
-    </div>
-
-    <div class="row">
-
-      <button class=" but1 sesion btn  ">Registrarse con Google</button>
-    </div>
+      <button class="w-100 btn btn-lg btn-primary">Submit</button>
+    </form>
 
   </div>
 </template>
@@ -33,17 +24,40 @@
 <script>
 
 
+
+import AuthService from "@/service/auth.service";
+
 export default {
-  name: 'LoginView',
+
+  name: "LoginView",
   data() {
     return {
-      email: '',
-      contraseña: '',
+      email: "",
+      password: "",
     }
-  },
 
+      ;
+  }
 
+  ,
+  methods: {
+    handleSubmit() {
+      AuthService.login(this.email, this.password).then((response) => {
+        console.log(response);
+
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
+
+    ,
+  }
+
+  ,
 }
+
+  ;
+</script>
 
 
 
@@ -98,4 +112,3 @@ export default {
   color: white;
 
 }
-</style>
