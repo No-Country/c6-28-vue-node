@@ -11,7 +11,7 @@ const login = (user, pass) => {
 }
 const get = () => {
     return ApiRequest.get(
-        "/users",
+        "users",
     )
 }
 
