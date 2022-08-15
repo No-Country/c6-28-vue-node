@@ -15,15 +15,15 @@ const get = () => {
 const register = (nameUser, lastname, email, pass, confirmPass) => {
   console.log(nameUser, lastname, email, pass, confirmPass);
   return ApiRequest.post("/users/signup", {
-    nameUser,
-    lastname,
+    nombre: nameUser,
+    apellidos: lastname,
     email,
-    pass,
-    confirmPass,
+    password: pass,
+    confirmarPassword: confirmPass,
   });
 };
 
-const setAccessToken = userLogged => {
+const setAccessToken = (userLogged) => {
   Cookies.set("userLogged", userLogged);
 };
 

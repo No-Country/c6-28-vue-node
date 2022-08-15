@@ -3,6 +3,7 @@ import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
 import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
 import HeaderItem from "@/Components/HeaderItem.vue";
 import AuthService from "../service/auth.service";
+import {useRouter} from 'vue-router';
 import { ref } from "vue";
 
 const name = ref("");
@@ -10,6 +11,9 @@ const lastname = ref("");
 const password = ref("");
 const confirmPass = ref("");
 const email = ref("");
+const showModal = ref(false);
+let message = ref("asda");
+const router = useRouter();
 
 function handleSubmit() {
   AuthService.register(
@@ -19,11 +23,19 @@ function handleSubmit() {
     password.value,
     confirmPass.value
   )
-    .then(response => {
-      console.log(response);
+    .then((response) => {
+      console.log(response.msg)
+      alert(response.msg);
+      // showToast = true;
+      message.value = response.msg;
+      showModal.value = true
+      router.push('/login')
     })
-    .catch(error => {
+    .catch((error) => {
       console.log(error);
+      alert("No se pudo crear el usuario");
+      message.value = "No se pudo crear el usuario";
+      showModal.value = true
     });
 }
 </script>
@@ -112,9 +124,11 @@ function handleSubmit() {
       </template>
       <template #content>Registrarse con Google </template>
     </ButtonGoogle>
-    {{ name }}
   </form>
+  
+  
 </template>
+
 <style scoped>
 .register__form {
   width: 80%;
