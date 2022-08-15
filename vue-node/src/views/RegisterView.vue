@@ -2,19 +2,30 @@
 import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
 import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
 import HeaderItem from "@/Components/HeaderItem.vue";
-function submit(){
+// import {AuthService} from '../service/auth.service';
+// import { ref } from "vue";
 
+function handleSubmit() {
+  // console.log(email,password);
+  // AuthService.register(name, lastname,email, password, confirmPass)
+  //   .then(response => {
+  //     console.log(response);
+  //   })
+  //   .catch(error => {
+  //     console.log(error);
+  //   });
 }
 </script>
 <template>
   <HeaderItem></HeaderItem>
-  <form action="" class="register__form">
+  <form action="" class="register__form" @submit.prevent="handleSubmit">
     <h1 class="mb-5">Registro</h1>
     <div class="row mb-3">
       <div class="col">
         <input
           type="text"
           class="form-control"
+          v-model="name"
           name="reg__nombre"
           placeholder="Nombre"
           aria-label="First name"
@@ -24,6 +35,7 @@ function submit(){
         <input
           type="text"
           class="form-control"
+          v-model="lastname"
           name="reg__apellido"
           placeholder="Apellido"
           aria-label="Last name"
@@ -35,8 +47,9 @@ function submit(){
         <input
           type="email"
           class="form-control"
+          v-model="email"
           name="reg__email"
-          placeholder="Email"
+          placeholder="Correo"
           aria-label="First name"
         />
       </div>
@@ -46,8 +59,9 @@ function submit(){
         <input
           type="password"
           class="form-control"
+          v-model="password"
           name="reg__password"
-          placeholder="password"
+          placeholder="Contraseña"
           aria-label="First name"
         />
       </div>
@@ -57,8 +71,9 @@ function submit(){
         <input
           type="password"
           class="form-control"
+          v-model="confirmPass"
           name="reg__confirmar"
-          placeholder="Confirmar password"
+          placeholder="Confirmar contraseña"
           aria-label="First name"
         />
       </div>
@@ -86,17 +101,18 @@ function submit(){
       </template>
       <template #content>Registrarse con Google </template>
     </ButtonGoogle>
+    {{name}}
   </form>
 </template>
 <style scoped>
 .register__form {
   width: 80%;
-  margin: 0 auto;
-  transform: translateY(20%);
+  margin: 4em auto;
+  /* transform: translateY(10%); */
   transition: all 300ms;
   padding: 2em;
   border-radius: 5px;
-  backdrop-filter: blur(50%);
+  /* backdrop-filter: blur(50%); */
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%),
     0 1px 5px 0 rgb(0 0 0 / 20%);
 }
