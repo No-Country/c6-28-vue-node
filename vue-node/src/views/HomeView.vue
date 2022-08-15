@@ -1,58 +1,87 @@
 <template>
+  
 
-  <body>
-    <SearchBar class="SearchBar" />
-    <br />
-    <CarouselTrending class="CarrouselTrending" />
-    <br />
-    <div class="categories">
-      <h5>Mascotas</h5>
+    <body>
+      <SearchBar class="SearchBar" />
+      <br />
+      <CarouselTrending class="CarrouselTrending" />
+      <br />
+      <div class="categories">
+        <h5>Ofertas</h5>
+        <div class="categoryImages">
+          <div>
+            <img src="https://picsum.photos/id/132/200/200" alt="..." />
+          </div>
+          <div>
+            <img src="https://picsum.photos/id/137/200/200" alt="..." />
+          </div>
+          <div>
+            <img src="https://picsum.photos/id/135/200/200" alt="..." />
+          </div>
+        </div>
+        <h5>Mascotas</h5>
 
-      <div class="categoryImages">
-        <div class="dogs">
-          <img src="https://picsum.photos/id/232/200/200" alt="..." />
+        <div class="categoryImages">
+          <div>
+            <img src="https://picsum.photos/id/232/200/200" alt="..." />
+          </div>
+          <div>
+            <img src="https://picsum.photos/id/237/200/200" alt="..." />
+          </div>
+          <div>
+            <img src="https://picsum.photos/id/235/200/200" alt="..." />
+          </div>
         </div>
-        <div class="cats">
-          <img src="https://picsum.photos/id/237/200/200" alt="..." />
-        </div>
-        <div class="reptiles">
-          <img src="https://picsum.photos/id/235/200/200" alt="..." />
+
+        <h5>Categorías Populares</h5>
+
+        <div class="categoryImages">
+          <div>
+            <img src="https://picsum.photos/id/132/200/200" alt="..." />
+          </div>
+          <div>
+            <img src="https://picsum.photos/id/137/200/200" alt="..." />
+          </div>
+          <div>
+            <img src="https://picsum.photos/id/135/200/200" alt="..." />
+          </div>
         </div>
       </div>
+      <div class="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 
-      <h5>Categorías Populares</h5>
+        <div class="d-grid gap-2 d-md-block">
+          <button type="button" class="btn btn-primary btn-md">
+            Registrarse
+          </button>
+          <button type="button" class="btn btn-outline-primary btn-md">
+            Contactarnos
+          </button>
 
-      <div class="categoryImages">
-        <div class="dogs">
-          <img src="https://picsum.photos/id/132/200/200" alt="..." />
-        </div>
-        <div class="cats">
-          <img src="https://picsum.photos/id/137/200/200" alt="..." />
         </div>
         <div class="reptiles">
           <img src="https://picsum.photos/id/135/200/200" alt="..." />
         </div>
       </div>
-    </div>
-    <div class="container">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-      <p>{{ this.$store.state.count }}</p>
+ 
+  <div class="container">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+    <p>{{ this.$store.state.count }}</p>
 
-      <div class="d-grid gap-2 d-md-block">
-        <button type="button" class="btn btn-primary btn-md">
-          Registrarse
-        </button>
-        <button type="button" class="btn btn-outline-primary btn-md">
-          Contactarnos
-        </button>
-      </div>
-      <button type="button" id="backToTop" class="btn btn-success">
-        Volver Arriba
+    <div class="d-grid gap-2 d-md-block">
+      <button type="button" class="btn btn-primary btn-md">
+        Registrarse
+      </button>
+      <button type="button" class="btn btn-outline-primary btn-md">
+        Contactarnos
       </button>
     </div>
+
+    <button type="button" id="backToTop" class="btn btn-success">
+      Volver Arriba
+    </button>
+  </div>
   </body>
-
-
 
 </template>
 
@@ -71,6 +100,10 @@ export default {
 </script>
 
 <style scoped>
+img {
+  border-radius: 10px;
+}
+
 .SearchBar {
   display: flex;
   justify-content: center;

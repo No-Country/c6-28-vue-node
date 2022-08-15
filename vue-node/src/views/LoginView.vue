@@ -1,6 +1,5 @@
 <template>
 
-
   <div class="container">
     <form @submit.prevent="handleSubmit">
       <h2 class="titulo mb-5">Iniciar sesion</h2>
@@ -39,10 +38,13 @@
     </form>
 
     <FooterView/>
+
   </div>
 </template>
 
 <script>
+
+
 
 
 
@@ -86,24 +88,25 @@ export default {
 /* .container{
   background-color: #F2EDD7;
 } */
+
 .sesion {
   margin-top: 50px;
   margin-left: 15px;
   width: 450px;
 
   text-align: center;
+
   Line-height: 22px;
 }
 
 .iniciar{
 
+
+
 }
 
 .titulo {
-
   margin-bottom: 20px;
-
-
 }
 
 .email {
@@ -111,7 +114,6 @@ export default {
 }
 
 .checkbox {
-
   margin-top: 15px;
 }
 
@@ -127,16 +129,18 @@ export default {
 }
 
 .but1 {
-  background-color: #2D3748;
+  background-color: #2d3748;
   font-family: Gothic A1;
   font-size: 17px;
   font-weight: 700;
   color: white;
+
   margin-top: 15px;
 }
 p{
   float: right;
   margin-top: 10px;
   color: #18A0FB;
+
 }
 </style>
