@@ -83,9 +83,9 @@ export default {
 
 <style scoped>
 
-.container{
-
-}
+/* .container{
+  background-color: #F2EDD7;
+} */
 .sesion {
   margin-top: 50px;
   margin-left: 15px;

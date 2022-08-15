@@ -1,5 +1,7 @@
 <template>
-  <div>
+
+  <footer>
+
     <div>
       <img src="https://res.cloudinary.com/dytpump6i/image/upload/v1660593048/Logo_ugs7jt.svg" alt="logo">
     </div>
@@ -10,11 +12,12 @@
       <li>Beneficios</li>
     </ul>
 
-     <div class="footer-bottom">
+    <div class="footer-bottom">
       <p> &copy;Mundo mascota, inc.2019</p>
 
     </div>
-  </div>
+
+  </footer>
 </template>
 
 <script>
@@ -24,6 +27,11 @@ export default {
 </script>
 
 <style scoped>
+
+/* footer{
+  background-color:#A0937D;
+  margin-top: 25px;
+} */
 img {
   display: flex;
   align-items: center;
@@ -36,33 +44,32 @@ img {
 
 }
 
-ul{
-   display:flex;
+ul {
+  display: flex;
   justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
-  
+
 }
 
-li{
+li {
   font-family: monserrat;
   font-style: normal;
   font-size: 15px;
   float: left;
   display: block;
   padding: 1.5em;
-  
+
 }
 
-.footer-bottom p{
-   text-align: center;
-      font-size: 14px;
-      word-spacing: 2px;
-      text-transform: capitalize;
-       text-transform: uppercase;
-      opacity: .4;
-      font-weight: 200
-      ;
+.footer-bottom p {
+  text-align: center;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+  text-transform: uppercase;
+  opacity: .4;
+  font-weight: 200;
 }
 </style>
