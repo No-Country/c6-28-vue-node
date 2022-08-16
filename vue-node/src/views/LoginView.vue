@@ -1,45 +1,60 @@
 <template>
 
-  <div class="container">
-    <form @submit.prevent="handleSubmit">
-      <h2 class="titulo mb-5">Iniciar sesion</h2>
+  <div class="contenedorForm">
 
-      <div class="row">
-        <div class="col-md-12 form-group">
-          <input type="text" class="email form-control" placeholder="email" v-model="email" />
+    <HeaderItem></HeaderItem>
+
+    <div class="formulario">
+      <form @submit.prevent="handleSubmit">
+        <h2 class="titulo mb-5">Iniciar sesion</h2>
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <input type="text" class="email form-control" placeholder="email" v-model="email" />
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-12 form-group">
-          <input type="password" placeholder="contraseña" class="form-control" v-model="password" />
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <input type="password" placeholder="contraseña" class="form-control" v-model="password" />
+          </div>
         </div>
-      </div>
-      
-      <input type="checkbox" class="checkbox" value="" /> recordarme
-      
 
-      <div v-if="message" style="color: red; margin-top 5%">
-        Credenciales Invalidas
-      </div>
-      <div class="row">
-        <button class=" iniciar sesion btn btn-primary">Iniciar sesion</button>
-      </div>
+        <input type="checkbox" class="checkbox" value="" /> recordarme
 
-      <div class="hr">
-        <hr class="hrLinea" />
-        o inicia sesion con
-        <hr class="hrLinea" />
-      </div>
 
-      <div class="row">
-        <button class="but1 sesion btn">Registrarse con Google</button>
-      </div>
-    </form>
+        <div v-if="message" style="color: red; margin-top 5%">
+          Credenciales Invalidas
+        </div>
+        <div>
+          <ButtonBase>Iniciar sesion</ButtonBase>
+        </div>
 
-    <FooterView/>
+        <div class="hr">
+          <hr class="hrLinea" />
+          o inicia sesion con
+          <hr class="hrLinea" />
+        </div>
+
+        <div>
+          <ButtonGoogle>
+            <template #icon>
+              <img src="../assets/icons/iconGoogle.svg" alt="icon google svg" class="icon__google"
+                style="margin-top: 3px; margin-left: 5px" />
+            </template>
+            <template #content>Registrarse con Google </template>
+          </ButtonGoogle>
+        </div>
+      </form>
+    </div>
+
+
+
+    <FooterView />
 
   </div>
+
+
 </template>
 
 <script>
@@ -50,14 +65,19 @@
 
 import AuthService from "@/service/auth.service";
 import FooterView from '../Components/FooterView.vue';
+import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
+import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
+import HeaderItem from "@/Components/HeaderItem.vue";
 
 
 export default {
 
   name: "LoginView",
-   components: {
-      FooterView
-    
+  components: {
+    FooterView,
+    ButtonGoogle,
+    ButtonBase,
+    HeaderItem
   },
   data() {
     return {
@@ -69,14 +89,16 @@ export default {
   ,
   methods: {
     handleSubmit() {
-      AuthService.login(this.email, this.password).then((response) => {
-        console.log(response.data.token)
-        AuthService.setAccessToken(response.data.token);
-        this.$router.push("/");
+      AuthService.login(this.email, this.password)
+        .then((response) => {
+          console.log(response);
+          AuthService.setAccessToken(response.token);
+          this.$store.commit("updateUser", response.user);
+          this.$router.push("/");
 
-      }).catch((error) => {
-        console.log(error);
-      });
+        }).catch((error) => {
+          console.log(error);
+        });
     }
   }
 }
@@ -84,7 +106,6 @@ export default {
 
 
 <style scoped>
-
 /* .container{
   background-color: #F2EDD7;
 } */
@@ -99,9 +120,20 @@ export default {
   Line-height: 22px;
 }
 
-.iniciar{
-
-
+.formulario {
+  background-color:#F2EDD7;
+  width: 80%;
+  margin: 4em auto;
+  /* transform: translateY(10%); */
+  transition: all 300ms;
+  padding: 2em;
+  border-radius: 5px;
+  /* backdrop-filter: blur(50%); */
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%),
+    0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+.contenedorForm{
+  background-color:#F2EDD7;
 
 }
 
@@ -119,7 +151,7 @@ export default {
 
 .hrLinea {
   vertical-align: middle;
-  width: 33%;
+  width: 27%;
   display: inline-block;
   border: 1px solid black;
 }
@@ -137,7 +169,8 @@ export default {
 
   margin-top: 15px;
 }
-p{
+
+p {
   float: right;
   margin-top: 10px;
   color: #18A0FB;

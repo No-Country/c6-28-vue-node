@@ -12,6 +12,8 @@
       <li>Beneficios</li>
     </ul>
 
+    <font-awesome-icon icon="fa-brands fa-instagram" />
+
     <div class="footer-bottom">
       <p> &copy;Mundo mascota, inc.2019</p>
 
@@ -21,6 +23,7 @@
 </template>
 
 <script>
+
 export default {
   name: "FooterView",
 };
@@ -28,10 +31,9 @@ export default {
 
 <style scoped>
 
-/* footer{
+footer{
   background-color:#A0937D;
-  margin-top: 25px;
-} */
+}
 img {
   display: flex;
   align-items: center;
