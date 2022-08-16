@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 
   <div class="contenedorForm">
 
@@ -34,8 +35,23 @@
           <hr class="hrLinea" />
           o inicia sesion con
           <hr class="hrLinea" />
+=======
+  <div class="container">
+    <form @submit.prevent="handleSubmit">
+      <h2 class="titulo mb-5">Iniciar sesion</h2>
+
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <input
+            type="text"
+            class="email form-control"
+            placeholder="email"
+            v-model="email"
+          />
+>>>>>>> 177b66a2caf3f8736eb2d6f8b10208eb825aad97
         </div>
 
+<<<<<<< HEAD
         <div>
           <ButtonGoogle>
             <template #icon>
@@ -52,45 +68,79 @@
 
     <FooterView />
 
+=======
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <input
+            type="password"
+            placeholder="contraseña"
+            class="form-control"
+            v-model="password"
+          />
+        </div>
+      </div>
+
+      <input type="checkbox" class="checkbox" value="" /> recordarme
+
+      <div v-if="message" style="color: red; margin-top 5%">
+        Credenciales Invalidas
+      </div>
+      <div class="row">
+        <button class="iniciar sesion btn btn-primary">Iniciar sesion</button>
+      </div>
+
+      <div class="hr">
+        <hr class="hrLinea" />
+        o inicia sesion con
+        <hr class="hrLinea" />
+      </div>
+
+      <div class="row">
+        <button class="but1 sesion btn">Registrarse con Google</button>
+      </div>
+    </form>
+
+    <FooterView />
+>>>>>>> 177b66a2caf3f8736eb2d6f8b10208eb825aad97
   </div>
 
 
 </template>
 
 <script>
-
-
-
-
-
 import AuthService from "@/service/auth.service";
+<<<<<<< HEAD
 import FooterView from '../Components/FooterView.vue';
 import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
 import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
 import HeaderItem from "@/Components/HeaderItem.vue";
 
+=======
+import FooterView from "../Components/FooterView.vue";
+>>>>>>> 177b66a2caf3f8736eb2d6f8b10208eb825aad97
 
 export default {
-
   name: "LoginView",
   components: {
     FooterView,
+<<<<<<< HEAD
     ButtonGoogle,
     ButtonBase,
     HeaderItem
+=======
+>>>>>>> 177b66a2caf3f8736eb2d6f8b10208eb825aad97
   },
   data() {
     return {
       email: "",
       password: "",
-    }
-      ;
-  }
-  ,
+    };
+  },
   methods: {
     handleSubmit() {
       AuthService.login(this.email, this.password)
         .then((response) => {
+<<<<<<< HEAD
           console.log(response);
           AuthService.setAccessToken(response.token);
           this.$store.commit("updateUser", response.user);
@@ -102,6 +152,18 @@ export default {
     }
   }
 }
+=======
+          console.log(response.data.token);
+          AuthService.setAccessToken(response.data.token);
+          this.$router.push("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
+};
+>>>>>>> 177b66a2caf3f8736eb2d6f8b10208eb825aad97
 </script>
 
 
@@ -117,6 +179,7 @@ export default {
 
   text-align: center;
 
+<<<<<<< HEAD
   Line-height: 22px;
 }
 
@@ -135,6 +198,9 @@ export default {
 .contenedorForm{
   background-color:#F2EDD7;
 
+=======
+  line-height: 22px;
+>>>>>>> 177b66a2caf3f8736eb2d6f8b10208eb825aad97
 }
 
 .titulo {
@@ -169,11 +235,13 @@ export default {
 
   margin-top: 15px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 177b66a2caf3f8736eb2d6f8b10208eb825aad97
 p {
   float: right;
   margin-top: 10px;
-  color: #18A0FB;
-
+  color: #18a0fb;
 }
 </style>
