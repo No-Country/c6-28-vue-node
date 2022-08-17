@@ -29,7 +29,7 @@ import {RouterLink} from 'vue-router';
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color:#3A6351; ;
+    background-color:#3A6351; 
     /* max-height: 50px; */
   }
   /* .header__menu, .header__login, .header__logo{

@@ -84,7 +84,10 @@ li {
 .redes{
   margin-left:100px;
 }
-.twiter{
+.redes :hover{
+  color: #3A6351;
+}
+.twiter {
   margin: 5px;
   
 }
