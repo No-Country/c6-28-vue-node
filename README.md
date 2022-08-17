@@ -110,6 +110,9 @@ Para la instalación de este proyecto debe instalar los siguientes requisitos
 
 Actualmente el E-Commerce permite la compra y venta de productos para mascotas como: gatos, perros y aves.
 
+### Diseño Figma
+https://www.figma.com/file/DG9GnIsAu7DzHoGLoJBYSO/Mundo-Mascota?node-id=0%3A1
+
 ### Información
 
 
