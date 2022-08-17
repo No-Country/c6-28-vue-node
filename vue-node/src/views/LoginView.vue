@@ -21,6 +21,7 @@
         </div>
 
         <input type="checkbox" class="checkbox" value="" /> recordarme
+        <p>olvidaste tu contraseña?</p>
 
 
         <div v-if="message" style="color: red; margin-top 5%">
@@ -48,6 +49,7 @@
       </form>
     </div>
 
+  
 
 
     <FooterView />
@@ -121,7 +123,7 @@ export default {
 }
 
 .formulario {
-  background-color:#F2EDD7;
+  background-color: #F2EDD7;
   width: 80%;
   margin: 4em auto;
   /* transform: translateY(10%); */
@@ -132,8 +134,9 @@ export default {
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%),
     0 1px 5px 0 rgb(0 0 0 / 20%);
 }
-.contenedorForm{
-  background-color:#F2EDD7;
+
+.contenedorForm {
+  background-color: #F2EDD7;
 
 }
 

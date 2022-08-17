@@ -12,6 +12,12 @@
       <li>Beneficios</li>
     </ul>
 
+    <div class="redes">
+       <fa class="twiter" :icon="['fab', 'twitter']" />
+       <fa class="instagram"  :icon="['fab', 'instagram']" />
+       <fa class="facebook"  :icon="['fab', 'facebook']" />
+    </div>
+
     <font-awesome-icon icon="fa-brands fa-instagram" />
 
     <div class="footer-bottom">
@@ -73,5 +79,21 @@ li {
   text-transform: uppercase;
   opacity: .4;
   font-weight: 200;
+}
+
+.redes{
+  margin-left:100px;
+}
+.twiter{
+  margin: 5px;
+  
+}
+.instagram{
+  margin: 5px;
+  
+}
+.facebook{
+  margin: 5px;
+  
 }
 </style>
