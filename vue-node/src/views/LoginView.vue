@@ -177,6 +177,20 @@ p {
   float: right;
   margin-top: 10px;
   color: #18A0FB;
-
+}
+@media screen and (min-width: 480px) {
+  .formulario {
+    width: 92%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .formulario {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .formulario {
+    width: 35%;
+  }
 }
 </style>
