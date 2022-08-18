@@ -1,14 +1,15 @@
-import {createStore} from 'vuex';
+import { createStore } from "vuex";
 
 const store = createStore({
-
   state: {
     user: {},
-    products: [{
-      id: 1,
-      name: 'Drum Machine',
-      price: '$18.000',
-    }],
+    products: [
+      {
+        id: 1,
+        name: "Drum Machine",
+        price: "$18.000",
+      },
+    ],
   },
 
   mutations: {
@@ -17,7 +18,7 @@ const store = createStore({
     },
     setToken(state, token) {
       state.token = token;
-      localStorage.setItem('token', token);
+      localStorage.setItem("token", token);
     },
     setProducts(state, transactions) {
       state.transactions = transactions;
@@ -30,7 +31,7 @@ const store = createStore({
 
   actions: {
     logout(ctx) {
-      ctx.commit('setLogout');
+      ctx.commit("setLogout");
       // authService.deleteAccessToken()
       // Company().deleteCompanyToken()
     },

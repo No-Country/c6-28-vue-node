@@ -1,9 +1,10 @@
 <template>
-
   <footer>
-
     <div>
-      <img src="https://res.cloudinary.com/dytpump6i/image/upload/v1660593048/Logo_ugs7jt.svg" alt="logo">
+      <img
+        src="https://res.cloudinary.com/dytpump6i/image/upload/v1660593048/Logo_ugs7jt.svg"
+        alt="logo"
+      />
     </div>
 
     <ul class="footer01">
@@ -13,32 +14,28 @@
     </ul>
 
     <div class="redes">
-       <fa class="twiter" :icon="['fab', 'twitter']" />
-       <fa class="instagram"  :icon="['fab', 'instagram']" />
-       <fa class="facebook"  :icon="['fab', 'facebook']" />
+      <fa class="twiter" :icon="['fab', 'twitter']" />
+      <fa class="instagram" :icon="['fab', 'instagram']" />
+      <fa class="facebook" :icon="['fab', 'facebook']" />
     </div>
 
     <font-awesome-icon icon="fa-brands fa-instagram" />
 
     <div class="footer-bottom">
-      <p> &copy;Mundo mascota, inc.2019</p>
-
+      <p>&copy;Mundo mascota, inc.2019</p>
     </div>
-
   </footer>
 </template>
 
 <script>
-
 export default {
-  name: 'FooterView',
+  name: "FooterView",
 };
 </script>
 
 <style scoped>
-
-footer{
-  background-color:#A0937D;
+footer {
+  background-color: #a0937d;
 }
 img {
   display: flex;
@@ -49,7 +46,6 @@ img {
   width: 100%;
   height: 84px;
   justify-content: center;
-
 }
 
 ul {
@@ -58,7 +54,6 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
-
 }
 
 li {
@@ -68,7 +63,6 @@ li {
   float: left;
   display: block;
   padding: 1.5em;
-
 }
 
 .footer-bottom p {
@@ -77,23 +71,23 @@ li {
   word-spacing: 2px;
   text-transform: capitalize;
   text-transform: uppercase;
-  opacity: .4;
+  opacity: 0.4;
   font-weight: 200;
 }
 
-.redes{
-  margin-left:100px;
+.redes {
+  margin-left: 100px;
 }
-.redes :hover{
-  color: #3A6351;
+.redes :hover {
+  color: #3a6351;
 }
 .twiter {
   margin: 5px;
 }
-.instagram{
+.instagram {
   margin: 5px;
 }
-.facebook{
+.facebook {
   margin: 5px;
 }
 </style>
