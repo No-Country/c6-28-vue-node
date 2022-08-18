@@ -1,5 +1,5 @@
 <script setup>
-// import { RouterLink } from "vue-router";
+import { RouterLink } from "vue-router";
 </script>
 <template>
   <!-- <header class="header">
@@ -20,22 +20,21 @@
       <nav class="secondary-nav">
         <ul class="secondary-nav__list">
           <li class="secondary-nav__item">
-            <a href="#" class="secondary-nav__link">Cotizaciones</a>
+            <a href="#" class="secondary-nav__link">Carrito</a>
           </li>
           <li class="secondary-nav__item">
-            <a href="#" class="secondary-nav__link">Contacto</a>
+            <router-link to="/login" class="secondary-nav__link">Login</router-link>
           </li>
           <li class="secondary-nav__item">
-            <a href="#" class="secondary-nav__link">Login</a>
+            <router-link to="/register" class="secondary-nav__link">Registrarse</router-link>
           </li>
         </ul>
       </nav>
     </div>
     <div class="primary-wrapper-nav">
-      <a href="#" class="primary-wrapper-nav__wrapper-logo"
-        >Title
-        <!-- <img src="" alt="" class="primary-wrapper-nav__logo" /> -->
-      </a>
+      <router-link to="/" class="primary-wrapper-nav__wrapper-logo">
+        <img src="../assets/Logo.svg" alt="logo icon svg" />
+      </router-link>
       <input
         id="primary-wrapper-nav__checkbox"
         type="checkbox"
@@ -68,22 +67,17 @@
       <nav class="primary-nav">
         <ul class="primary-nav__list">
           <li class="primary-nav__item primary-nav__item--active">
-            <a href="#" class="primary-nav__link">Inicio</a>
+            <router-link to="/" class="primary-nav__link">Inicio</router-link>
           </li>
           <li class="primary-nav__item">
-            <a href="#" class="primary-nav__link">Quién soy</a>
+            <router-link to="/about" class="primary-nav__link"
+              >Acerca de</router-link
+            >
           </li>
           <li class="primary-nav__item">
-            <a href="#" class="primary-nav__link">Cómo puedo ayudarte</a>
-          </li>
-          <li class="primary-nav__item">
-            <a href="#" class="primary-nav__link">Eventos</a>
-          </li>
-          <li class="primary-nav__item">
-            <a href="#" class="primary-nav__link">Blog</a>
-          </li>
-          <li class="primary-nav__item">
-            <a href="#" class="primary-nav__link">Goodies</a>
+            <router-link to="/help" class="primary-nav__link"
+              >Cómo puedo ayudarte</router-link
+            >
           </li>
         </ul>
       </nav>
@@ -91,13 +85,13 @@
   </header>
 </template>
 <style>
-/* img {
+img {
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.header {
+/*.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -112,16 +106,33 @@
   color: black;
 } */
 
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.secondary-nav__link {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
 .header {
-  padding: 0 var(--container);
-  position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 20;
-  margin-top: calc(var(--margin-negative-top) * -1);
+  padding: 1em var(--container);
+  /* background-color: red; */
+  /* position: fixed; */
+  /* right: 0;
+  left: 0; */
+  /* z-index: 20; */
+  /* margin-top: calc(var(--margin-negative-top) * -1); */
+  border-bottom: 1px solid black;
 }
 
 .secondary-wrapper-nav {
+  /* min-height: 10em; */
 }
 
 .secondary-nav__list {
@@ -132,12 +143,15 @@
 
 .primary-wrapper-nav {
   position: relative;
+  min-height: 3em;
+  /* border-bottom: 1px solid black; */
 }
 
 .primary-wrapper-nav__wrapper-logo {
   position: absolute;
   top: 0;
   left: 0;
+  height: 2.5em;
 }
 
 .primary-wrapper-nav__label {
@@ -223,6 +237,46 @@
 
   .header {
     background-color: transparent;
+  }
+
+  .primary-wrapper-nav{
+    /* min-height: 0; */
+  }
+
+  .primary-nav__list {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    margin-top: 0;
+    justify-content: flex-end;
+    padding-right: 0;
+    /* gap: 30px; */
+    gap: 0;
+  }
+
+  .primary-wrapper-nav__label {
+    display: none;
+  }
+
+  .primary-nav {
+    height: auto;
+  }
+
+  .primary-nav__item--active {
+    background-color: var(--bg-button-hover);
+    padding: 0.5em 1.5em;
+    color: var(--color-text);
+    border-radius: 25px;
+  }
+  .primary-nav__item {
+    padding: 0.5em 1.5em;
+  }
+
+  .primary-nav__item:hover {
+    cursor: pointer;
+    background-color: var(--bg-button-hover);
+    color: var(--color-text);
+    border-radius: 25px;
   }
 }
 
