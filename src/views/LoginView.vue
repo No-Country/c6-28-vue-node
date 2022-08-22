@@ -61,14 +61,7 @@
             <template #content>Registrarse con Google </template>
           </ButtonGoogle>
         </div>
-        <div class="container">
-          <div>
-            <h6>usted ya tiene cuenta?</h6>
-          </div>
-          <div>
-            <h6 class="cuentah6">ingrese aqui</h6>
-          </div>
-        </div>
+  
       </form>
     </div>
     <FooterView />

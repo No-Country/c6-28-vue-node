@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <body>
       <HeaderItem></HeaderItem>
       <SearchBar class="SearchBar" />
@@ -89,6 +90,10 @@ export default {
 </script>
 
 <style scoped>
+
+body{
+  background-color: #F2EDD7
+}
 img {
   border-radius: 10px;
 }
@@ -143,7 +148,7 @@ h5 {
   margin-right: auto;
 }
 
-@media (max-width: 481px) {
+@media (max-width: 750px) {
   #carouselExampleControls {
     width: 70vw;
   }
@@ -151,18 +156,62 @@ h5 {
   img {
     max-width: 50%;
   }
+
 }
 
 @media screen and (min-width: 760px) {
   .categoryImages {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  .btn {
      display: flex;
-  margin-top: 10%;
-  
+    justify-content: center;
   }
 
   img {
-  margin-left: 40px;
+    margin-left: 40px;
 
+  }
 }
+
+@media screen and (min-width: 1000px) {
+  .categoryImages {
+    margin-top: 6%;
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    width: 400px;
+    margin-top: 20px;
+    margin-left: 120px;
+  }
+
+  img {
+    margin-inline: 70px;
+
+  }
+
+  .container {
+
+    padding: 100px;
+  }
+  .d-grid{
+    margin-left: 135px;
+  }
+
+   .categoryImages  :hover{
+  transform: scale(1.1);
+  transition: all 0.9s
+ 
+}
+
 }
 </style>

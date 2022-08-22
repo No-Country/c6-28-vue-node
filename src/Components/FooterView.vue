@@ -92,5 +92,46 @@ li {
 }
 
 
+@media screen and (min-width: 480px) {
+  .register__form {
+    width: 92%;
+  }
+}
+@media screen and (min-width: 760px) {
+
+li{
+
+ padding-inline: 6em;
+}
+  /* .redes {
+  margin-left: 240px;
+} */
+}
+@media screen and (min-width: 1100px) {
+  li{
+
+ padding-inline: 10em;
+ }
+
+   .redes {
+  margin-left: 200px;
+}
+}
+
+@media screen and (min-width: 1350px) {
+  li{
+
+ padding-inline: 13em;  
+ }
+
+    .redes {
+  margin-left: 190px;
+}
+
+
+
+}
+
+
 </style>
 
