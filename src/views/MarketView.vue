@@ -1,105 +1,85 @@
 <template>
-<HeaderItem />
-<div class="container">
+  <div>
+    <HeaderItem />
+    <div class="container">
 
-   <div class="p-2 my-4 bg-light rounded-3 back-image text-center">
+      <div class="p-2 my-4 bg-light rounded-3 back-image text-center">
 
         <h2 class="title1 top">Ordena los productos</h2>
         <h2 class="title2 mt-n8">Para tu mascota.</h2>
         <p class="text-success lead">Delivery Gratis</p>
 
-        <div
-          class="form-group mb-3 d-none d-sm-none d-md-flex
-                 justify-content-center align-items-center"
-        >
-          <input
-            type="text"
-            class="input-busq"
-            placeholder="Busca los mejores productos"
-          />
+        <div class="form-group mb-3 d-none d-sm-none d-md-flex
+                 justify-content-center align-items-center">
+          <input type="text" class="input-busq" placeholder="Busca los mejores productos" />
           <div class="input-group-append">
-            <button
-              class="btn btn-success btn-lg py-7"
-              type="button"
-            >
+            <button class="btn btn-success btn-lg py-7" type="button">
               Buscar
             </button>
           </div>
         </div>
         <br><br><br><br><br><br><br><br><br>
-    </div>
-    <!--Aqui inicia el filtro-->
-    <div class="row g-3 my-2">
-      <div class="col-md-6 col-lg-4 col-xl-3">
-        <SearchBar class="SearchBar" />
       </div>
-      <div class="col-md-6 col-lg-4 col-xl-3">
-        <form action="">
-          <div class="form-group">
-            <label for="category">Categorías</label>
-            <select class="form-control" id="category">
-              <option>Producto 1</option>
-              <option>Producto 2</option>
-              <option>Producto 3</option>
-              <option>Producto 4</option>
-              <option>Producto 5</option>
-            </select>
-          </div>
-        </form>
+      <!--Aqui inicia el filtro-->
+      <div class="row g-3 my-2">
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <SearchBar class="SearchBar" />
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <form action="">
+            <div class="form-group">
+              <label for="category">Categorías</label>
+              <select class="form-control" id="category">
+                <option>Producto 1</option>
+                <option>Producto 2</option>
+                <option>Producto 3</option>
+                <option>Producto 4</option>
+                <option>Producto 5</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <form action="">
+            <div class="form-group">
+              <label for="price" class="form-label">Filtrar por precio</label>
+              <input type="range" class="form-range" min="0" max="51800" id="price">
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <form action="">
+            <div class="form-group">
+              <label for="mark">Marcas</label>
+              <select class="form-control" id="mark">
+                <option>Marca 1</option>
+                <option>Marca 2</option>
+                <option>Marca 3</option>
+                <option>Marca 4</option>
+                <option>Marca 5</option>
+              </select>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="col-md-6 col-lg-4 col-xl-3">
-        <form action="">
-          <div class="form-group">
-            <label for="price" class="form-label">Filtrar por precio</label>
-            <input
-              type="range"
-              class="form-range"
-              min="0"
-              max="51800"
-              id="price"
-            >
-          </div>
-        </form>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3">
-        <form action="">
-          <div class="form-group">
-            <label for="mark">Marcas</label>
-            <select class="form-control" id="mark">
-              <option>Marca 1</option>
-              <option>Marca 2</option>
-              <option>Marca 3</option>
-              <option>Marca 4</option>
-              <option>Marca 5</option>
-            </select>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!--Aqui inicia los productos-->
-    <div class="row g-3 my-2">
+      <!--Aqui inicia los productos-->
+      <div class="row g-3 my-2">
         <div class="col-md-6 col-lg-4 col-xl-3">
           <div class="card">
             <img class="card-img-top" src="https://picsum.photos/id/132/200/200" alt="Card image cap">
             <div class="card-body">
               <h2>
                 1000$
-                <span
-                  style="color: green;
+                <span style="color: green;
                   font-size: 20px;
                   display: block;
-                  float: right"
-                >
+                  float: right">
                   10% OFF
                 </span>
               </h2>
               <p>Lorem ipsum dolor sit atme t, cosectur adipiscing elit.</p>
               <p class="text-center">
-                <a
-                  href="#"
-                  target="_blank"
-                  class="btn btn-success"
-                >
+                <a href="#" target="_blank" class="btn btn-success">
                   Comprar
                 </a>
               </p>
@@ -113,22 +93,16 @@
             <div class="card-body">
               <h2>
                 1000$
-                <span
-                  style="color: green;
+                <span style="color: green;
                   font-size: 20px;
                   display: block;
-                  float: right"
-                >
+                  float: right">
                   10% OFF
                 </span>
               </h2>
               <p>Lorem ipsum dolor sit atme t, cosectur adipiscing elit.</p>
               <p class="text-center">
-                <a
-                  href="#"
-                  target="_blank"
-                  class="btn btn-success"
-                >
+                <a href="#" target="_blank" class="btn btn-success">
                   Comprar
                 </a>
               </p>
@@ -142,22 +116,16 @@
             <div class="card-body">
               <h2>
                 1000$
-                <span
-                  style="color: green;
+                <span style="color: green;
                   font-size: 20px;
                   display: block;
-                  float: right"
-                >
+                  float: right">
                   10% OFF
                 </span>
               </h2>
               <p>Lorem ipsum dolor sit atme t, cosectur adipiscing elit.</p>
               <p class="text-center">
-                <a
-                  href="#"
-                  target="_blank"
-                  class="btn btn-success"
-                >
+                <a href="#" target="_blank" class="btn btn-success">
                   Comprar
                 </a>
               </p>
@@ -171,31 +139,27 @@
             <div class="card-body">
               <h2>
                 1000$
-                <span
-                  style="color: green;
+                <span style="color: green;
                   font-size: 20px;
                   display: block;
-                  float: right"
-                >
+                  float: right">
                   10% OFF
                 </span>
               </h2>
               <p>Lorem ipsum dolor sit atme t, cosectur adipiscing elit.</p>
               <p class="text-center">
-                <a
-                  href="#"
-                  target="_blank"
-                  class="btn btn-success"
-                >
+                <a href="#" target="_blank" class="btn btn-success">
                   Comprar
                 </a>
               </p>
             </div>
           </div>
         </div>
+      </div>
     </div>
-</div>
-<FooterView />
+
+    <FooterView />
+  </div>
 </template>
 
 <script>
@@ -210,7 +174,7 @@ export default {
     SearchBar,
     FooterView,
   },
-  data() {},
+  data() { },
 };
 </script>
 
@@ -236,18 +200,22 @@ export default {
   h2.title1 {
     font-size: 15px;
   }
+
   h2.title2 {
     font-size: 15px;
   }
+
   .top {
     margin-top: 5px;
   }
 }
+
 @media only screen and (min-width: 600px) {
   .top {
     margin-top: 20px;
   }
 }
+
 @media only screen and (min-width: 768px) {
   .top {
     margin-top: 35px;

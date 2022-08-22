@@ -96,9 +96,7 @@ li {
 .facebook{
   margin: 5px;
 }
-<<<<<<< HEAD:vue-node/src/Components/FooterView.vue
+
 
 </style>
-=======
-</style>
->>>>>>> remotes/origin/develop:src/Components/FooterView.vue
+

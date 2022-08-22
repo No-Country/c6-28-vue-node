@@ -176,4 +176,17 @@ h5 {
     max-width: 50%;
   }
 }
+
+@media screen and (min-width: 760px) {
+  .categoryImages {
+     display: flex;
+  margin-top: 10%;
+  
+  }
+
+  img {
+  margin-left: 40px;
+
+}
+}
 </style>
