@@ -94,11 +94,11 @@ export default {
     userLogged() {
       return AuthService.getAccessToken();
     },
-    user() {
+    /* user() {
       if (this.userLogged) {
         return AuthService.get();
       }
-    },
+    }, */
   },
   methods: {
     changePassword() {
