@@ -1,5 +1,4 @@
-<script setup>
-</script>
+<script setup></script>
 <template>
   <button class="button__google">
     <div class="button__icon">
@@ -11,8 +10,7 @@
   </button>
 </template>
 <style>
-
-.button__google{
+.button__google {
   background-color: var(--bg-button-google);
   display: flex;
   align-items: center;
@@ -25,13 +23,13 @@
   border-radius: 5px;
 }
 
-.button__content{
+.button__content {
   width: 100%;
   height: 100%;
   font-size: 1.4rem;
 }
 
-.button__icon{
+.button__icon {
   position: absolute;
   left: 10px;
   top: 25%;

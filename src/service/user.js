@@ -1,16 +1,13 @@
 import { ApiRequest } from "@/service/index";
 
-
 const get = () => {
-    return ApiRequest.get(
-        "/users",
-    )
-}
+  return ApiRequest.get("/users");
+};
 
 const User = () => {
-    return {
-        get
-    }
-}
+  return {
+    get,
+  };
+};
 
-export default User
+export default User;

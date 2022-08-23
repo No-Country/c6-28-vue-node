@@ -1,5 +1,26 @@
-:root{
-  --bg-button-google: #2D3748;
-  --bg-button-register: #18A0FB;
-  --bg-register: #F2EDD7;
+:root {
+  --bg-button-google: #2d3748;
+  --bg-button-register: #18a0fb;
+  --bg-register: #f2edd7;
+}
+
+:root {
+  --container: 2rem;
+  --container-content: calc(var(--container) - 0.8rem);
+  --margin-negative-top: -3.2rem;
+  --max-index: 40;
+  --skip-index: 2;
+  --z-index-max: var(--max-index);
+  --z-index-middle: calc(var(--z-index-max) / var(--skip-index));
+  --z-index-10: calc(var(--z-index-middle) - var(--skip-index));
+  --z-index-9: calc(var(--z-index-10) - var(--skip-index));
+  --z-index-8: calc(var(--z-index-9) - var(--skip-index));
+  --z-index-7: calc(var(--z-index-8) - var(--skip-index));
+  --z-index-6: calc(var(--z-index-7) - var(--skip-index));
+  --z-index-5: calc(var(--z-index-6) - var(--skip-index));
+  --z-index-4: calc(var(--z-index-5) - var(--skip-index));
+  --z-index-3: calc(var(--z-index-4) - var(--skip-index));
+  --z-index-2: calc(var(--z-index-3) - var(--skip-index));
+  --z-index-1: calc(var(--z-index-2) - var(--skip-index));
+  --z-index-min: calc(var(--z-index-1) - var(--skip-index));
 }

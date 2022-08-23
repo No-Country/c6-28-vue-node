@@ -1,7 +1,5 @@
 <template>
-
   <div>
-
     <body>
       <HeaderItem></HeaderItem>
       <SearchBar class="SearchBar" />
@@ -59,7 +57,6 @@
           <button type="button" class="btn btn-outline-primary btn-md">
             Contactarnos
           </button>
-
         </div>
         <div class="reptiles">
           <img src="https://picsum.photos/id/135/200/200" alt="..." />
@@ -68,7 +65,7 @@
 
       <div class="container">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-        <p>{{ this.$store.state.count }}</p>
+        <p>{{ $store.state.count }}</p>
 
         <div class="d-grid gap-2 d-md-block">
           <button type="button" class="btn btn-primary btn-md">
@@ -79,40 +76,35 @@
           </button>
         </div>
 
-        <button type="button" id="backToTop" class="btn btn-success">
+        <button id="backToTop" type="button" class="btn btn-success">
           Volver Arriba
         </button>
       </div>
-
     </body>
 
-
     <FooterView />
-
   </div>
-
 </template>
 
 <script>
-import SearchBar from '../Components/SearchBar.vue';
-import CarouselTrending from '../Components/CarouselTrending.vue';
-import HeaderItem from '@/Components/HeaderItem.vue';
-import FooterView from '../Components/FooterView.vue';
+import SearchBar from "../Components/SearchBar.vue";
+import CarouselTrending from "../Components/CarouselTrending.vue";
+import HeaderItem from "@/Components/HeaderItem.vue";
+import FooterView from "../Components/FooterView.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     SearchBar,
     CarouselTrending,
     HeaderItem,
     FooterView,
   },
-  data() { },
+  data() {},
 };
 </script>
 
 <style scoped>
-
 img {
   border-radius: 10px;
 }

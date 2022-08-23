@@ -1,7 +1,5 @@
 <template>
-
   <div class="contenedorForm">
-
     <HeaderItem></HeaderItem>
 
     <div class="formulario">
@@ -11,10 +9,10 @@
         <div class="row">
           <div class="col-md-12 form-group">
             <input
+              v-model="email"
               type="text"
               class="email form-control"
               placeholder="email"
-              v-model="email"
             />
           </div>
         </div>
@@ -22,17 +20,16 @@
         <div class="row">
           <div class="col-md-12 form-group">
             <input
+              v-model="password"
               type="password"
               placeholder="contraseña"
               class="form-control"
-              v-model="password"
             />
           </div>
         </div>
 
         <input type="checkbox" class="checkbox" value="" /> recordarme
         <p>olvidaste tu contraseña?</p>
-
 
         <div v-if="message" style="color: red; margin-top 5%">
           Credenciales Invalidas
@@ -54,8 +51,7 @@
                 src="../assets/icons/iconGoogle.svg"
                 alt="icon google svg"
                 class="icon__google"
-                style="margin-top: 3px;
-                margin-left: 5px"
+                style="margin-top: 3px; margin-left: 5px"
               />
             </template>
             <template #content>Registrarse con Google </template>
@@ -68,15 +64,14 @@
 </template>
 
 <script>
-import AuthService from '@/service/auth.service';
-import FooterView from '../Components/FooterView.vue';
-import ButtonGoogle from '@/Components/ui/Button/ButtonGoogle.vue';
-import ButtonBase from '@/Components/ui/Button/ButtonBase.vue';
-import HeaderItem from '@/Components/HeaderItem.vue';
+import AuthService from "@/service/auth.service";
+import FooterView from "../Components/FooterView.vue";
+import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
+import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
+import HeaderItem from "@/Components/HeaderItem.vue";
 
 export default {
-
-  name: 'LoginView',
+  name: "LoginView",
   components: {
     FooterView,
     ButtonGoogle,
@@ -85,21 +80,22 @@ export default {
   },
   data() {
     return {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     };
   },
   methods: {
     handleSubmit() {
       AuthService.login(this.email, this.password)
-          .then((response) => {
-            console.log(response);
-            AuthService.setAccessToken(response.token);
-            this.$store.commit('updateUser', response.user);
-            this.$router.push('/');
-          }).catch((error) => {
-            console.log(error);
-          });
+        .then((response) => {
+          console.log(response);
+          AuthService.setAccessToken(response.token);
+          this.$store.commit("updateUser", response.user);
+          this.$router.push("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };
@@ -117,11 +113,11 @@ export default {
 
   text-align: center;
 
-  Line-height: 22px;
+  line-height: 22px;
 }
 
 .formulario {
-  background-color: #F2EDD7;
+  background-color: #f2edd7;
   width: 80%;
   margin: 4em auto;
   /* transform: translateY(10%); */
@@ -134,8 +130,7 @@ export default {
 }
 
 .contenedorForm {
-  background-color: #F2EDD7;
-
+  background-color: #f2edd7;
 }
 
 .titulo {
@@ -174,7 +169,6 @@ export default {
 p {
   float: right;
   margin-top: 10px;
-  color: #18A0FB;
-
+  color: #18a0fb;
 }
 </style>

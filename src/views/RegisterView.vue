@@ -1,138 +1,137 @@
+<!-- eslint-disable vue/no-multiple-template-root -->
 <script setup>
-import ButtonGoogle from '@/Components/ui/Button/ButtonGoogle.vue';
-import ButtonBase from '@/Components/ui/Button/ButtonBase.vue';
-import HeaderItem from '@/Components/HeaderItem.vue';
-import FooterView from '../Components/FooterView.vue';
-import {ref} from 'vue';
+import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
+import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
+import HeaderItem from "@/Components/HeaderItem.vue";
+import FooterView from "../Components/FooterView.vue";
+import { ref } from "vue";
 
-const name = ref('');
-const lastname = ref('');
-const password = ref('');
-const confirmPass = ref('');
-const email = ref('');
+const name = ref("");
+const lastname = ref("");
+const password = ref("");
+const confirmPass = ref("");
+const email = ref("");
 </script>
 <template>
-  <body>
-    <HeaderItem></HeaderItem>
-    <form action="" class="register__form" @submit.prevent="handleSubmit">
-      <h1 class="mb-5">Registro</h1>
-      <div class="row mb-3">
-        <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            v-model="name"
-            name="reg__nombre"
-            placeholder="Nombre"
-            aria-label="First name"
-          />
-        </div>
-        <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            v-model="lastname"
-            name="reg__apellido"
-            placeholder="Apellido"
-            aria-label="Last name"
-          />
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col">
-          <input
-            type="email"
-            class="form-control"
-            v-model="email"
-            name="reg__email"
-            placeholder="Correo"
-            aria-label="First name"
-          />
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col">
-          <input
-            type="password"
-            class="form-control"
-            v-model="password"
-            name="reg__password"
-            placeholder="Contraseña"
-            aria-label="First name"
-          />
-        </div>
-      </div>
-      <div class="row mb-5">
-        <div class="col">
-          <input
-            type="password"
-            class="form-control"
-            v-model="confirmPass"
-            name="reg__confirmar"
-            placeholder="Confirmar contraseña"
-            aria-label="First name"
-          />
-        </div>
-      </div>
-      <div class="form-check mb-5">
+  <HeaderItem></HeaderItem>
+  <form action="" class="register__form" @submit.prevent="handleSubmit">
+    <h1 class="mb-5">Registro</h1>
+    <div class="row mb-3">
+      <div class="col">
         <input
-          class="form-check-input"
-          type="checkbox"
-          value=""
-          id="flexCheckChecked"
-          checked
+          v-model="name"
+          type="text"
+          class="form-control"
+          name="reg__nombre"
+          placeholder="Nombre"
+          aria-label="First name"
         />
-        <label class="form-check-label" for="flexCheckChecked">
-          Acepto los terminos y condiciones
-        </label>
       </div>
-      <ButtonBase @submit.prevent="submit">Registrarse</ButtonBase>
-      <ButtonGoogle>
-        <template #icon>
-          <img
-            src="../assets/icons/iconGoogle.svg"
-            alt="icon google svg"
-            class="icon__google"
-            style="margin-top: 5px; margin-left: 15px"
-          />
-        </template>
-        <template #content>Registrarse con Google </template>
-      </ButtonGoogle>
-    </form>
-    <FooterView />
-  </body>
+      <div class="col">
+        <input
+          v-model="lastname"
+          type="text"
+          class="form-control"
+          name="reg__apellido"
+          placeholder="Apellido"
+          aria-label="Last name"
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col">
+        <input
+          v-model="email"
+          type="email"
+          class="form-control"
+          name="reg__email"
+          placeholder="Correo"
+          aria-label="First name"
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col">
+        <input
+          v-model="password"
+          type="password"
+          class="form-control"
+          name="reg__password"
+          placeholder="Contraseña"
+          aria-label="First name"
+        />
+      </div>
+    </div>
+    <div class="row mb-5">
+      <div class="col">
+        <input
+          v-model="confirmPass"
+          type="password"
+          class="form-control"
+          name="reg__confirmar"
+          placeholder="Confirmar contraseña"
+          aria-label="First name"
+        />
+      </div>
+    </div>
+    <div class="form-check mb-5">
+      <input
+        id="flexCheckChecked"
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        checked
+      />
+      <label class="form-check-label" for="flexCheckChecked">
+        Acepto los terminos y condiciones
+      </label>
+    </div>
+    <ButtonBase @submit.prevent="submit">Registrarse</ButtonBase>
+    <ButtonGoogle>
+      <template #icon>
+        <img
+          src="../assets/icons/iconGoogle.svg"
+          alt="icon google svg"
+          class="icon__google"
+          style="margin-top: 5px; margin-left: 15px"
+        />
+      </template>
+      <template #content>Registrarse con Google </template>
+    </ButtonGoogle>
+  </form>
+  <FooterView />
 </template>
 
 <script>
-import AuthService from '../service/auth.service';
+import AuthService from "../service/auth.service";
 export default {
   data() {
     return {
-      name: '',
-      lastname: '',
-      email: '',
-      password: '',
-      confirmPass: '',
+      name: "",
+      lastname: "",
+      email: "",
+      password: "",
+      confirmPass: "",
     };
   },
   methods: {
     handleSubmit() {
       AuthService.register(
-          this.name,
-          this.lastname,
-          this.email,
-          this.password,
-          this.confirmPass,
+        this.name,
+        this.lastname,
+        this.email,
+        this.password,
+        this.confirmPass
       )
-          .then((response) => {
-            console.log(response);
-            AuthService.setAccessToken(response.token);
-            this.$store.commit('updateUser', response.user);
-            this.$router.push('/login');
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        .then((response) => {
+          console.log(response);
+          AuthService.setAccessToken(response.token);
+          this.$store.commit("updateUser", response.user);
+          this.$router.push("/login");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };
@@ -153,7 +152,7 @@ export default {
   display: block;
 }
 body {
-  background-color:#F2EDD7;
+  background-color: #f2edd7;
   padding-bottom: 100%;
 }
 @media screen and (min-width: 480px) {

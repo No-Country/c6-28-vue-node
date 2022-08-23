@@ -1,16 +1,13 @@
 import { ApiRequest } from "@/service/config";
 
-
 const get = () => {
-    return ApiRequest.get(
-        "",
-    )
-}
+  return ApiRequest.get("");
+};
 
 const Product = () => {
-    return {
-        get
-    }
-}
+  return {
+    get,
+  };
+};
 
-export default Product
+export default Product;
