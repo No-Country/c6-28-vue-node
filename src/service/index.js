@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API_BASE_URL = 'https://c6-28.up.railway.app/api/v1';
+const API_BASE_URL = "https://c6-28.up.railway.app/api/v1";
 // const API_BASE_URL = 'https://localhost:8080/api/';
 
 // const config = {
