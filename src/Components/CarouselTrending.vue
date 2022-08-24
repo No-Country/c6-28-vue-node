@@ -65,4 +65,9 @@ img {
     width: 70vw;
   }
 }
+@media (min-width: 760px) {
+  #carouselExampleControls {
+    width: 35vw;
+  }
+}
 </style>

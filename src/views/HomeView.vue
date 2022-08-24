@@ -58,28 +58,13 @@
             Contactarnos
           </button>
         </div>
-        <div class="reptiles">
-          <img src="https://picsum.photos/id/135/200/200" alt="..." />
-        </div>
       </div>
 
-      <div class="container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-        <p>{{ $store.state.count }}</p>
-
-        <div class="d-grid gap-2 d-md-block">
-          <button type="button" class="btn btn-primary btn-md">
-            Registrarse
-          </button>
-          <button type="button" class="btn btn-outline-primary btn-md">
-            Contactarnos
-          </button>
-        </div>
-
-        <button id="backToTop" type="button" class="btn btn-success">
+      <!-- <div class="container">
+        <button type="button" id="backToTop" class="btn btn-secondary">
           Volver Arriba
         </button>
-      </div>
+      </div> -->
     </body>
 
     <FooterView />
@@ -100,11 +85,14 @@ export default {
     HeaderItem,
     FooterView,
   },
-  data() {},
 };
 </script>
 
 <style scoped>
+
+body{
+  background-color: #F2EDD7
+}
 img {
   border-radius: 10px;
 }
@@ -134,7 +122,7 @@ img {
 .container {
   font-family: arial;
   font-size: 1rem;
-  margin-top: 15%;
+  padding: 20% 5% 20% 5%;
 }
 
 p {
@@ -159,7 +147,7 @@ h5 {
   margin-right: auto;
 }
 
-@media (max-width: 481px) {
+@media (max-width: 750px) {
   #carouselExampleControls {
     width: 70vw;
   }
@@ -167,5 +155,62 @@ h5 {
   img {
     max-width: 50%;
   }
+
+}
+
+@media screen and (min-width: 760px) {
+  .categoryImages {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  .btn {
+     display: flex;
+    justify-content: center;
+  }
+
+  img {
+    margin-left: 40px;
+
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .categoryImages {
+    margin-top: 6%;
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    width: 400px;
+    margin-top: 20px;
+    margin-left: 120px;
+  }
+
+  img {
+    margin-inline: 70px;
+
+  }
+
+  .container {
+
+    padding: 100px;
+  }
+  .d-grid{
+    margin-left: 135px;
+  }
+
+   .categoryImages  :hover{
+  transform: scale(1.1);
+  transition: all 0.9s
+ 
+}
+
 }
 </style>

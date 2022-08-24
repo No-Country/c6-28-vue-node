@@ -188,7 +188,7 @@ export default {
     FooterView,
     HeaderBanner,
   },
-  data() {},
+  data() { },
 };
 </script>
 
@@ -214,18 +214,22 @@ export default {
   h2.title1 {
     font-size: 15px;
   }
+
   h2.title2 {
     font-size: 15px;
   }
+
   .top {
     margin-top: 5px;
   }
 }
+
 @media only screen and (min-width: 600px) {
   .top {
     margin-top: 20px;
   }
 }
+
 @media only screen and (min-width: 768px) {
   .top {
     margin-top: 35px;

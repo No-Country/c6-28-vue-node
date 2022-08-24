@@ -57,6 +57,7 @@
             <template #content>Registrarse con Google </template>
           </ButtonGoogle>
         </div>
+  
       </form>
     </div>
     <FooterView />
@@ -169,6 +170,40 @@ export default {
 p {
   float: right;
   margin-top: 10px;
-  color: #18a0fb;
+  color: #18A0FB;
+  cursor: pointer
+}
+
+.container {
+  display:flex;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 1em;
+}
+h6{
+  float: left;
+}
+.cuentah6{
+  color: #18A0FB;
+  margin-left: 5px;
+  cursor: pointer
+}
+
+@media screen and (min-width: 480px) {
+  .formulario {
+    width: 92%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .formulario {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .formulario {
+    width: 35%;
+  }
 }
 </style>
