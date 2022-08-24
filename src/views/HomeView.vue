@@ -1,7 +1,5 @@
 <template>
   <div>
-    <body>
-      <HeaderItem></HeaderItem>
       <SearchBar class="SearchBar" />
       <br />
       <CarouselTrending class="CarrouselTrending" />
@@ -65,25 +63,18 @@
           Volver Arriba
         </button>
       </div> -->
-    </body>
-
-    <FooterView />
   </div>
 </template>
 
 <script>
 import SearchBar from "../Components/SearchBar.vue";
 import CarouselTrending from "../Components/CarouselTrending.vue";
-import HeaderItem from "@/Components/HeaderItem.vue";
-import FooterView from "../Components/FooterView.vue";
 
 export default {
   name: "HomeView",
   components: {
     SearchBar,
     CarouselTrending,
-    HeaderItem,
-    FooterView,
   },
 };
 </script>

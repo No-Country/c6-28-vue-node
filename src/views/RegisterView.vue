@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/no-multiple-template-root -->
 <script setup>
 import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
 import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
@@ -13,8 +12,7 @@ const confirmPass = ref("");
 const email = ref("");
 </script>
 <template>
-  <HeaderItem></HeaderItem>
-  <form action="" class="register__form" @submit.prevent="handleSubmit">
+  <form action="" class="register__form bg-white" @submit.prevent="handleSubmit">
     <h1 class="mb-5">Registro</h1>
     <div class="row mb-3">
       <div class="col">
@@ -99,7 +97,6 @@ const email = ref("");
       <template #content>Registrarse con Google </template>
     </ButtonGoogle>
   </form>
-  <FooterView />
 </template>
 
 <script>

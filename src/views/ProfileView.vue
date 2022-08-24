@@ -1,10 +1,8 @@
 <template>
-  <body>
-    <HeaderItem />
     <div
-      class="container d-flex justify-content-center align-items-center vh-100 my-5"
+      class="container d-flex  justify-content-center align-items-center vh-100 my-5"
     >
-      <div class="back-div text-center p-5 mt-3 center">
+      <div class="back-div text-center p-5 mt-3 center bg-white">
         <h3>Información Personal</h3>
         <img
           src="https://mdbcdn.b-cdn.net/img/new/avatars/6.webp"
@@ -63,21 +61,14 @@
         <button type="button" class="btn">Cambiar Contraseña</button>
       </div>
     </div>
-    <FooterView />
-  </body>
 </template>
 
 <script>
 import AuthService from "../service/auth.service";
-import HeaderItem from "@/Components/HeaderItem.vue";
-import FooterView from "../Components/FooterView.vue";
 
 export default {
   name: "ProfileView",
-  components: {
-    FooterView,
-    HeaderItem,
-  },
+  components: { },
   data() {
     return {
       oldPassword: "",

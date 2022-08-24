@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 my-4 bg-light rounded-3 back-image text-center">
+  <div class="p-2 mb-4 bg-light rounded-3 back-image text-center">
     <h2 class="title1 top">Ordena los productos</h2>
     <h2 class="title2 mt-n8">Para tu mascota.</h2>
     <p class="text-success lead">Delivery Gratis</p>

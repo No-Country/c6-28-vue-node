@@ -1,7 +1,4 @@
 <template>
-  <div class="contenedorForm">
-    <HeaderItem></HeaderItem>
-
     <div class="formulario">
       <form @submit.prevent="handleSubmit">
         <h2 class="titulo mb-5">Iniciar sesion</h2>
@@ -59,25 +56,19 @@
         </div>
   
       </form>
-    </div>
-    <FooterView />
   </div>
 </template>
 
 <script>
 import AuthService from "@/service/auth.service";
-import FooterView from "../Components/FooterView.vue";
 import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
 import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
-import HeaderItem from "@/Components/HeaderItem.vue";
 
 export default {
   name: "LoginView",
   components: {
-    FooterView,
     ButtonGoogle,
     ButtonBase,
-    HeaderItem,
   },
   data() {
     return {
@@ -118,7 +109,7 @@ export default {
 }
 
 .formulario {
-  background-color: #f2edd7;
+  background-color: white;
   width: 80%;
   margin: 4em auto;
   /* transform: translateY(10%); */
@@ -128,10 +119,6 @@ export default {
   /* backdrop-filter: blur(50%); */
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%),
     0 1px 5px 0 rgb(0 0 0 / 20%);
-}
-
-.contenedorForm {
-  background-color: #f2edd7;
 }
 
 .titulo {

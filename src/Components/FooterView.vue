@@ -22,7 +22,7 @@
     <font-awesome-icon icon="fa-brands fa-instagram" />
 
     <div class="footer-bottom">
-      <p>&copy;Mundo mascota, inc.2019</p>
+      <p class="m-0">&copy;Mundo mascota, inc.2019</p>
     </div>
   </footer>
 </template>
@@ -61,8 +61,8 @@ li {
   font-style: normal;
   font-size: 15px;
   float: left;
-  display: block;
   padding: 1.5em;
+  /*padding-bottom: 1.5em;*/
 }
 
 .footer-bottom p {
@@ -77,8 +77,6 @@ li {
 
 .redes {
   margin-left: 50px;
-  margin-bottom: 10px;
-  
 }
 .redes :hover {
   color: #3a6351;
@@ -93,47 +91,33 @@ li {
   margin-left: 4px;
 }
 
-
-@media screen and (min-width: 480px) {
-  .register__form {
-    width: 92%;
-  }
-}
 @media screen and (min-width: 760px) {
 
-li{
-
- padding-inline: 6em;
-}
+  li{
+  /* padding-inline: 6em;*/
+  }
   /* .redes {
-  margin-left: 240px;
-} */
+    margin-left: 240px;
+  } */
 }
 @media screen and (min-width: 1100px) {
   li{
+    /*padding-inline: 10em;*/
+  }
 
- padding-inline: 10em;
- }
-
-   .redes {
-  margin-left: 200px;
-}
+  .redes {
+    margin-left: 200px;
+  }
 }
 
 @media screen and (min-width: 1350px) {
   li{
+    /*padding-inline: 13em;  */
+  }
 
- padding-inline: 13em;  
- }
-
-    .redes {
-  margin-left: 230px;
+  .redes {
+    margin-left: 230px;
+  }
 }
-
-
-
-}
-
-
 </style>
 

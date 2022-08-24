@@ -1,6 +1,4 @@
 <template>
-  <body>
-    <HeaderItem />
     <div class="container bg-white rounded my-5">
       <div class="row g-3">
         <div class="col-md-7 col-lg-7 col-xl-7">
@@ -120,21 +118,15 @@
         </div>
       </div>
     </div>
-    <FooterView />
-  </body>
 </template>
 
 <script>
-import HeaderItem from "@/Components/HeaderItem.vue";
-import FooterView from "../Components/FooterView.vue";
 import Product from "../Components/Product.vue";
 import Starts from "../Components/Starts.vue";
 
 export default {
   name: "ProductView",
   components: {
-    FooterView,
-    HeaderItem,
     Product,
     Starts,
   },

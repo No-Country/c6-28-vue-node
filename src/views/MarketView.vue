@@ -1,6 +1,4 @@
 <template>
-<div class="market">
-  <HeaderItem />
   <div class="container">
     <HeaderBanner />
     <!--Aqui inicia el filtro-->
@@ -52,7 +50,7 @@
       </div>
     </div>
     <!--Aqui inicia los productos-->
-    <div class="row g-3 my-2">
+    <div class="row g-3">
       <div class="col-md-6 col-lg-4 col-xl-3">
         <div class="card">
           <img
@@ -170,13 +168,9 @@
       </div>
     </div>
   </div>
-  <FooterView />
-</div>
 </template>
 
 <script>
-import HeaderItem from "@/Components/HeaderItem.vue";
-import FooterView from "../Components/FooterView.vue";
 import SearchBar from "../Components/SearchBar.vue";
 
 /* Componentes para MarketView*/
@@ -185,9 +179,7 @@ import HeaderBanner from "../Components/HeaderBanner";
 export default {
   name: "MarketView",
   components: {
-    HeaderItem,
     SearchBar,
-    FooterView,
     HeaderBanner,
   },
   data() { },
@@ -206,9 +198,6 @@ export default {
   background-size: cover;
 }
 
-.container{
-  background-color: #F2EDD7;
-}
 .market{
   background-color: #F2EDD7;
 }
