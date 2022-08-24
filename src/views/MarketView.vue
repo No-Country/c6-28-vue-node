@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="market">
     <HeaderItem />
     <div class="container">
 
@@ -188,6 +188,13 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.container{
+  background-color: #F2EDD7;
+}
+.market{
+  background-color: #F2EDD7;
 }
 
 .input-busq {

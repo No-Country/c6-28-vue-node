@@ -76,19 +76,21 @@ li {
 }
 
 .redes {
-  margin-left: 100px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  
 }
 .redes :hover {
   color: #3a6351;
 }
 .twiter {
-  margin: 5px;
+  margin-left: 4px;
 }
 .instagram {
-  margin: 5px;
+  margin-left: 4px;
 }
 .facebook {
-  margin: 5px;
+  margin-left: 4px;
 }
 
 
@@ -125,7 +127,7 @@ li{
  }
 
     .redes {
-  margin-left: 190px;
+  margin-left: 230px;
 }
 
 
