@@ -51,10 +51,10 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 
         <div class="d-grid gap-2 d-md-block">
-          <button type="button" class="btn btn-primary btn-md">
+          <button type="button" class="btn btn-success btn-md">
             Registrarse
           </button>
-          <button type="button" class="btn btn-outline-primary btn-md">
+          <button type="button" class="btn btn-outline-success btn-md">
             Contactarnos
           </button>
         </div>
@@ -190,7 +190,7 @@ h5 {
   button {
     width: 400px;
     margin-top: 20px;
-    margin-left: 120px;
+    margin-left: 215px;
   }
 
   img {
