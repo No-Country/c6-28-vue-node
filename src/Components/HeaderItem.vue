@@ -3,13 +3,13 @@
     <div v-if="mobileView">
       <div class="dropdown">
         <button
+          id="dropdownMenuButton1"
           class="btn"
           type="button"
-          id="dropdownMenuButton1"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          <div @click="toggleMenu()" id="navMenu">
+          <div id="navMenu" @click="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
@@ -83,9 +83,9 @@
     <div v-if="mobileView">
       <div>
         <button
+          id="dropdownMenuButton1"
           class="btn"
           type="button"
-          id="dropdownMenuButton1"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
