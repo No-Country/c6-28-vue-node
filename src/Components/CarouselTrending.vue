@@ -1,34 +1,56 @@
 <template>
-  <div>
+  <div class="wrapper-content">
     <div
       id="carouselExampleControls"
       class="carousel slide"
       data-bs-ride="carousel"
     >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
-            src="https://picsum.photos/id/232/200/200"
+            src="https://picsum.photos/id/550/1600/700"
             class="d-block w-100"
             alt="..."
           />
         </div>
         <div class="carousel-item">
           <img
-            src="https://picsum.photos/id/231/200/200"
+            src="https://picsum.photos/id/200/1600/700"
             class="d-block w-100"
             alt="..."
           />
         </div>
         <div class="carousel-item">
           <img
-            src="https://picsum.photos/id/237/200/200"
+            src="https://picsum.photos/id/600/1600/700"
             class="d-block w-100"
             alt="..."
           />
         </div>
       </div>
-      <button
+      <!-- <button
         class="carousel-control-prev"
         type="button"
         data-bs-target="#carouselExampleControls"
@@ -45,7 +67,7 @@
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-      </button>
+      </button> -->
     </div>
   </div>
 </template>
@@ -56,18 +78,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 img {
-  border-radius: 10px;
+  border-radius: 6px;
 }
-@media (max-width: 481px) {
-  #carouselExampleControls {
-    width: 70vw;
-  }
+
+.wrapper-content{
+  padding: 1em var(--content);
 }
-@media (min-width: 760px) {
-  #carouselExampleControls {
-    width: 35vw;
-  }
-}
+
 </style>
