@@ -22,7 +22,7 @@
     <font-awesome-icon icon="fa-brands fa-instagram" />
 
     <div class="footer-bottom">
-      <p class="m-0">&copy;Mundo mascota, inc.2019</p>
+      <p>&copy;Mundo mascota, inc.2019</p>
     </div>
   </footer>
 </template>
@@ -61,8 +61,8 @@ li {
   font-style: normal;
   font-size: 15px;
   float: left;
+  display: block;
   padding: 1.5em;
-  /*padding-bottom: 1.5em;*/
 }
 
 .footer-bottom p {
@@ -73,51 +73,66 @@ li {
   text-transform: uppercase;
   opacity: 0.4;
   font-weight: 200;
+  margin: 0;
 }
 
 .redes {
-  margin-left: 50px;
+  margin-left: 140px;
 }
 .redes :hover {
   color: #3a6351;
 }
 .twiter {
-  margin-left: 4px;
+  margin: 5px;
 }
 .instagram {
-  margin-left: 4px;
+  margin: 5px;
 }
 .facebook {
-  margin-left: 4px;
+  margin: 5px;
 }
 
+
+@media screen and (min-width: 480px) {
+  .register__form {
+    width: 92%;
+  }
+}
 @media screen and (min-width: 760px) {
 
-  li{
-  /* padding-inline: 6em;*/
-  }
-  /* .redes {
-    margin-left: 240px;
-  } */
+li{
+
+ padding-inline: 6em;
+}
+  .redes {
+  margin-left: 240px;
+}
 }
 @media screen and (min-width: 1100px) {
   li{
-    /*padding-inline: 10em;*/
-  }
 
-  .redes {
-    margin-left: 200px;
-  }
+ padding-inline: 10em;
+ }
+
+   .redes {
+  margin-left: 200px;
+}
 }
 
 @media screen and (min-width: 1350px) {
   li{
-    /*padding-inline: 13em;  */
-  }
 
-  .redes {
-    margin-left: 230px;
-  }
+ padding-inline: 13em;  
+ }
+
+    .redes {
+  margin-left: 190px;
 }
+
+
+
+}
+
+
 </style>
 
