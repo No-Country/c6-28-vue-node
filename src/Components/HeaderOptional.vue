@@ -30,7 +30,7 @@ onUnmounted(() => {
 <template>
   <header
     ref="header"
-    class="d-flex px-3 py-2 sticky-top  align-items-center z-index header"
+    class="d-flex px-3 py-2 sticky-top align-items-center z-index header"
   >
     <div class="logo d-flex align-items-center">
       <img :src="IconBurger" class="d-md-none" alt="burger icon" />
@@ -66,7 +66,7 @@ onUnmounted(() => {
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
         height="20"
-        width="20" 
+        width="20"
         class="bi bi-cart4 header__cart"
         viewBox="0 0 16 16"
       >
@@ -152,7 +152,7 @@ onUnmounted(() => {
   font-size: 2rem;
 }
 
-.header__cart{
+.header__cart {
   /* height: 20%; */
   /* display: block; */
 }

@@ -83,8 +83,7 @@ img {
   border-radius: 6px;
 }
 
-.wrapper-content{
+.wrapper-content {
   padding: 1em var(--content);
 }
-
 </style>

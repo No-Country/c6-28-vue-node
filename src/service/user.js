@@ -5,18 +5,14 @@ const get = () => {
 };
 
 const getUser = (id) => {
-    return ApiRequest.get(
-        `/users/${id}/`,
-    )
-}
+  return ApiRequest.get(`/users/${id}/`);
+};
 
 const User = () => {
-    return {
-        get,
-        getUser
-    }
-}
+  return {
+    get,
+    getUser,
+  };
+};
 
-
-
-export default User
+export default User;

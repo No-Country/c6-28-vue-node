@@ -92,16 +92,15 @@ li {
 }
 
 @media screen and (min-width: 760px) {
-
-  li{
-  /* padding-inline: 6em;*/
+  li {
+    /* padding-inline: 6em;*/
   }
   /* .redes {
     margin-left: 240px;
   } */
 }
 @media screen and (min-width: 1100px) {
-  li{
+  li {
     /*padding-inline: 10em;*/
   }
 
@@ -111,7 +110,7 @@ li {
 }
 
 @media screen and (min-width: 1350px) {
-  li{
+  li {
     /*padding-inline: 13em;  */
   }
 
@@ -120,4 +119,3 @@ li {
   }
 }
 </style>
-

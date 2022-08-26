@@ -20,8 +20,8 @@ export default {
     // HeaderView,
     FooterView,
     HeaderBottomView,
-    HeaderOptionalView
-},
+    HeaderOptionalView,
+  },
 };
 </script>
 <style>
