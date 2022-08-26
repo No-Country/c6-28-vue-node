@@ -35,7 +35,8 @@ export default {
 
 <style scoped>
 footer {
-  background-color: #a0937d;
+  /*background-color: #a0937d;*/
+  background-color: #898aa6;
 }
 img {
   display: flex;

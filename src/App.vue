@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-  <div id="app" style="background: #e8e1d9;">
+  <div id="app" style="background: #d6efed;">
     <HeaderView />
     <router-view />
     <FooterView />
