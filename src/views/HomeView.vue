@@ -73,7 +73,6 @@
 </template>
 
 <script>
-import SearchBar from "../Components/SearchBar.vue";
 import CarouselTrending from "../Components/CarouselTrending.vue";
 
 export default {
