@@ -1,10 +1,10 @@
 <template>
   <div
-    class="md:hidden fixed z-10 bottom-0 flex items-center justify-between shadow-bottomNavigation text-gray-700 body-font bg-white w-full h-14 sm:h-16 px-4"
+    class="d-md-none position-sticky z-10 bottom-0 d-flex align-items-center justify-content-between shadow-bottomNavigation text-gray-700 body-font bg-white w-100 h-14 sm:h-16 px-2 py-4"
   >
     <button
       aria-label="Menu"
-      class="menuBtn flex flex-col items-center justify-center flex-shrink-0 outline-none focus:outline-none"
+      class="menuBtn d-flex flex-column align-items-center justify-content-center flex-shrink-0"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@
         </g>
       </svg></button
     ><button
-      class="flex items-center justify-center flex-shrink-0 h-auto relative focus:outline-none"
+      class="d-flex align-items-center justify-content-center flex-shrink-0 h-auto position-relative focus:outline-none"
       aria-label="search-button"
     >
       <svg
@@ -75,7 +75,7 @@
           stroke-width="0.4"
         ></path></svg></a
     ><button
-      class="flex items-center justify-center flex-shrink-0 h-auto relative focus:outline-none transform"
+      class="d-flex align-items-center justify-content-center flex-shrink-0 position-relative"
       aria-label="cart-button"
     >
       <svg
@@ -92,10 +92,10 @@
           fill-rule="evenodd"
         ></path></svg
       ><span
-        class="cart-counter-badge flex items-center justify-center bg-heading text-white absolute -top-2.5 xl:-top-3 -end-2.5 xl:-end-3 rounded-full font-bold"
+        class="cart-counter-badge d-flex align-items-center justify-content-center bg-heading text-white position-absolute -top-2.5 xl:-top-3 -end-2.5 xl:-end-3 rounded-full font-bold"
         >0</span
       ></button
-    ><button class="flex-shrink-0 focus:outline-none">
+    ><button class="d-flex justify-content-center align-items-center flex-shrink-0 ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="18px"
@@ -113,4 +113,9 @@
     </button>
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+  button{
+    border: transparent;
+    background-color: transparent;
+  }
+</style>

@@ -2,10 +2,17 @@
 import { RouterLink } from "vue-router";
 import Logo from "../assets/Logo.svg";
 import IconBurger from "../assets/icons/IconBurger.svg";
+import OffCanvas from "./ui/OffCanvas/OffCanvas.vue";
+import SidebarOffCanvas from "./ui/OffCanvas/SidebarOffCanvas.vue";
 import { ref, onMounted, onUnmounted } from "vue";
+// import { useStore } from "vuex";
+import * as bootstrap from "bootstrap";
 
 const header = ref();
-
+const child = ref();
+const sidebar = ref(null);
+// const sidebarOffCanvas = ref(false);
+// const store = useStore();
 /**
  * this a callback function to add y remove the header_scrolling class
  */
@@ -21,7 +28,16 @@ function headerScroll() {
 
 onMounted(() => {
   window.addEventListener("scroll", headerScroll);
+  console.log(child.value.sidebar);
+  sidebar.value = bootstrap.Offcanvas.getOrCreateInstance(child.value.sidebar);
+  // const bsOffcanvas = new bootstrap.Offcanvas(child.value.sidebar);
+  // console.log(bsOffcanvas.show());
 });
+
+// eslint-disable-next-line require-jsdoc
+function handleShowOffCanvas() {
+  sidebar.value.show();
+}
 
 onUnmounted(() => {
   window.addEventListener("scroll", headerScroll);
@@ -33,12 +49,23 @@ onUnmounted(() => {
     class="d-flex px-3 py-2 sticky-top align-items-center z-index header"
   >
     <div class="logo d-flex align-items-center">
-      <img :src="IconBurger" class="d-md-none" alt="burger icon" />
+      <!-- <img
+        :src="IconBurger"
+        class="d-md-none"
+        alt="burger icon"
+        @click="store.commit('setOffCanvasShow', true)"
+      /> -->
+      <img
+        :src="IconBurger"
+        class="d-none d-md-block"
+        alt="burger icon"
+        @click="handleShowOffCanvas()"
+      />
       <router-link to="/" class="d-block">
         <img :src="Logo" class="header__logo d-block" alt="page logo" />
       </router-link>
     </div>
-    <nav class="d-none align-items-center d-md-inline-flex w-100">
+    <nav class="d-none align-items-center d-lg-flex w-75">
       <ul class="d-flex align-items-center gap-5 m-0">
         <router-link to="/productos" class="text-dark">Productos</router-link>
         <router-link to="/" class="text-dark">Marcas</router-link>
@@ -48,12 +75,12 @@ onUnmounted(() => {
       </ul>
     </nav>
     <div
-      class="d-flex gap-5 header__actions align-items-center justify-content-end"
+      class="d-flex gap-4 header__actions align-items-center justify-content-end w-lg-50"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
-        class="bi bi-search header__searchIcon"
+        class="bi bi-search header__searchIcon d-none d-md-flex"
         viewBox="0 0 16 16"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal"
@@ -67,7 +94,7 @@ onUnmounted(() => {
         fill="currentColor"
         height="20"
         width="20"
-        class="bi bi-cart4 header__cart"
+        class="bi bi-cart4 header__cart d-none d-md-flex"
         viewBox="0 0 16 16"
       >
         <path
@@ -77,6 +104,11 @@ onUnmounted(() => {
       <router-link to="/login" class="text-dark">Login</router-link>
       <router-link to="/register" class="text-dark">Registro</router-link>
     </div>
+    <Teleport to="body">
+      <OffCanvas ref="child">
+        <SidebarOffCanvas></SidebarOffCanvas>
+      </OffCanvas>
+    </Teleport>
   </header>
   <div
     id="exampleModal"
@@ -121,7 +153,8 @@ onUnmounted(() => {
 <style>
 .header {
   background-color: #e8e1d9;
-  min-height: 100px;
+  height: 50px;
+  /* min-height: 100px; */
 }
 
 .header__logo {
@@ -141,7 +174,8 @@ onUnmounted(() => {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
   color: black;
-  height: 100px;
+  /* height: 100px; */
+  width: 100%;
 }
 
 .header__searchIcon {
@@ -161,5 +195,11 @@ onUnmounted(() => {
   --tw-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+@media (min-width: 992px){
+  .w-lg-50{
+    width: 25%;
+  }
 }
 </style>
