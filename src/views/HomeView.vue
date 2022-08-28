@@ -1,6 +1,12 @@
 <template>
   <div class="home">
-  <h1 class="titulo"><img class="img-fluid" src="https://res.cloudinary.com/dytpump6i/image/upload/v1661658723/cooltext418118799602268_eaxtwa.png" alt=""></h1>
+    <h1 class="titulo">
+      <img
+        class="img-fluid"
+        src="https://res.cloudinary.com/dytpump6i/image/upload/v1661658723/cooltext418118799602268_eaxtwa.png"
+        alt=""
+      />
+    </h1>
     <br />
     <CarouselTrending class="CarrouselTrending" />
     <br />
@@ -73,21 +79,20 @@ import CarouselTrending from "../Components/CarouselTrending.vue";
 export default {
   name: "HomeView",
   components: {
-    SearchBar,
     CarouselTrending,
   },
 };
 </script>
 
 <style scoped>
-.titulo{
+.titulo {
   text-align: center;
 }
 body {
-  background: #B7D3DF;
+  background: #b7d3df;
 }
-.home{
-  background: #B7D3DF;
+.home {
+  background: #b7d3df;
 }
 img {
   border-radius: 10px;

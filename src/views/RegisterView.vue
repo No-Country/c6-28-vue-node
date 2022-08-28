@@ -1,11 +1,11 @@
 <script setup>
 import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
 import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
-import HeaderItem from "@/Components/HeaderItem.vue";
+// import HeaderItem from "@/Components/HeaderItem.vue";
 import FooterView from "../Components/FooterView.vue";
 import { ref } from "vue";
 
-const name = ref("");
+// const name = ref("");
 const lastname = ref("");
 const password = ref("");
 const confirmPass = ref("");
