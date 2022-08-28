@@ -1,105 +1,92 @@
 <template>
+  <div class="formulario">
+    <form @submit.prevent="handleSubmit">
+      <h2 class="titulo mb-5">Iniciar sesion</h2>
 
-  <div class="contenedorForm">
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <input
+            v-model="email"
+            type="text"
+            class="email form-control"
+            placeholder="email"
+          />
+        </div>
+      </div>
 
-    <HeaderItem></HeaderItem>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <input
+            v-model="password"
+            type="password"
+            placeholder="contraseña"
+            class="form-control"
+          />
+        </div>
+      </div>
 
-    <div class="formulario">
-      <form @submit.prevent="handleSubmit">
-        <h2 class="titulo mb-5">Iniciar sesion</h2>
+      <input type="checkbox" class="checkbox" value="" /> recordarme
+      <p>olvidaste tu contraseña?</p>
 
-        <div class="row">
-          <div class="col-md-12 form-group">
-            <input
-              type="text"
-              class="email form-control"
-              placeholder="email"
-              v-model="email"
+      <div v-if="message" style="color: red; margin-top 5%">
+        Credenciales Invalidas
+      </div>
+      <div>
+        <ButtonBase>Iniciar sesion</ButtonBase>
+      </div>
+
+      <div class="hr">
+        <hr class="hrLinea" />
+        o inicia sesion con
+        <hr class="hrLinea" />
+      </div>
+
+      <div>
+        <ButtonGoogle>
+          <template #icon>
+            <img
+              src="../assets/icons/iconGoogle.svg"
+              alt="icon google svg"
+              class="icon__google"
+              style="margin-top: 3px; margin-left: 5px"
             />
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12 form-group">
-            <input
-              type="password"
-              placeholder="contraseña"
-              class="form-control"
-              v-model="password"
-            />
-          </div>
-        </div>
-
-        <input type="checkbox" class="checkbox" value="" /> recordarme
-        <p>olvidaste tu contraseña?</p>
-
-
-        <div v-if="message" style="color: red; margin-top 5%">
-          Credenciales Invalidas
-        </div>
-        <div>
-          <ButtonBase>Iniciar sesion</ButtonBase>
-        </div>
-
-        <div class="hr">
-          <hr class="hrLinea" />
-          o inicia sesion con
-          <hr class="hrLinea" />
-        </div>
-
-        <div>
-          <ButtonGoogle>
-            <template #icon>
-              <img
-                src="../assets/icons/iconGoogle.svg"
-                alt="icon google svg"
-                class="icon__google"
-                style="margin-top: 3px;
-                margin-left: 5px"
-              />
-            </template>
-            <template #content>Registrarse con Google </template>
-          </ButtonGoogle>
-        </div>
-      </form>
-    </div>
-    <FooterView />
+          </template>
+          <template #content>Registrarse con Google </template>
+        </ButtonGoogle>
+      </div>
+    </form>
   </div>
 </template>
 
 <script>
-import AuthService from '@/service/auth.service';
-import FooterView from '../Components/FooterView.vue';
-import ButtonGoogle from '@/Components/ui/Button/ButtonGoogle.vue';
-import ButtonBase from '@/Components/ui/Button/ButtonBase.vue';
-import HeaderItem from '@/Components/HeaderItem.vue';
+import AuthService from "@/service/auth.service";
+import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
+import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
 
 export default {
-
-  name: 'LoginView',
+  name: "LoginView",
   components: {
-    FooterView,
     ButtonGoogle,
     ButtonBase,
-    HeaderItem,
   },
   data() {
     return {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     };
   },
   methods: {
     handleSubmit() {
       AuthService.login(this.email, this.password)
-          .then((response) => {
-            console.log(response);
-            AuthService.setAccessToken(response.token);
-            this.$store.commit('updateUser', response.user);
-            this.$router.push('/');
-          }).catch((error) => {
-            console.log(error);
-          });
+        .then((response) => {
+          console.log(response);
+          AuthService.setAccessToken(response.token);
+          this.$store.commit("updateUser", response.user);
+          this.$router.push("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };
@@ -117,11 +104,11 @@ export default {
 
   text-align: center;
 
-  Line-height: 22px;
+  line-height: 22px;
 }
 
 .formulario {
-  background-color: #F2EDD7;
+  background-color: white;
   width: 80%;
   margin: 4em auto;
   /* transform: translateY(10%); */
@@ -131,11 +118,6 @@ export default {
   /* backdrop-filter: blur(50%); */
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%),
     0 1px 5px 0 rgb(0 0 0 / 20%);
-}
-
-.contenedorForm {
-  background-color: #F2EDD7;
-
 }
 
 .titulo {
@@ -174,7 +156,40 @@ export default {
 p {
   float: right;
   margin-top: 10px;
-  color: #18A0FB;
+  color: #18a0fb;
+  cursor: pointer;
+}
 
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  padding: 1em;
+}
+h6 {
+  float: left;
+}
+.cuentah6 {
+  color: #18a0fb;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 480px) {
+  .formulario {
+    width: 92%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .formulario {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .formulario {
+    width: 35%;
+  }
 }
 </style>

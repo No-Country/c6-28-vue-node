@@ -1,9 +1,22 @@
+<!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-  <router-view />
+  <div id="app" style="background: #d6efed;">
+    <HeaderView />
+    <router-view />
+    <FooterView />
+  </div>
 </template>
 
 <script>
-export default {};
+import HeaderView from './Components/HeaderItem.vue';
+import FooterView from './Components/FooterView.vue';
+
+export default {
+  components: {
+    HeaderView,
+    FooterView,
+  },
+};
 </script>
 <style>
 #app {

@@ -1,20 +1,20 @@
-import Cookies from 'js-cookie';
-import {ApiRequest} from '@/service/index';
+import Cookies from "js-cookie";
+import { ApiRequest } from "@/service/index";
 
 const login = (user, pass) => {
-  return ApiRequest.post('/users/login', {
+  return ApiRequest.post("/users/login", {
     email: user,
     password: pass,
   });
 };
 
 const get = () => {
-  return ApiRequest.get('/users');
+  return ApiRequest.get("/users");
 };
 
 const register = (nameUser, lastname, email, pass, confirmPass) => {
   console.log(nameUser, lastname, email, pass, confirmPass);
-  return ApiRequest.post('/users/signup', {
+  return ApiRequest.post("/users/signup", {
     nombre: nameUser,
     apellidos: lastname,
     email,
@@ -24,15 +24,15 @@ const register = (nameUser, lastname, email, pass, confirmPass) => {
 };
 
 const setAccessToken = (userLogged) => {
-  Cookies.set('userLogged', userLogged);
+  Cookies.set("userLogged", userLogged);
 };
 
 const getAccessToken = () => {
-  return Cookies.get('userLogged');
+  return Cookies.get("userLogged");
 };
 
 const deleteAccessToken = () => {
-  Cookies.remove('userLogged');
+  Cookies.remove("userLogged");
 };
 
 export default {

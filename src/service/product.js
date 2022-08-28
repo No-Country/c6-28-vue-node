@@ -1,6 +1,5 @@
 import {ApiRequest} from '@/service/config';
 
-
 const get = () => {
   return ApiRequest.get(
       '/products',

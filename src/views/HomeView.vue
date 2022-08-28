@@ -1,7 +1,5 @@
 <template>
   <div>
-    <body>
-      <HeaderItem></HeaderItem>
       <SearchBar class="SearchBar" />
       <br />
       <CarouselTrending class="CarrouselTrending" />
@@ -51,10 +49,10 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 
         <div class="d-grid gap-2 d-md-block">
-          <button type="button" class="btn btn-primary btn-md">
+          <button type="button" class="btn btn-success btn-md">
             Registrarse
           </button>
-          <button type="button" class="btn btn-outline-primary btn-md">
+          <button type="button" class="btn btn-outline-success btn-md">
             Contactarnos
           </button>
         </div>
@@ -65,30 +63,27 @@
           Volver Arriba
         </button>
       </div> -->
-    </body>
-
-    <FooterView />
   </div>
 </template>
 
 <script>
 import SearchBar from "../Components/SearchBar.vue";
 import CarouselTrending from "../Components/CarouselTrending.vue";
-import HeaderItem from "@/Components/HeaderItem.vue";
-import FooterView from "../Components/FooterView.vue";
 
 export default {
   name: "HomeView",
   components: {
     SearchBar,
     CarouselTrending,
-    HeaderItem,
-    FooterView,
   },
 };
 </script>
 
 <style scoped>
+
+body{
+  background-color: #F2EDD7
+}
 img {
   border-radius: 10px;
 }
@@ -143,7 +138,7 @@ h5 {
   margin-right: auto;
 }
 
-@media (max-width: 481px) {
+@media (max-width: 750px) {
   #carouselExampleControls {
     width: 70vw;
   }
@@ -151,5 +146,62 @@ h5 {
   img {
     max-width: 50%;
   }
+
+}
+
+@media screen and (min-width: 760px) {
+  .categoryImages {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  .btn {
+     display: flex;
+    justify-content: center;
+  }
+
+  img {
+    margin-left: 40px;
+
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .categoryImages {
+    margin-top: 6%;
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    width: 400px;
+    margin-top: 20px;
+    margin-left: 215px;
+  }
+
+  img {
+    margin-inline: 70px;
+
+  }
+
+  .container {
+
+    padding: 100px;
+  }
+  .d-grid{
+    margin-left: 135px;
+  }
+
+   .categoryImages  :hover{
+  transform: scale(1.1);
+  transition: all 0.9s
+ 
+}
+
 }
 </style>

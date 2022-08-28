@@ -1,6 +1,6 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API_BASE_URL = 'https://c6-28.up.railway.app/api/v1';
+const API_BASE_URL = "https://c6-28.up.railway.app/api/v1";
 // const API_BASE_URL = 'https://localhost:8080/api/';
 
 // const config = {
@@ -13,7 +13,7 @@ const API_BASE_URL = 'https://c6-28.up.railway.app/api/v1';
 
 export const ApiRequest = axios.create({
   baseURL: API_BASE_URL,
-  headers: {'Content-Type': 'application/json'},
+  headers: { "Content-Type": "application/json" },
 });
 
 const validResponseFormat = /[2]\d\d/;

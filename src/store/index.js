@@ -1,7 +1,6 @@
 import { createStore } from 'vuex';
 
 const store = createStore({
-
   state: {
     user: {},
     token: null,
@@ -27,7 +26,7 @@ const store = createStore({
     },
     setToken(state, token) {
       state.token = token;
-      localStorage.setItem('token', token);
+      localStorage.setItem("token", token);
     },
     setProducts(state, products) {
       state.products = products;
@@ -81,7 +80,7 @@ const store = createStore({
 
   actions: {
     logout(ctx) {
-      ctx.commit('setLogout');
+      ctx.commit("setLogout");
       // authService.deleteAccessToken()
     },
   },
