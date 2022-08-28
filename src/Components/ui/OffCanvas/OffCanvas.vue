@@ -34,28 +34,26 @@ function validation(value) {
 }
 </script>
 <template>
-    <div
-      id="offCanvas"
-      ref="sidebar"
-      class="offcanvas w-100"
-      :class="[
-        validation(props.position),
-      ]"
-      tabindex="-1"
-      aria-labelledby="offCanvasLabel"
-    >
-      <div class="offcanvas-header">
-        <h5 id="offCanvasLabel" class="offcanvas-title">Offcanvas</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-          @click="store.commit('setOffCanvasShow', false)"
-        ></button>
-      </div>
-      <div class="offcanvas-body">
-        <slot></slot>
-      </div>
+  <div
+    id="offCanvas"
+    ref="sidebar"
+    class="offcanvas w-100"
+    :class="[validation(props.position)]"
+    tabindex="-1"
+    aria-labelledby="offCanvasLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 id="offCanvasLabel" class="offcanvas-title">Offcanvas</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+        @click="store.commit('setOffCanvasShow', false)"
+      ></button>
     </div>
+    <div class="offcanvas-body">
+      <slot></slot>
+    </div>
+  </div>
 </template>

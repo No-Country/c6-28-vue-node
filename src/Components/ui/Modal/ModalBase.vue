@@ -10,7 +10,6 @@
       <div class="modal-content">
         <div class="modal-header">
           <!-- <h5 id="ModalTemplateLabel" class="modal-title">Modal title</h5> -->
-          
         </div>
         <div class="modal-body d-flex align-items-center gap-2">
           <slot></slot>

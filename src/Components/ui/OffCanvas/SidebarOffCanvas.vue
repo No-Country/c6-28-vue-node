@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 <template>
   <nav class="w-100">
     <ul class="d-flex align-items-center flex-column gap-5 m-0">

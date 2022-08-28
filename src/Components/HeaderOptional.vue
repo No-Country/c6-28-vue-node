@@ -197,8 +197,8 @@ onUnmounted(() => {
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-@media (min-width: 992px){
-  .w-lg-50{
+@media (min-width: 992px) {
+  .w-lg-50 {
     width: 25%;
   }
 }

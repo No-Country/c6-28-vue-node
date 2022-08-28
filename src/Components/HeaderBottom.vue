@@ -95,7 +95,9 @@
         class="cart-counter-badge d-flex align-items-center justify-content-center bg-heading text-white position-absolute -top-2.5 xl:-top-3 -end-2.5 xl:-end-3 rounded-full font-bold"
         >0</span
       ></button
-    ><button class="d-flex justify-content-center align-items-center flex-shrink-0 ">
+    ><button
+      class="d-flex justify-content-center align-items-center flex-shrink-0"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="18px"
@@ -114,8 +116,8 @@
   </div>
 </template>
 <style scoped>
-  button{
-    border: transparent;
-    background-color: transparent;
-  }
+button {
+  border: transparent;
+  background-color: transparent;
+}
 </style>
