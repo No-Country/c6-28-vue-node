@@ -7,19 +7,20 @@
       />
     </div>
 
-    <ul class="footer01">
-      <li>Comunidad</li>
-      <li>Empresa</li>
-      <li>Beneficios</li>
-    </ul>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-4 col-md-4 col-lg-4 col-xl-4">
+          <p>Comunidad</p>
+          <fa class="redes twiter" :icon="['fab', 'twitter']" />
+          <fa class="redes instagram" :icon="['fab', 'instagram']" />
+          <fa class="redes facebook" :icon="['fab', 'facebook']" />
+        </div>
 
-    <div class="redes">
-      <fa class="twiter" :icon="['fab', 'twitter']" />
-      <fa class="instagram" :icon="['fab', 'instagram']" />
-      <fa class="facebook" :icon="['fab', 'facebook']" />
+        <div class="col-4 col-md-4 col-lg-4 col-xl-4"><p>Empresa</p></div>
+
+        <div class="col-4 col-md-4 col-lg-4 col-xl-4"><p>Beneficios</p></div>
+      </div>
     </div>
-
-    <font-awesome-icon icon="fa-brands fa-instagram" />
 
     <div class="footer-bottom">
       <p>&copy;Mundo mascota, inc.2019</p>
@@ -48,23 +49,6 @@ img {
   justify-content: center;
 }
 
-ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  font-family: monserrat;
-  font-style: normal;
-  font-size: 15px;
-  float: left;
-  display: block;
-  padding: 1.5em;
-}
-
 .footer-bottom p {
   text-align: center;
   font-size: 14px;
@@ -76,9 +60,6 @@ li {
   margin: 0;
 }
 
-.redes {
-  margin-left: 140px;
-}
 .redes :hover {
   color: #3a6351;
 }
@@ -91,48 +72,5 @@ li {
 .facebook {
   margin: 5px;
 }
-
-
-@media screen and (min-width: 480px) {
-  .register__form {
-    width: 92%;
-  }
-}
-@media screen and (min-width: 760px) {
-
-li{
-
- padding-inline: 6em;
-}
-  .redes {
-  margin-left: 240px;
-}
-}
-@media screen and (min-width: 1100px) {
-  li{
-
- padding-inline: 10em;
- }
-
-   .redes {
-  margin-left: 200px;
-}
-}
-
-@media screen and (min-width: 1350px) {
-  li{
-
- padding-inline: 13em;  
- }
-
-    .redes {
-  margin-left: 190px;
-}
-
-
-
-}
-
-
 </style>
 
