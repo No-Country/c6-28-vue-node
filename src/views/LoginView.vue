@@ -1,61 +1,60 @@
 <template>
-    <div class="formulario">
-      <form @submit.prevent="handleSubmit">
-        <h2 class="titulo mb-5">Iniciar sesion</h2>
+  <div class="formulario">
+    <form @submit.prevent="handleSubmit">
+      <h2 class="titulo mb-5">Iniciar sesion</h2>
 
-        <div class="row">
-          <div class="col-md-12 form-group">
-            <input
-              v-model="email"
-              type="text"
-              class="email form-control"
-              placeholder="email"
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <input
+            v-model="email"
+            type="text"
+            class="email form-control"
+            placeholder="email"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <input
+            v-model="password"
+            type="password"
+            placeholder="contraseña"
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <input type="checkbox" class="checkbox" value="" /> recordarme
+      <p>olvidaste tu contraseña?</p>
+
+      <div v-if="message" style="color: red; margin-top 5%">
+        Credenciales Invalidas
+      </div>
+      <div>
+        <ButtonBase>Iniciar sesion</ButtonBase>
+      </div>
+
+      <div class="hr">
+        <hr class="hrLinea" />
+        o inicia sesion con
+        <hr class="hrLinea" />
+      </div>
+
+      <div>
+        <ButtonGoogle>
+          <template #icon>
+            <img
+              src="../assets/icons/iconGoogle.svg"
+              alt="icon google svg"
+              class="icon__google"
+              style="margin-top: 3px; margin-left: 5px"
             />
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12 form-group">
-            <input
-              v-model="password"
-              type="password"
-              placeholder="contraseña"
-              class="form-control"
-            />
-          </div>
-        </div>
-
-        <input type="checkbox" class="checkbox" value="" /> recordarme
-        <p>olvidaste tu contraseña?</p>
-
-        <div v-if="message" style="color: red; margin-top 5%">
-          Credenciales Invalidas
-        </div>
-        <div>
-          <ButtonBase>Iniciar sesion</ButtonBase>
-        </div>
-
-        <div class="hr">
-          <hr class="hrLinea" />
-          o inicia sesion con
-          <hr class="hrLinea" />
-        </div>
-
-        <div>
-          <ButtonGoogle>
-            <template #icon>
-              <img
-                src="../assets/icons/iconGoogle.svg"
-                alt="icon google svg"
-                class="icon__google"
-                style="margin-top: 3px; margin-left: 5px"
-              />
-            </template>
-            <template #content>Registrarse con Google </template>
-          </ButtonGoogle>
-        </div>
-  
-      </form>
+          </template>
+          <template #content>Registrarse con Google </template>
+        </ButtonGoogle>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -157,23 +156,23 @@ export default {
 p {
   float: right;
   margin-top: 10px;
-  color: #18A0FB;
-  cursor: pointer
+  color: #18a0fb;
+  cursor: pointer;
 }
 
 .container {
-  display:flex;
+  display: flex;
   justify-content: center;
   margin-top: 15px;
   padding: 1em;
 }
-h6{
+h6 {
   float: left;
 }
-.cuentah6{
-  color: #18A0FB;
+.cuentah6 {
+  color: #18a0fb;
   margin-left: 5px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 @media screen and (min-width: 480px) {

@@ -73,4 +73,3 @@ img {
   margin: 5px;
 }
 </style>
-

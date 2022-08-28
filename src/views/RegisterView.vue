@@ -12,7 +12,11 @@ const confirmPass = ref("");
 const email = ref("");
 </script>
 <template>
-  <form action="" class="register__form bg-white" @submit.prevent="handleSubmit">
+  <form
+    action=""
+    class="register__form bg-white"
+    @submit.prevent="handleSubmit"
+  >
     <h1 class="mb-5">Registro</h1>
     <div class="row mb-3">
       <div class="col">

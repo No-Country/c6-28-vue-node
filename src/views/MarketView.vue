@@ -182,7 +182,7 @@ export default {
     SearchBar,
     HeaderBanner,
   },
-  data() { },
+  data() {},
 };
 </script>
 
@@ -198,8 +198,8 @@ export default {
   background-size: cover;
 }
 
-.market{
-  background-color: #F2EDD7;
+.market {
+  background-color: #f2edd7;
 }
 
 .input-busq {

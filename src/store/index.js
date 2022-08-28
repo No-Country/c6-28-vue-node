@@ -1,4 +1,4 @@
-import { createStore } from 'vuex';
+import { createStore } from "vuex";
 
 const store = createStore({
   state: {
@@ -17,7 +17,6 @@ const store = createStore({
     brands: [],
     offers: [],
     checkoutTotal: null,
-
   },
 
   mutations: {
@@ -75,7 +74,6 @@ const store = createStore({
       };
       state.checkoutTotal = null;
     },
-
   },
 
   actions: {

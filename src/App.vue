@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-  <div id="app" style="background: #e8e1d9;">
+  <div id="app" style="background: #e8e1d9">
     <HeaderView />
     <router-view />
     <FooterView />
@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import HeaderView from './Components/HeaderItem.vue';
-import FooterView from './Components/FooterView.vue';
+import HeaderView from "./Components/HeaderItem.vue";
+import FooterView from "./Components/FooterView.vue";
 
 export default {
   components: {

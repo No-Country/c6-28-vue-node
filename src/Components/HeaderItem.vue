@@ -109,7 +109,6 @@
   </header>
 </template>
 
-
 <script>
 export default {
   name: "HeaderItem",
@@ -135,7 +134,6 @@ export default {
   },
 };
 </script>
-
 
 <style scoped>
 .img {
