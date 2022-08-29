@@ -13,7 +13,6 @@
 </template>
 
 <script>
-
 // import HeaderView from "./Components/HeaderItem.vue";
 import FooterView from "./Components/FooterView.vue";
 import HeaderBottomView from "./Components/HeaderBottom.vue";
