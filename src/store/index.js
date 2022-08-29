@@ -17,6 +17,13 @@ const store = createStore({
     brands: [],
     offers: [],
     checkoutTotal: null,
+
+    offCanvas: {
+      show: false,
+      widthAll: false,
+      overflowHidden: false,
+    },
+
   },
 
   mutations: {
@@ -74,6 +81,16 @@ const store = createStore({
       };
       state.checkoutTotal = null;
     },
+
+
+    setOffCanvasShow(state, payload) {
+      state.offCanvas.show = payload;
+    },
+
+    setOffCanvasWidthAll(state, payload) {
+      state.offCanvas.widthAll = payload;
+    },
+
   },
 
   actions: {

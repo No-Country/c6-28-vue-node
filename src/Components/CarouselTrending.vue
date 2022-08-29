@@ -1,34 +1,57 @@
 <template>
-  <div>
+  <div class="wrapper-content">
     <div
       id="carouselExampleControls"
       class="carousel slide"
       data-bs-ride="carousel"
     >
-      <div class="carousel-inner">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner carousel">
         <div class="carousel-item active">
           <img
-            src="https://picsum.photos/id/232/200/200"
+            src="https://res.cloudinary.com/dytpump6i/image/upload/v1661633030/pexels-edgar-daniel-hern%C3%A1ndez-cervantes-3628100_oajzda.jpg"
+            class="d-block w-200 img-fluid"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://res.cloudinary.com/dytpump6i/image/upload/v1661633050/pexels-alotrobo-1562983_rqdvoc.jpg"
             class="d-block w-100"
             alt="..."
           />
         </div>
         <div class="carousel-item">
           <img
-            src="https://picsum.photos/id/231/200/200"
+            src="https://res.cloudinary.com/dytpump6i/image/upload/v1661633330/pexels-pixabay-45170_d5nsct.jpg"
             class="d-block w-100"
             alt="..."
           />
         </div>
-        <div class="carousel-item">
-          <img
-            src="https://picsum.photos/id/237/200/200"
-            class="d-block w-100"
-            alt="..."
-          />
-        </div>
+        
       </div>
-      <button
+      <!-- <button
         class="carousel-control-prev"
         type="button"
         data-bs-target="#carouselExampleControls"
@@ -45,7 +68,7 @@
       >
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
-      </button>
+      </button> -->
     </div>
   </div>
 </template>
@@ -56,18 +79,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+.carousel {
+  height: 600px;
+}
 img {
-  border-radius: 10px;
+  border-radius: 6px;
 }
-@media (max-width: 481px) {
-  #carouselExampleControls {
-    width: 70vw;
-  }
-}
-@media (min-width: 760px) {
-  #carouselExampleControls {
-    width: 35vw;
-  }
+
+.wrapper-content {
+  padding: 1em var(--content);
 }
 </style>

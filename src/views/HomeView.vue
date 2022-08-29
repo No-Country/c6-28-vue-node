@@ -1,5 +1,4 @@
 <template>
-  <div class="home">
     <h1 class="titulo">
       <img
         class="img-fluid"
@@ -10,6 +9,7 @@
     <br />
     <CarouselTrending class="CarrouselTrending" />
     <br />
+  <div>
     <div class="categories">
       <h5>Ofertas</h5>
       <div class="categoryImages">
@@ -73,6 +73,7 @@
 </template>
 
 <script>
+
 import CarouselTrending from "../Components/CarouselTrending.vue";
 
 export default {
@@ -85,7 +86,8 @@ export default {
 
 <style scoped>
 .titulo {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 body {
   background: #b7d3df;
@@ -104,8 +106,8 @@ img {
 }
 
 .CarrouselTrending {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 
 .categoryImages {
