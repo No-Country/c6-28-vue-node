@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="back">
     <div>
       <img
         src="https://res.cloudinary.com/dytpump6i/image/upload/v1660593048/Logo_ugs7jt.svg"
@@ -37,6 +37,23 @@ export default {
 footer {
   /*background-color: #a0937d;*/
   background-color: #898aa6;
+}
+.back {
+  background: 898aa6;
+  /* width: 40%;*/
+  padding: 20px;
+  position: relative;
+}
+.back::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background: url(~@/assets/footer.svg) bottom center;
+  transform: rotate(180deg);
+  background-size: 150%;
 }
 img {
   display: flex;

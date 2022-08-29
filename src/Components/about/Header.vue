@@ -3,9 +3,9 @@
   <div class="row g-3 d-flex align-items-center">
     <div class="col-md-6 col-lg-6 col-xl-6 text-center">
       <h1 class="font-weight-bold">Nosotros</h1>
-      <button type="button" class="btn rounded">
+      <a type="button" class="btn rounded" href="/about/#company">
         Contactanos
-      </button>
+      </a>
     </div>
     <div class="col-md-6 col-lg-6 col-xl-6">
       <img
