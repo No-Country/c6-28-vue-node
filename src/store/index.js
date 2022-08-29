@@ -23,7 +23,6 @@ const store = createStore({
       widthAll: false,
       overflowHidden: false,
     },
-
   },
 
   mutations: {
@@ -82,7 +81,6 @@ const store = createStore({
       state.checkoutTotal = null;
     },
 
-
     setOffCanvasShow(state, payload) {
       state.offCanvas.show = payload;
     },
@@ -90,7 +88,6 @@ const store = createStore({
     setOffCanvasWidthAll(state, payload) {
       state.offCanvas.widthAll = payload;
     },
-
   },
 
   actions: {

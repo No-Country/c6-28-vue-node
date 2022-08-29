@@ -49,7 +49,6 @@
             alt="..."
           />
         </div>
-        
       </div>
       <!-- <button
         class="carousel-control-prev"
