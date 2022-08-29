@@ -1,18 +1,16 @@
-import {ApiRequest} from '@/service/index';
+import { ApiRequest } from '@/service/index';
 
 const get = () => {
-<<<<<<< HEAD
+
   return ApiRequest.get(
-      '/users',
+    '/users',
   );
-=======
-  return ApiRequest.get("/users");
->>>>>>> remotes/origin/about-us
+
 };
 
 const getUser = (id) => {
   return ApiRequest.get(
-      `/users/${id}/`,
+    `/users/${id}/`,
   );
 };
 

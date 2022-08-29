@@ -1,46 +1,38 @@
-import {ApiRequest} from '@/service/config';
+import { ApiRequest } from '@/service/index';
 
 const get = () => {
   return ApiRequest.get(
-      '/products',
+    'https://c6-28.up.railway.app/api/v1/products',
   );
 };
 
 const getProduct = (id) => {
   return ApiRequest.get(
-      `/products/${id}`,
+    `https://c6-28.up.railway.app/api/v1/products/${id}`,
   );
 };
-const getCategories = () => {
-  return ApiRequest.get(
-      '/products/categories',
-  );
-};
-const getPets = () => {
-  return ApiRequest.get(
-      '/products/pets',
-  );
-};
-const getOffers = () => {
-  return ApiRequest.get(
-      '/products/offers',
-  );
-};
-const getBrands = () => {
-  return ApiRequest.get(
-      '/products/brands',
-  );
-};
+// const getCategories = () => {
+//   return ApiRequest.get(
+//     '/products/categories',
+//   );
+// };
+// const getPets = () => {
+//   return ApiRequest.get(
+//     '/products/pets',
+//   );
+// };
+// const getOffers = () => {
+//   return ApiRequest.get(
+//     '/products/offers',
+//   );
+// };
+// const getBrands = () => {
+//   return ApiRequest.get(
+//     '/products/brands',
+//   );
+// };
 
-const Product = () => {
-  return {
-    get,
-    getProduct,
-    getCategories,
-    getPets,
-    getOffers,
-    getBrands,
-  };
+export default {
+  get,
+  getProduct
 };
-
-export default Product;

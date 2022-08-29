@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import NotFound from "../views/NotFound.vue";
 
+
 const routes = [
   {
     path: "/",
@@ -24,6 +25,14 @@ const routes = [
     /* ..import(webpackChunkName: "about" ) */
   },
   {
+    path: "/product/:id",
+    name: "product",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import("../views/ProductView.vue"),
+  },
+  {
     path: "/login",
     name: "login",
     // route level code-splitting
@@ -39,14 +48,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import("../views/ProfileView.vue"),
   },
-  {
-    path: "/product",
-    name: "product",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import("../views/ProductView.vue"),
-  },
+
   {
     path: "/about",
     name: "about",
