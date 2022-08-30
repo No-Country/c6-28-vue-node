@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import Logo from "../assets/Logo.svg";
+import Logo from "../assets/logo.png";
 import IconBurger from "../assets/icons/IconBurger.svg";
 import OffCanvas from "./ui/OffCanvas/OffCanvas.vue";
 import SidebarOffCanvas from "./ui/OffCanvas/SidebarOffCanvas.vue";

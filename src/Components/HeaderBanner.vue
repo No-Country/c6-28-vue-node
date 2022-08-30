@@ -1,24 +1,21 @@
 <template>
-  <div class="p-2 mb-4 bg-light rounded-3 back-image text-center">
-    <h2 class="title1 top">Ordena los productos</h2>
-    <h2 class="title2 mt-n8">Para tu mascota.</h2>
-    <p class="text-success lead">Delivery Gratis</p>
-    <div
-      class="form-group mb-3 d-none d-sm-none d-md-flex justify-content-center align-items-center"
-    >
-      <input
-        type="text"
-        class="input-busq"
-        placeholder="Busca los mejores productos"
-      />
-      <div class="input-group-append">
-        <button class="btn btn-success btn-lg py-7" type="button">
-          Buscar
-        </button>
-      </div>
+<div class="back">
+  <div class="row g-3 d-flex align-items-center">
+    <div class="col-md-12 col-lg-12 col-xl-12 text-center">
+      <h2 class="title1 top">Ordena los productos</h2>
+      <h2 class="title2 mt-n8">Para tu mascota.</h2>
     </div>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br />
   </div>
+  <div class="row g-3 d-flex align-items-center">
+    <div class="col-md-12 col-lg-12 col-xl-12 text-center">
+      <img
+        class="img-fluid"
+        src="../assets/animals.png"
+        alt="Perro y Gato"
+      />
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -29,42 +26,36 @@ export default {
 };
 </script>
 <style scoped>
-.back-image {
-  background-image: url("~@/assets/animals-grey.jpg");
-  /* Full height */
-  height: 100%;
+.back {
+  background: #c9bbcf;
+  background-image: url("~@/assets/cos.svg");
+  /* width: 40%;*/
+  padding: 20px;
+  position: relative;
+}
+.back::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 20px;
   width: 100%;
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url(~@/assets/rip.svg) bottom center;
+  background-size: 150%;
 }
-
-.input-busq {
-  outline: solid green 2px;
-  border-radius: 10px;
-  padding: 8px;
+.btn {
+  background-color: #898aa6;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 18px;
 }
-
 @media only screen and (max-width: 600px) {
   h2.title1 {
     font-size: 15px;
   }
   h2.title2 {
     font-size: 15px;
-  }
-  .top {
-    margin-top: 5px;
-  }
-}
-@media only screen and (min-width: 600px) {
-  .top {
-    margin-top: 20px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .top {
-    margin-top: 35px;
   }
 }
 </style>

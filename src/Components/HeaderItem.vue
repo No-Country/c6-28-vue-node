@@ -77,7 +77,7 @@
     </nav>
     <div class="headerLogo">
       <router-link to="/">
-        <img class="img" src="../assets/Logo.svg" alt="logo icon svg" />
+        <img class="img" src="../assets/logo.png" alt="logo icon svg" />
       </router-link>
     </div>
     <div v-if="mobileView">
