@@ -6,6 +6,8 @@ const get = () => {
 
 const getUser = (id) => {
   return ApiRequest.get(`/users/${id}/`);
+
+  return ApiRequest.get(`/users/${id}/`);
 };
 
 const User = () => {
