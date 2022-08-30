@@ -49,7 +49,7 @@ onUnmounted(() => {
         alt="burger icon"
         @click="handleShowOffCanvas()"
       />
-      <router-link to="/" class="header-link__logo d-block ">
+      <router-link to="/" class="header-link__logo d-block">
         <img :src="Logo" class="header__logo d-block" alt="page logo" />
       </router-link>
     </div>
@@ -107,8 +107,7 @@ onUnmounted(() => {
   >
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header">          
-        </div>
+        <div class="modal-header"></div>
         <div class="modal-body d-flex align-items-center gap-2">
           <input
             type="text"
@@ -122,8 +121,7 @@ onUnmounted(() => {
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-footer">
-        </div>
+        <div class="modal-footer"></div>
       </div>
     </div>
   </div>
@@ -135,11 +133,11 @@ onUnmounted(() => {
   /* min-height: 100px; */
 }
 
-.header-logo__content{
+.header-logo__content {
   height: 100%;
 }
 
-.header-link__logo{
+.header-link__logo {
   height: 100%;
 }
 

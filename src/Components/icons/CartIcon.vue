@@ -1,7 +1,2 @@
-<template>
-
-
-</template>
-<style>
-
-</style>
+<template></template>
+<style></style>

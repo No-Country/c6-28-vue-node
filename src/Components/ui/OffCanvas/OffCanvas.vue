@@ -4,7 +4,6 @@ import { useStore } from "vuex";
 import { ref } from "vue";
 // import * as bootstrap from "bootstrap";
 
-
 const store = useStore();
 const sidebar = ref();
 
@@ -38,7 +37,6 @@ function validation(value) {
 // onMounted(() => {
 //   sidebar.value = bootstrap.Offcanvas.getOrCreateInstance(sidebar.value.sidebar);
 // })
-
 </script>
 <template>
   <div
