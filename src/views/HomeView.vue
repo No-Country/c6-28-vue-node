@@ -97,10 +97,7 @@ img {
   margin-top: 2%;
 }
 
-.CarrouselTrending {
-  /* display: flex;
-  justify-content: center; */
-}
+
 
 .categoryImages {
   display: flex;
