@@ -8,10 +8,11 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 library.add(fas, fab);
 
-import store from "./store";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.js";
-import "material-icons/iconfont/material-icons.css";
+import store from './store';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'material-icons/iconfont/material-icons.css';
 
 import "./global.css";
 

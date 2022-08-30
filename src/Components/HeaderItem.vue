@@ -153,7 +153,9 @@ export default {
   align-items: center;
   padding: 1%;
   height: auto;
-  background-color: #3a6351;
+  /* background-color: #3a6351; */
+  background-color: #c9bbcf;
+  background-image: url("~@/assets/cos.svg");
   /* max-height: 50px; */
 }
 

@@ -1,0 +1,51 @@
+<template>
+<div class="back">
+  <div class="row g-3 d-flex align-items-center">
+    <div class="col-md-6 col-lg-6 col-xl-6 text-center">
+      <h1 class="font-weight-bold">Nosotros</h1>
+      <button type="button" class="btn rounded">
+        Contactanos
+      </button>
+    </div>
+    <div class="col-md-6 col-lg-6 col-xl-6">
+      <img
+        class="img-fluid"
+        src="../../assets/dogcat.png"
+        alt="Perro y Gato"
+      />
+    </div>
+  </div>
+</div>
+</template>
+<style scoped>
+.back {
+  background: #c9bbcf;
+  background-image: url("~@/assets/cos.svg");
+  /* width: 40%;*/
+  padding: 20px;
+  position: relative;
+}
+.back::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background: url(~@/assets/rip.svg) bottom center;
+  background-size: 150%;
+}
+.btn {
+  background-color: #898aa6;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border: 3px solid #898aa6;
+  color: #898aa6;
+}
+</style>

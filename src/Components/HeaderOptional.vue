@@ -128,7 +128,8 @@ onUnmounted(() => {
 </template>
 <style>
 .header {
-  background-color: #e8e1d9;
+  background-color: #c9bbcf;
+  background-image: url("~@/assets/cos.svg");
   height: 4em;
   /* min-height: 100px; */
 }

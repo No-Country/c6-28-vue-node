@@ -1,10 +1,13 @@
-import { createStore } from "vuex";
+import { createStore } from 'vuex';
+import Product from "@/service/product";
+
 
 const store = createStore({
   state: {
     user: {},
     token: null,
     products: [],
+    product: {},
     newProduct: {
       name: null,
       brand: null,
@@ -34,6 +37,9 @@ const store = createStore({
     },
     setProducts(state, products) {
       state.products = products;
+    },
+    setProduct(state, product) {
+      state.product = product
     },
     setNameNewProduct(state, name) {
       state.newProduct.name = name;
@@ -65,19 +71,7 @@ const store = createStore({
 
     setLogout(state) {
       state.user = {};
-      state.products = [];
       state.token = null;
-      state.products = [];
-      state.categories = [];
-      state.pets = [];
-      state.newProduct = {
-        name: null,
-        brand: null,
-        category: null,
-        price: null,
-        description: null,
-      };
-      state.checkoutTotal = null;
     },
     setOffCanvasShow(state, payload) {
       state.offCanvas.show = payload;
@@ -89,6 +83,23 @@ const store = createStore({
   },
 
   actions: {
+
+    getProducts({ commit }) {
+      Product.get().then(response => {
+        commit("setProducts", response.data.products)
+      }).catch(e => {
+        console.log(e)
+      })
+    },
+    getProduct({ commit }, id) {
+      Product.getProduct(id).then(response => {
+        commit("setProduct", response)
+      })
+
+    },
+
+
+
     logout(ctx) {
       ctx.commit("setLogout");
       // authService.deleteAccessToken()

@@ -15,7 +15,7 @@
         <div class="card">
           <div class="card-body">
             <p class="fw-lighter">
-              Código: 15001
+              Código: 1500{{ product.id }}
               <span
                 class="material-icons md-48 align-middle orange442"
                 style="display: block; float: right"
@@ -28,12 +28,18 @@
               src="../assets/perrarina.webp"
               alt="Producto"
             />
+            <h4 class="card-title">
+              {{ product.nombre_marca }}
+            </h4>
             <h3 class="card-title">
-              Perrarina Purina 8 Kg Adulto Carne y hueso
+              {{ product.nombre }}
             </h3>
-            <h6 class="card-subtitle mb-2 text-muted">Perro</h6>
+
+            <h6 class="card-subtitle mb-2 text-muted">
+              {{ productCategory[0] }}
+            </h6>
             <Starts :start="start" />
-            <p class="card-text display-5 mt-3">$2759</p>
+            <p class="card-text display-5 mt-3">${{ product.precio }}</p>
             <p style="color: #f4a442">
               <span class="material-icons md-12 orange442 align-middle">
                 credit_card
@@ -41,7 +47,13 @@
               Pago a acordar con el vendedor.
             </p>
             <div
-              class="input-group my-2 w-auto justify-content-center align-items-center"
+              class="
+                input-group
+                my-2
+                w-auto
+                justify-content-center
+                align-items-center
+              "
             >
               <input
                 type="button"
@@ -76,15 +88,7 @@
       <div class="col-md-7 col-lg-7 col-xl-7 p-3">
         <h3 class="text-muted">Descripción</h3>
         <p class="text-muted">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
+          {{ product.descripcion }}
         </p>
       </div>
       <div class="col-md-5 col-lg-5 col-xl-5 p-3">
@@ -130,11 +134,26 @@ export default {
     Product,
     Starts,
   },
+  props: ["id"],
+
   data() {
     return {
       counter: 0,
       start: 3,
     };
+  },
+  mounted() {
+    this.$store.dispatch("getProduct", this.$route.params.id);
+  },
+  computed: {
+    product() {
+      return this.$store.state.product;
+    },
+    productCategory() {
+      return this.$store.state.product.categoria
+        ? this.$store.state.product.categoria
+        : "";
+    },
   },
 };
 </script>
