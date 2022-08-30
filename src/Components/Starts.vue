@@ -20,7 +20,7 @@
 </template>
 <script>
 export default {
-  name: "RangeStarts",
+  name: 'RangeStarts',
   props: {
     start: {
       type: Number,

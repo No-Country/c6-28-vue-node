@@ -68,10 +68,10 @@
 
 <script>
 // import SearchBar from "../Components/SearchBar.vue";
-import CarouselTrending from "../Components/CarouselTrending.vue";
+import CarouselTrending from '../Components/CarouselTrending.vue';
 
 export default {
-  name: "HomeView",
+  name: 'HomeView',
   components: {
     // SearchBar,
     CarouselTrending,

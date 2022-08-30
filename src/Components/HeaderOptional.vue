@@ -1,11 +1,11 @@
 <script setup>
-import { RouterLink } from "vue-router";
-import Logo from "../assets/Logo.svg";
-import IconBurger from "../assets/icons/IconBurger.svg";
-import OffCanvas from "./ui/OffCanvas/OffCanvas.vue";
-import SidebarOffCanvas from "./ui/OffCanvas/SidebarOffCanvas.vue";
-import { ref, onMounted, onUnmounted } from "vue";
-import * as bootstrap from "bootstrap";
+import {RouterLink} from 'vue-router';
+import Logo from '../assets/Logo.svg';
+import IconBurger from '../assets/icons/IconBurger.svg';
+import OffCanvas from './ui/OffCanvas/OffCanvas.vue';
+import SidebarOffCanvas from './ui/OffCanvas/SidebarOffCanvas.vue';
+import {ref, onMounted, onUnmounted} from 'vue';
+import * as bootstrap from 'bootstrap';
 
 const header = ref();
 const child = ref();
@@ -15,16 +15,16 @@ const sidebar = ref(null);
  */
 function headerScroll() {
   if (header.value.offsetTop !== 0) {
-    if (!header.value.classList.contains("header__scrolling")) {
-      header.value.classList.add("header__scrolling");
+    if (!header.value.classList.contains('header__scrolling')) {
+      header.value.classList.add('header__scrolling');
     }
   } else {
-    header.value.classList.remove("header__scrolling");
+    header.value.classList.remove('header__scrolling');
   }
 }
 
 onMounted(() => {
-  window.addEventListener("scroll", headerScroll);
+  window.addEventListener('scroll', headerScroll);
   sidebar.value = bootstrap.Offcanvas.getOrCreateInstance(child.value.sidebar);
 });
 
@@ -34,7 +34,7 @@ function handleShowOffCanvas() {
 }
 
 onUnmounted(() => {
-  window.addEventListener("scroll", headerScroll);
+  window.addEventListener('scroll', headerScroll);
 });
 </script>
 <template>

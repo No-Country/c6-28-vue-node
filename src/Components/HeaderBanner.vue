@@ -4,7 +4,13 @@
     <h2 class="title2 mt-n8">Para tu mascota.</h2>
     <p class="text-success lead">Delivery Gratis</p>
     <div
-      class="form-group mb-3 d-none d-sm-none d-md-flex justify-content-center align-items-center"
+      class="
+        form-group
+        mb-3 d-none
+        d-sm-none
+        d-md-flex
+        justify-content-center
+        align-items-center"
     >
       <input
         type="text"
@@ -23,7 +29,7 @@
 
 <script>
 export default {
-  name: "HeaderBanner",
+  name: 'HeaderBanner',
   components: {},
   data() {},
 };

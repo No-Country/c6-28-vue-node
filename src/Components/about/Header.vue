@@ -1,21 +1,21 @@
 <template>
-<div class="back">
-  <div class="row g-3 d-flex align-items-center">
-    <div class="col-md-6 col-lg-6 col-xl-6 text-center">
-      <h1 class="font-weight-bold">Nosotros</h1>
-      <a type="button" class="btn rounded" href="/about/#company">
-        Contactanos
-      </a>
-    </div>
-    <div class="col-md-6 col-lg-6 col-xl-6">
-      <img
-        class="img-fluid"
-        src="../../assets/dogcat.png"
-        alt="Perro y Gato"
-      />
+  <div class="back">
+    <div class="row g-3 d-flex align-items-center">
+      <div class="col-md-6 col-lg-6 col-xl-6 text-center">
+        <h1 class="font-weight-bold">Nosotros</h1>
+        <a type="button" class="btn rounded" href="/about/#company">
+          Contactanos
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-6 col-xl-6">
+        <img
+          class="img-fluid"
+          src="../../assets/dogcat.png"
+          alt="Perro y Gato"
+        />
+      </div>
     </div>
   </div>
-</div>
 </template>
 <style scoped>
 .back {

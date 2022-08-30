@@ -1,65 +1,64 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import RegisterView from "../views/RegisterView.vue";
-import NotFound from "../views/NotFound.vue";
-
+import {createRouter, createWebHistory} from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import RegisterView from '../views/RegisterView.vue';
+import NotFound from '../views/NotFound.vue';
 
 const routes = [
   {
-    path: "/",
-    name: "home",
+    path: '/',
+    name: 'home',
     component: HomeView,
   },
   {
-    path: "/register",
-    name: "register",
+    path: '/register',
+    name: 'register',
     component: RegisterView,
   },
   {
-    path: "/productos",
-    name: "productos",
+    path: '/productos',
+    name: 'productos',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import("../views/MarketView.vue"),
+    component: () => import('../views/MarketView.vue'),
     /* ..import(webpackChunkName: "about" ) */
   },
   {
-    path: "/product/:id",
-    name: "product",
+    path: '/product/:id',
+    name: 'product',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import("../views/ProductView.vue"),
+    component: () => import('../views/ProductView.vue'),
   },
   {
-    path: "/login",
-    name: "login",
+    path: '/login',
+    name: 'login',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import("../views/LoginView.vue"),
+    component: () => import('../views/LoginView.vue'),
   },
   {
-    path: "/profile",
-    name: "profile",
+    path: '/profile',
+    name: 'profile',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import("../views/ProfileView.vue"),
+    component: () => import('../views/ProfileView.vue'),
   },
 
   {
-    path: "/about",
-    name: "about",
+    path: '/about',
+    name: 'about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import("../views/AboutView.vue"),
+    component: () => import('../views/AboutView.vue'),
   },
   {
-    path: "/:pathMatch(.*)*",
-    name: "notfound",
+    path: '/:pathMatch(.*)*',
+    name: 'notfound',
     component: NotFound,
   },
 ];

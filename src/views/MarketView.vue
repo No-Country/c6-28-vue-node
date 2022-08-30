@@ -52,15 +52,13 @@
     <!--Aqui inicia los productos-->
     <div class="container mt-5">
       <div class="row">
-        <div 
+        <div
           class="col-md-4 col-lg-4 col-xl-3"
           v-for="product in products"
           :key="product.id"
           :product="product"
         >
-          <div
-            class="card mt-5 mb-5"
-          >
+          <div class="card mt-5 mb-5">
             <router-link :to="{ name: 'product', params: { id: product.id } }">
               <img
                 class="card-img-top"
@@ -101,18 +99,16 @@
 </template>
 
 <script>
-import SearchBar from "../Components/SearchBar.vue";
+import SearchBar from '../Components/SearchBar.vue';
 
 /* Componentes para MarketView*/
-import HeaderBanner from "../Components/HeaderBanner";
-import ProductView from "../views/ProductView.vue";
+import HeaderBanner from '../Components/HeaderBanner';
 
 export default {
-  name: "MarketView",
+  name: 'MarketView',
   components: {
     SearchBar,
     HeaderBanner,
-    ProductView,
   },
 
   data() {
@@ -120,7 +116,7 @@ export default {
   },
 
   mounted() {
-    this.$store.dispatch("getProducts");
+    this.$store.dispatch('getProducts');
   },
   computed: {
     products() {
@@ -130,7 +126,7 @@ export default {
 
   methods: {
     cardClick() {
-      console.log("click");
+      console.log('click');
     },
   },
 };
