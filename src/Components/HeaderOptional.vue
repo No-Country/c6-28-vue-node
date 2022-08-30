@@ -5,14 +5,11 @@ import IconBurger from "../assets/icons/IconBurger.svg";
 import OffCanvas from "./ui/OffCanvas/OffCanvas.vue";
 import SidebarOffCanvas from "./ui/OffCanvas/SidebarOffCanvas.vue";
 import { ref, onMounted, onUnmounted } from "vue";
-// import { useStore } from "vuex";
 import * as bootstrap from "bootstrap";
 
 const header = ref();
 const child = ref();
 const sidebar = ref(null);
-// const sidebarOffCanvas = ref(false);
-// const store = useStore();
 /**
  * this a callback function to add y remove the header_scrolling class
  */
@@ -28,10 +25,7 @@ function headerScroll() {
 
 onMounted(() => {
   window.addEventListener("scroll", headerScroll);
-  console.log(child.value.sidebar);
   sidebar.value = bootstrap.Offcanvas.getOrCreateInstance(child.value.sidebar);
-  // const bsOffcanvas = new bootstrap.Offcanvas(child.value.sidebar);
-  // console.log(bsOffcanvas.show());
 });
 
 // eslint-disable-next-line require-jsdoc
@@ -48,20 +42,14 @@ onUnmounted(() => {
     ref="header"
     class="d-flex px-3 py-2 sticky-top align-items-center z-index header"
   >
-    <div class="logo d-flex align-items-center">
-      <!-- <img
-        :src="IconBurger"
-        class="d-md-none"
-        alt="burger icon"
-        @click="store.commit('setOffCanvasShow', true)"
-      /> -->
+    <div class="header-logo__content d-flex align-items-center">
       <img
         :src="IconBurger"
-        class="d-none d-md-block"
+        class="d-none d-md-block d-lg-none"
         alt="burger icon"
         @click="handleShowOffCanvas()"
       />
-      <router-link to="/" class="d-block">
+      <router-link to="/" class="header-link__logo d-block">
         <img :src="Logo" class="header__logo d-block" alt="page logo" />
       </router-link>
     </div>
@@ -119,10 +107,7 @@ onUnmounted(() => {
   >
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <!-- <div class="modal-header">
-          <h5 id="exampleModalLabel" class="modal-title">Modal title</h5>
-          
-        </div> -->
+        <div class="modal-header"></div>
         <div class="modal-body d-flex align-items-center gap-2">
           <input
             type="text"
@@ -136,16 +121,7 @@ onUnmounted(() => {
             aria-label="Close"
           ></button>
         </div>
-        <!-- <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
+        <div class="modal-footer"></div>
       </div>
     </div>
   </div>
@@ -153,12 +129,20 @@ onUnmounted(() => {
 <style>
 .header {
   background-color: #e8e1d9;
-  height: 50px;
+  height: 4em;
   /* min-height: 100px; */
 }
 
+.header-logo__content {
+  height: 100%;
+}
+
+.header-link__logo {
+  height: 100%;
+}
+
 .header__logo {
-  height: 40%;
+  height: 100%;
 }
 
 .header__search:focus {
@@ -166,15 +150,11 @@ onUnmounted(() => {
   border-color: transparent;
 }
 
-/* .header__search{
-} */
-
 .header__actions {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
   color: black;
-  /* height: 100px; */
   width: 100%;
 }
 
@@ -184,11 +164,6 @@ onUnmounted(() => {
   width: 4%;
   font-weight: 700;
   font-size: 2rem;
-}
-
-.header__cart {
-  /* height: 20%; */
-  /* display: block; */
 }
 
 .header__scrolling {

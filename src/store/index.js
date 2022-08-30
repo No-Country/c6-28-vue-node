@@ -73,7 +73,6 @@ const store = createStore({
       state.user = {};
       state.token = null;
     },
-
     setOffCanvasShow(state, payload) {
       state.offCanvas.show = payload;
     },
