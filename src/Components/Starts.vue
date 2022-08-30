@@ -4,7 +4,7 @@
       v-for="n in start"
       :key="n"
       class="material-icons md-48 align-middle"
-      style="color: #f4a442"
+      style="color: #b7d3df"
     >
       grade
     </span>
@@ -12,7 +12,7 @@
       v-for="m in noStart"
       :key="m"
       class="material-icons-outlined md-48 align-middle"
-      style="color: #f4a442"
+      style="color: #b7d3df"
     >
       grade
     </span>

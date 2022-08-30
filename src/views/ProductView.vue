@@ -17,7 +17,7 @@
               <p class="fw-lighter">
                 Código: 15001
                 <span
-                  class="material-icons md-48 align-middle orange442"
+                  class="material-icons md-48 align-middle bluedf"
                   style="display: block; float: right"
                 >
                   favorite
@@ -34,8 +34,8 @@
               <h6 class="card-subtitle mb-2 text-muted">Perro</h6>
               <Starts :start="start" />
               <p class="card-text display-5 mt-3">$2759</p>
-              <p style="color: #f4a442">
-                <span class="material-icons md-12 orange442 align-middle">
+              <p class="font-weight-bold text-muted">
+                <span class="material-icons md-12 align-middle">
                   credit_card
                 </span>
                 Pago a acordar con el vendedor.
@@ -109,7 +109,7 @@
           </dl>
         </div>
       </div>
-      <h4 class="p-3" style="color: #f4a442">
+      <h4 class="p-3" style="color: #b7d3df">
         Quienes vieron este producto también compraron
       </h4>
       <div class="row g-3 p-3 justify-content-center">
@@ -140,24 +140,21 @@ export default {
 </script>
 
 <style scoped>
-body {
-  background-color: #e8e1d9;
-}
-.material-icons.orange442 {
-  color: #f4a442;
+.material-icons.bluedf {
+  color: #b7d3df;
 }
 .btn {
   background-color: transparent;
-  border: 3px solid #3e7c17;
+  border: 3px solid #898aa6;
   font-weight: bold;
   width: 80%;
-  color: #3e7c17;
+  color: #898aa6;
   padding: 10px;
   font-size: 18px;
 }
 
 .btn:hover {
-  background-color: #3e7c17;
+  background-color: #898aa6;
   color: white;
 }
 
@@ -167,7 +164,7 @@ body {
   justify-content: center;
   text-align: center;
   vertical-align: middle;
-  background-color: #3e7c17;
+  background-color: #898aa6;
   color: white;
   border: 0;
 }
