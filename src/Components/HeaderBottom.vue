@@ -80,20 +80,19 @@
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="18px"
-        height="18px"
-        viewBox="0 0 20 20"
-        class="md:w-4 xl:w-5 md:h-4 xl:h-5"
+        fill="currentColor"
+        height="20"
+        width="20"
+        class=""
+        viewBox="0 0 16 16"
       >
         <path
-          d="M5,4H19a1,1,0,0,1,1,1V19a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V5A1,1,0,0,1,5,4ZM2,5A3,3,0,0,1,5,2H19a3,3,0,0,1,3,3V19a3,3,0,0,1-3,3H5a3,3,0,0,1-3-3Zm10,7C9.239,12,7,9.314,7,6H9c0,2.566,1.669,4,3,4s3-1.434,3-4h2C17,9.314,14.761,12,12,12Z"
-          transform="translate(-2 -2)"
-          fill="currentColor"
-          fill-rule="evenodd"
-        ></path></svg
-      ><span
-        class="cart-counter-badge d-flex align-items-center justify-content-center bg-heading text-white position-absolute -top-2.5 xl:-top-3 -end-2.5 xl:-end-3 rounded-full font-bold"
-        >0</span
+          d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+        />
+      </svg>
+      <span
+        class="position-absolute top-0 start-100 translate-middle rounded-5 bg-dark p-1 text-white cart-counter"
+        >10</span
       ></button
     ><button
       class="d-flex justify-content-center align-items-center flex-shrink-0"
@@ -119,5 +118,10 @@
 button {
   border: transparent;
   background-color: transparent;
+}
+
+.cart-counter {
+  font-size: 0.6rem;
+  line-height: 1.2em;
 }
 </style>
