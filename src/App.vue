@@ -1,20 +1,26 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
   <div id="app" style="background: #e8e1d9">
-    <HeaderView />
+    <HeaderOptionalView />
+    <!-- <HeaderView /> -->
     <router-view />
     <FooterView />
+    <HeaderBottomView />
   </div>
 </template>
 
 <script>
-import HeaderView from "./Components/HeaderItem.vue";
+// import HeaderView from "./Components/HeaderItem.vue";
 import FooterView from "./Components/FooterView.vue";
+import HeaderBottomView from "./Components/HeaderBottom.vue";
+import HeaderOptionalView from "./Components/HeaderOptional.vue";
 
 export default {
   components: {
-    HeaderView,
+    // HeaderView,
     FooterView,
+    HeaderBottomView,
+    HeaderOptionalView,
   },
 };
 </script>
