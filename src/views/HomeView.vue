@@ -97,8 +97,6 @@ img {
   margin-top: 2%;
 }
 
-
-
 .categoryImages {
   display: flex;
   margin-top: 5%;
