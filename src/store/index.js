@@ -79,7 +79,6 @@ const store = createStore({
       };
       state.checkoutTotal = null;
     },
-
     setOffCanvasShow(state, payload) {
       state.offCanvas.show = payload;
     },
