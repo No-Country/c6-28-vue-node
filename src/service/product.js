@@ -55,6 +55,5 @@ const getProduct = (id) => {
 export default {
   get,
   getProduct,
-  Product
-
+  Product,
 };

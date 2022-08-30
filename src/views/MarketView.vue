@@ -104,13 +104,11 @@ import SearchBar from "../Components/SearchBar.vue";
 /* Componentes para MarketView*/
 import HeaderBanner from "../Components/HeaderBanner";
 
-
 export default {
   name: "MarketView",
   components: {
     SearchBar,
     HeaderBanner,
-   
   },
 
   data() {
@@ -150,7 +148,7 @@ img {
   cursor: pointer;
 }
 
- .market {
+.market {
   background-color: #f2edd7;
 }
 

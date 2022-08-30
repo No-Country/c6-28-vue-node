@@ -1,11 +1,5 @@
 <template>
-  <h1 class="titulo">
-    <img
-      class="img-fluid"
-      src="https://res.cloudinary.com/dytpump6i/image/upload/v1661658723/cooltext418118799602268_eaxtwa.png"
-      alt=""
-    />
-  </h1>
+
   <br />
   <CarouselTrending class="CarrouselTrending" />
   <br />
