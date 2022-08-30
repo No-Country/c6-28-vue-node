@@ -52,13 +52,12 @@
     <!--Aqui inicia los productos-->
     <div class="container mt-5">
       <div class="row">
-        <div class="col-md-4 col-lg-4 col-xl-3">
-          <div
-            class="card mt-5 mb-5"
-            v-for="product in products"
-            :key="product.id"
-            :product="product"
-          >
+        <div
+          class="col-md-4 col-lg-4 col-xl-3"
+          v-for="product in products"
+          :key="product.id"
+        >
+          <div class="card mt-5 mb-5">
             <router-link :to="{ name: 'product', params: { id: product.id } }">
               <img
                 class="card-img-top"

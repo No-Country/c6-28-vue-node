@@ -89,7 +89,6 @@ const store = createStore({
     },
 
 
-
     logout(ctx) {
       ctx.commit("setLogout");
       // authService.deleteAccessToken()
