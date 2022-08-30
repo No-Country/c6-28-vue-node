@@ -1,5 +1,4 @@
 <template>
-
   <br />
   <CarouselTrending class="CarrouselTrending" />
   <br />
