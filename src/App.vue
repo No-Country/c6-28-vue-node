@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-  <div id="app" style="background: #d6efed">
+  <div id="app" class="app">
     <HeaderOptionalView />
     <!-- <HeaderView /> -->
     <router-view />
@@ -30,5 +30,9 @@ export default {
   box-sizing: border-box;
   margin: 0%;
   padding: 0%;
+}
+.app {
+  background: #d6efed;
+  background-image: url("~@/assets/blob.svg");
 }
 </style>

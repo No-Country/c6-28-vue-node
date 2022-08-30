@@ -159,24 +159,21 @@ export default {
 </script>
 
 <style scoped>
-body {
-  background-color: #e8e1d9;
-}
-.material-icons.orange442 {
-  color: #f4a442;
+.material-icons.bluedf {
+  color: #b7d3df;
 }
 .btn {
   background-color: transparent;
-  border: 3px solid #3e7c17;
+  border: 3px solid #898aa6;
   font-weight: bold;
   width: 80%;
-  color: #3e7c17;
+  color: #898aa6;
   padding: 10px;
   font-size: 18px;
 }
 
 .btn:hover {
-  background-color: #3e7c17;
+  background-color: #898aa6;
   color: white;
 }
 
@@ -186,7 +183,7 @@ body {
   justify-content: center;
   text-align: center;
   vertical-align: middle;
-  background-color: #3e7c17;
+  background-color: #898aa6;
   color: white;
   border: 0;
 }

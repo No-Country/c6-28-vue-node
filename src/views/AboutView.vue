@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-4">
     <section id="header">
       <Header />
     </section>
@@ -20,9 +20,13 @@
         PageMaker including versions of Lorem Ipsum.
       </p>
       <div class="container">
-        <div class="row d-flex justify-content-center align-items-center">
-          <div class="col-md-6 col-lg-4 col-xl-3">
-            <Card />
+        <div class="row justify-content-center align-items-center">
+          <div 
+            class="col-md-6 col-lg-4 col-xl-3"
+            v-for="(contact, i) in contacts"
+            :key="i"
+          >
+            <Card :contacts="contact"/>
           </div>
         </div>
       </div>
@@ -42,7 +46,84 @@ export default {
     TitleCat,
     Card,
   },
-  data() { },
+  data() {
+    return {
+      contacts: [
+        {
+          photo: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp',
+          name: 'Yenifer Ramírez',
+          user: '@yeniferrosana',
+          position: 'FrontEnd Developer',
+          linkedin: 'https://www.linkedin.com/in/yeniferrosana/',
+          twitter: 'https://twitter.com/yeniferrosana',
+          github: 'https://github.com/yeniferrosana',
+        },
+        {
+          photo: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp',
+          name: 'Leandro Martini',
+          user: '@manrique1986',
+          position: 'FrontEnd Developer',
+          linkedin: 'https://www.linkedin.com/in/leandro-martini-developer',
+          twitter: '/#',
+          github: 'https://github.com/manrique1986',
+        },
+        {
+          photo: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp',
+          name: 'Carolina Quintoman',
+          user: '@carolinaquintoman',
+          position: 'BackEnd Developer',
+          linkedin: '/#',
+          twitter: '/#',
+          github: 'https://github.com/CarolinaQuintoman',
+        },
+        {
+          photo: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp',
+          name: 'Ariel Cuello',
+          user: '@cuelloariel',
+          position: 'BackEnd Developer',
+          linkedin: '/#',
+          twitter: '/#',
+          github: 'https://github.com/cuelloariel',
+        },
+        {
+          photo: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp',
+          name: 'James Noria',
+          user: '@jamesnoria',
+          position: 'BackEnd Developer',
+          linkedin: '/#',
+          twitter: '/#',
+          github: 'https://github.com/jamesnoria',
+        },
+        {
+          photo: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp',
+          name: 'Daniel Aguilar',
+          user: '@Onnichan',
+          position: 'FrontEnd Developer',
+          linkedin: '/#',
+          twitter: '/#',
+          github: 'https://github.com/Onnichan',
+        },
+        {
+          photo: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp',
+          name: 'Mikel Diaz',
+          user: '@SBolivarLoL',
+          position: 'BackEnd Developer',
+          linkedin: '/#',
+          twitter: '/#',
+          github: 'https://github.com/SBolivarLoL',
+        },
+        {
+          photo: 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp',
+          name: 'Agustin Prado',
+          user: '@subjekt-iv',
+          position: 'FrontEnd Developer',
+          linkedin: '/#',
+          twitter: '/#',
+          github: 'https://github.com/subjekt-iv',
+        },
+      ]
+    }
+  },
 };
 </script>
 

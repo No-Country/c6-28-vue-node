@@ -1,15 +1,18 @@
 <template>
-  <div class="container rounded my-5">
-    <div class="row g-3">
-      <div class="col-md-12 col-lg-12 col-xl-12 align-items-center">
-        <div class="align-items-center">
-          <img class="card-img" style="width: 28rem" src="" />
-          <img
+    <div class="container my-5">
+      <div class="row g-3 p-3 justify-content-center">
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          
+          <div class="align-items-center">
+            <img
+              class=""
+              src=""
+            />
+            <img 
             class="card-img"
-            style="width: 28rem"
-            alt="Producto"
-            src="https://res.cloudinary.com/yeniferramirez11/image/upload/v1632962216/proyecto-grado/404_b7kd9z.gif"
-            height="400px"
+              style="width: 20rem"
+              alt="Producto"
+          src="https://media.giphy.com/media/cjDbTQZy5Tlch5nQAI/giphy.gif"
           />
         </div>
       </div>
