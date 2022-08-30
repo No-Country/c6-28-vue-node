@@ -134,9 +134,6 @@ export default {
       start: 3,
     };
   },
-  mounted() {
-    this.$store.dispatch("getProduct", this.$route.params.id);
-  },
   computed: {
     product() {
       return this.$store.state.product;
@@ -146,6 +143,9 @@ export default {
         ? this.$store.state.product.categoria
         : "";
     },
+  },
+  mounted() {
+    this.$store.dispatch("getProduct", this.$route.params.id);
   },
 };
 </script>

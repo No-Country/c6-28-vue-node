@@ -54,9 +54,9 @@
       <div class="row">
         <div class="col-md-4 col-lg-4 col-xl-3">
           <div
-            class="card mt-5 mb-5"
             v-for="product in products"
             :key="product.id"
+            class="card mt-5 mb-5"
             :product="product"
           >
             <router-link :to="{ name: 'product', params: { id: product.id } }">
@@ -103,27 +103,27 @@ import SearchBar from "../Components/SearchBar.vue";
 
 /* Componentes para MarketView*/
 import HeaderBanner from "../Components/HeaderBanner";
-import ProductView from "../views/ProductView.vue";
+
 
 export default {
   name: "MarketView",
   components: {
     SearchBar,
     HeaderBanner,
-    ProductView,
+   
   },
 
   data() {
     return {};
   },
-
-  mounted() {
-    this.$store.dispatch("getProducts");
-  },
   computed: {
     products() {
       return this.$store.state.products;
     },
+  },
+
+  mounted() {
+    this.$store.dispatch("getProducts");
   },
 
   methods: {
@@ -146,11 +146,11 @@ export default {
   background-size: cover;
 }
 
-<<<<<<< HEAD ======= img {
+img {
   cursor: pointer;
 }
 
->>>>>>>a664d06d6ed9872824ca6affe745523996c049e4 .market {
+ .market {
   background-color: #f2edd7;
 }
 
