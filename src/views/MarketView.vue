@@ -99,13 +99,13 @@
 </template>
 
 <script>
-import SearchBar from '../Components/SearchBar.vue';
+import SearchBar from "../Components/SearchBar.vue";
 
 /* Componentes para MarketView*/
-import HeaderBanner from '../Components/HeaderBanner';
+import HeaderBanner from "../Components/HeaderBanner";
 
 export default {
-  name: 'MarketView',
+  name: "MarketView",
   components: {
     SearchBar,
     HeaderBanner,
@@ -116,7 +116,7 @@ export default {
   },
 
   mounted() {
-    this.$store.dispatch('getProducts');
+    this.$store.dispatch("getProducts");
   },
   computed: {
     products() {
@@ -126,7 +126,7 @@ export default {
 
   methods: {
     cardClick() {
-      console.log('click');
+      console.log("click");
     },
   },
 };

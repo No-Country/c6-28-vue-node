@@ -1,28 +1,10 @@
 <template>
   <div
-    class="
-      d-md-none
-      position-sticky
-      z-10
-      bottom-0
-      d-flex
-      align-items-center
-      justify-content-between
-      shadow-bottomNavigation
-      text-gray-700
-      body-font
-      bg-white
-      w-100
-      h-14
-      sm:h-16
-      px-2
-      py-4"
+    class="d-md-none position-sticky z-10 bottom-0 d-flex align-items-center justify-content-between shadow-bottomNavigation text-gray-700 body-font bg-white w-100 h-14 sm:h-16 px-2 py-4"
   >
     <button
       aria-label="Menu"
-      class="menuBtn d-flex flex-column
-            align-items-center justify-content-center
-            flex-shrink-0"
+      class="menuBtn d-flex flex-column align-items-center justify-content-center flex-shrink-0"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -61,9 +43,7 @@
         </g>
       </svg></button
     ><button
-      class="d-flex align-items-center justify-content-center
-            flex-shrink-0 h-auto position-relative
-            focus:outline-none"
+      class="d-flex align-items-center justify-content-center flex-shrink-0 h-auto position-relative focus:outline-none"
       aria-label="search-button"
     >
       <svg

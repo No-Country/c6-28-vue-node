@@ -1,5 +1,5 @@
-import {createStore} from 'vuex';
-import Product from '@/service/product';
+import { createStore } from "vuex";
+import Product from "@/service/product";
 
 const store = createStore({
   state: {
@@ -32,7 +32,7 @@ const store = createStore({
     },
     setToken(state, token) {
       state.token = token;
-      localStorage.setItem('token', token);
+      localStorage.setItem("token", token);
     },
     setProducts(state, products) {
       state.products = products;
@@ -82,23 +82,23 @@ const store = createStore({
   },
 
   actions: {
-    getProducts({commit}) {
+    getProducts({ commit }) {
       Product.get()
-          .then((response) => {
-            commit('setProducts', response.data.products);
-          })
-          .catch((e) => {
-            console.log(e);
-          });
+        .then((response) => {
+          commit("setProducts", response.data.products);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     },
-    getProduct({commit}, id) {
+    getProduct({ commit }, id) {
       Product.getProduct(id).then((response) => {
-        commit('setProduct', response);
+        commit("setProduct", response);
       });
     },
 
     logout(ctx) {
-      ctx.commit('setLogout');
+      ctx.commit("setLogout");
       // authService.deleteAccessToken()
     },
   },

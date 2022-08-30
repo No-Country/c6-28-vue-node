@@ -21,7 +21,7 @@
 </template>
 <script>
 export default {
-  name: 'CarouselProducts',
+  name: "CarouselProducts",
   data() {},
 };
 </script>

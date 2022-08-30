@@ -1,15 +1,15 @@
 <script setup>
-import ButtonGoogle from '@/Components/ui/Button/ButtonGoogle.vue';
-import ButtonBase from '@/Components/ui/Button/ButtonBase.vue';
+import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
+import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
 // import HeaderItem from "@/Components/HeaderItem.vue";
 // import FooterView from "../Components/FooterView.vue";
-import {ref} from 'vue';
+import { ref } from "vue";
 
-const name = ref('');
-const lastname = ref('');
-const password = ref('');
-const confirmPass = ref('');
-const email = ref('');
+const name = ref("");
+const lastname = ref("");
+const password = ref("");
+const confirmPass = ref("");
+const email = ref("");
 </script>
 <template>
   <form
@@ -104,35 +104,35 @@ const email = ref('');
 </template>
 
 <script>
-import AuthService from '../service/auth.service';
+import AuthService from "../service/auth.service";
 export default {
   data() {
     return {
-      name: '',
-      lastname: '',
-      email: '',
-      password: '',
-      confirmPass: '',
+      name: "",
+      lastname: "",
+      email: "",
+      password: "",
+      confirmPass: "",
     };
   },
   methods: {
     handleSubmit() {
       AuthService.register(
-          this.name,
-          this.lastname,
-          this.email,
-          this.password,
-          this.confirmPass,
+        this.name,
+        this.lastname,
+        this.email,
+        this.password,
+        this.confirmPass
       )
-          .then((response) => {
-            console.log(response);
-            AuthService.setAccessToken(response.token);
-            this.$store.commit('updateUser', response.user);
-            this.$router.push('/login');
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        .then((response) => {
+          console.log(response);
+          AuthService.setAccessToken(response.token);
+          this.$store.commit("updateUser", response.user);
+          this.$router.push("/login");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };

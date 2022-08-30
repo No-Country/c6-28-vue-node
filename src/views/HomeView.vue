@@ -1,9 +1,9 @@
 <template>
   <div>
-    <!-- <SearchBar class="SearchBar" /> -->
-    <!-- <br /> -->
+    <SearchBar class="SearchBar" />
+    <br />
     <CarouselTrending class="CarrouselTrending" />
-    <!-- <br /> -->
+    <br />
     <div class="categories">
       <h5>Ofertas</h5>
       <div class="categoryImages">
@@ -68,10 +68,10 @@
 
 <script>
 // import SearchBar from "../Components/SearchBar.vue";
-import CarouselTrending from '../Components/CarouselTrending.vue';
+import CarouselTrending from "../Components/CarouselTrending.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     // SearchBar,
     CarouselTrending,

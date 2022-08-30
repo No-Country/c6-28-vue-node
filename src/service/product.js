@@ -1,7 +1,7 @@
-import {ApiRequest} from '@/service/index';
+import { ApiRequest } from "@/service/index";
 
 const get = () => {
-  return ApiRequest.get('https://c6-28.up.railway.app/api/v1/products');
+  return ApiRequest.get("https://c6-28.up.railway.app/api/v1/products");
 };
 
 const getProduct = (id) => {

@@ -119,16 +119,16 @@
 </template>
 
 <script>
-import Product from '../Components/Product.vue';
-import Starts from '../Components/Starts.vue';
+import Product from "../Components/Product.vue";
+import Starts from "../Components/Starts.vue";
 
 export default {
-  name: 'ProductView',
+  name: "ProductView",
   components: {
     Product,
     Starts,
   },
-  props: ['id'],
+  props: ["id"],
 
   data() {
     return {
@@ -137,16 +137,16 @@ export default {
     };
   },
   mounted() {
-    this.$store.dispatch('getProduct', this.$route.params.id);
+    this.$store.dispatch("getProduct", this.$route.params.id);
   },
   computed: {
     product() {
       return this.$store.state.product;
     },
     productCategory() {
-      return this.$store.state.product.categoria ?
-        this.$store.state.product.categoria :
-        '';
+      return this.$store.state.product.categoria
+        ? this.$store.state.product.categoria
+        : "";
     },
   },
 };

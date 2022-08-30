@@ -7,29 +7,30 @@
       />
     </div>
 
-    <ul class="footer01">
-      <li>Comunidad</li>
-      <li>Empresa</li>
-      <li>Beneficios</li>
-    </ul>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-4 col-md-4 col-lg-4 col-xl-4">
+          <p>Comunidad</p>
+          <fa class="redes twiter" :icon="['fab', 'twitter']" />
+          <fa class="redes instagram" :icon="['fab', 'instagram']" />
+          <fa class="redes facebook" :icon="['fab', 'facebook']" />
+        </div>
 
-    <div class="redes">
-      <fa class="twiter" :icon="['fab', 'twitter']" />
-      <fa class="instagram" :icon="['fab', 'instagram']" />
-      <fa class="facebook" :icon="['fab', 'facebook']" />
+        <div class="col-4 col-md-4 col-lg-4 col-xl-4"><p>Empresa</p></div>
+
+        <div class="col-4 col-md-4 col-lg-4 col-xl-4"><p>Beneficios</p></div>
+      </div>
     </div>
 
-    <font-awesome-icon icon="fa-brands fa-instagram" />
-
     <div class="footer-bottom">
-      <p class="m-0">&copy;Mundo mascota, inc.2019</p>
+      <p>&copy;Mundo mascota, inc.2019</p>
     </div>
   </footer>
 </template>
 
 <script>
 export default {
-  name: 'FooterView',
+  name: "FooterView",
 };
 </script>
 
@@ -66,23 +67,6 @@ img {
   justify-content: center;
 }
 
-ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  font-family: monserrat;
-  font-style: normal;
-  font-size: 15px;
-  float: left;
-  padding: 1.5em;
-  /*padding-bottom: 1.5em;*/
-}
-
 .footer-bottom p {
   text-align: center;
   font-size: 14px;
@@ -91,49 +75,19 @@ li {
   text-transform: uppercase;
   opacity: 0.4;
   font-weight: 200;
+  margin: 0;
 }
 
-.redes {
-  margin-left: 50px;
-}
 .redes :hover {
   color: #3a6351;
 }
 .twiter {
-  margin-left: 4px;
+  margin: 5px;
 }
 .instagram {
-  margin-left: 4px;
+  margin: 5px;
 }
 .facebook {
-  margin-left: 4px;
-}
-
-@media screen and (min-width: 760px) {
-  li {
-    /* padding-inline: 6em;*/
-  }
-  /* .redes {
-    margin-left: 240px;
-  } */
-}
-@media screen and (min-width: 1100px) {
-  li {
-    /*padding-inline: 10em;*/
-  }
-
-  .redes {
-    margin-left: 200px;
-  }
-}
-
-@media screen and (min-width: 1350px) {
-  li {
-    /*padding-inline: 13em;  */
-  }
-
-  .redes {
-    margin-left: 230px;
-  }
+  margin: 5px;
 }
 </style>
