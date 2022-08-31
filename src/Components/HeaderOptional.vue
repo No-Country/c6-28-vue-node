@@ -55,11 +55,52 @@ onUnmounted(() => {
     </div>
     <nav class="d-none align-items-center d-lg-flex w-75">
       <ul class="d-flex align-items-center gap-5 m-0">
-        <router-link to="/productos" class="text-dark">Productos</router-link>
-        <router-link to="/" class="text-dark">Marcas</router-link>
-        <router-link to="/" class="text-dark">ofertas</router-link>
-        <router-link to="/" class="text-dark">Servicios</router-link>
-        <router-link to="/" class="text-dark">Acerca de</router-link>
+        <div class="header__link-wrapper position-relative">
+          <div class="position-absolute header__inner-list-wrapper">
+            <ul class="header__inner-list">
+              <li class="header__inner-item">
+                <router-link to="/productos" class="text-dark header__inner-link"
+                  >Ropa</router-link
+                >
+              </li>
+              <li  class="header__inner-item">
+                <router-link to="/productos" class="text-dark header__inner-link"
+                  >Alimentos</router-link
+                >
+              </li>
+              <li  class="header__inner-item">
+                <router-link to="/productos" class="text-dark header__inner-link"
+                  >Bebidas</router-link
+                >
+              </li>
+              <li  class="header__inner-item">
+                <router-link to="/productos" class="text-dark header__inner-link"
+                  >Accesorios</router-link
+                >
+              </li>
+              <li  class="header__inner-item">
+                <router-link to="/productos" class="text-dark header__inner-link"
+                  >Utensilios</router-link
+                >
+              </li>
+            </ul>
+          </div>
+          <router-link to="/productos" class="text-dark header_link"
+            >Productos</router-link
+          >
+        </div>
+        <div class="header__link-wrapper">
+          <router-link to="/" class="text-dark">Marcas</router-link>
+        </div>
+        <div class="header__link-wrapper">
+          <router-link to="/" class="text-dark">ofertas</router-link>
+        </div>
+        <div  class="header__link-wrapper">
+          <router-link to="/" class="text-dark">Servicios</router-link>
+        </div>
+        <div  class="header__link-wrapper">
+          <router-link to="/about" class="text-dark">Acerca de</router-link>
+        </div>
       </ul>
     </nav>
     <div
@@ -171,6 +212,36 @@ onUnmounted(() => {
   --tw-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.header__inner-list-wrapper{
+  top: 22px;
+  display: none;
+  padding: 1.4em 0;
+  background-color: #C9BBCF;
+  transition: all 800ms;
+}
+
+.header__inner-list{
+  list-style: none;
+  padding: 0;
+}
+
+.header__link-wrapper:hover > .header__inner-list-wrapper{
+
+  display: block;
+  transition: all 800ms;
+}
+
+.header__inner-item{
+  padding: 0.5em 6em 0.5em 1.4em;
+  display: flex;
+  align-items: center;
+}
+
+.header__inner-item:hover{
+  background-color: rgba(0, 0, 0, 0.08);
+  cursor: pointer;
 }
 
 @media (min-width: 992px) {

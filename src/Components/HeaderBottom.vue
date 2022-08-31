@@ -65,7 +65,7 @@
           fill-rule="evenodd"
         ></path>
       </svg></button
-    ><a class="flex-shrink-0" href="/"
+    ><router-link class="flex-shrink-0" to="/"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         width="18px"
@@ -78,7 +78,7 @@
           fill="currentColor"
           stroke="currentColor"
           stroke-width="0.4"
-        ></path></svg></a
+        ></path></svg></router-link
     ><button
       class="d-flex align-items-center justify-content-center flex-shrink-0 position-relative"
       aria-label="cart-button"
@@ -99,7 +99,8 @@
         class="position-absolute top-0 start-100 translate-middle rounded-5 bg-dark p-1 text-white cart-counter"
         >10</span
       ></button
-    ><button
+    ><router-link 
+      to="/profile"
       class="d-flex justify-content-center align-items-center flex-shrink-0"
     >
       <svg
@@ -116,7 +117,7 @@
           stroke-width="0.6"
         ></path>
       </svg>
-    </button>
+    </router-link>
   </div>
 </template>
 <style scoped>
