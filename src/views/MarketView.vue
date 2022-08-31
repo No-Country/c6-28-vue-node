@@ -53,9 +53,9 @@
     <div class="container mt-5">
       <div class="row">
         <div
-          class="col-md-4 col-lg-4 col-xl-3"
           v-for="product in products"
           :key="product.id"
+          class="col-md-4 col-lg-4 col-xl-3"
           :product="product"
         >
           <div class="card mt-5 mb-5">
@@ -114,14 +114,14 @@ export default {
   data() {
     return {};
   },
-
-  mounted() {
-    this.$store.dispatch("getProducts");
-  },
   computed: {
     products() {
       return this.$store.state.products;
     },
+  },
+
+  mounted() {
+    this.$store.dispatch("getProducts");
   },
 
   methods: {

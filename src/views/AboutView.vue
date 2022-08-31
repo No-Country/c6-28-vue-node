@@ -22,9 +22,9 @@
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div
-            class="col-md-6 col-lg-4 col-xl-3"
             v-for="(contact, i) in contacts"
             :key="i"
+            class="col-md-6 col-lg-4 col-xl-3"
           >
             <Card :contacts="contact" />
           </div>
