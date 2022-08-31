@@ -1,7 +1,9 @@
 <script setup></script>
 <template>
   <nav class="w-100 sidebar-products">
-    <ul class="d-flex justify-content-center flex-column gap-5 m-0 sidebar-list-products">
+    <ul
+      class="d-flex justify-content-center flex-column gap-5 m-0 sidebar-list-products"
+    >
       <li class="sidebar-product-item">
         <div class="d-flex justify-content-between">
           <router-link to="/productos" class="text-dark">Productos</router-link>

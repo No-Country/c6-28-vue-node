@@ -1,12 +1,6 @@
 <template>
-
-<div>
-  <div class="test">
-    asdasdasd
+  <div>
+    <div class="test">asdasdasd</div>
   </div>
-</div>
-
 </template>
-<style>
-
-</style>
+<style></style>
