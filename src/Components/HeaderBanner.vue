@@ -2,8 +2,11 @@
 <div class="back">
   <div class="row g-3 d-flex align-items-center">
     <div class="col-md-12 col-lg-12 col-xl-12 text-center">
-      <h2 class="title1 top">Ordena los productos</h2>
-      <h2 class="title2 mt-n8">Para tu mascota.</h2>
+      <h2 class="title1 text-dark">Ordena los mejores</h2>
+      <h2 class="title2 text-dark mt-n8">productos para tu mascota</h2>
+        <a type="button" class="btn rounded" href="/">
+          Ofertas
+        </a>
     </div>
   </div>
   <div class="row g-3 d-flex align-items-center">
@@ -49,6 +52,12 @@ export default {
   font-weight: bold;
   padding: 5px;
   font-size: 18px;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border: 3px solid #898aa6;
+  color: #898aa6;
 }
 @media only screen and (max-width: 600px) {
   h2.title1 {
