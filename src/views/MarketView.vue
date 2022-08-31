@@ -3,6 +3,27 @@
     <HeaderBanner />
     <!--Aqui inicia los productos-->
     <div class="container mt-5">
+      <!-- Filtro-->
+      <div class="row" v-if="products.length !== 0">
+        <div
+          class="col-md-6 col-lg-6 col-xl-6"
+        >
+          <p style="color: #898aa6">
+            Animales y Mascotas
+          </p>
+        </div>
+        <div
+          class="col-md-6 col-lg-6 col-xl-6 text-right d-flex justify-content-end align-items-center"
+        >
+          <label style="color: #898aa6">Ordenar por &nbsp;</label>
+          <select v-model="sortBy" v-on:change="filteredProduct">
+            <option value="0">Más relevantes</option>
+            <option value="1">Mayor Precio</option>
+            <option value="2">Menor Precio</option>
+          </select>
+        </div>
+      </div>
+      <!-- Card de Productos-->
       <div class="row">
         <div
           v-for="product in products"
@@ -10,40 +31,34 @@
           class="col-md-4 col-lg-4 col-xl-3"
           :product="product"
         >
-          <div class="card mt-5 mb-5">
-            <router-link :to="{ name: 'product', params: { id: product.id } }">
+          <router-link :to="{ name: 'product', params: { id: product.id } }">
+            <div class="card my-5">
               <img
                 class="card-img-top"
                 src="https://picsum.photos/id/132/200/200"
                 alt="Card image cap"
               />
-            </router-link>
-            <div class="card-body">
-              <h2>
-                {{ product.precio }}$
-                <span
-                  style="
-                    color: green;
-                    font-size: 20px;
-                    display: block;
-                    float: right;
-                  "
-                >
-                  10% OFF
-                </span>
-              </h2>
+              <div class="card-body text-dark">
+                <h3>
+                  {{ product.precio }}$
+                  <span
+                    v-if="product.oferta"
+                    style="
+                      color: #b7d3df;
+                      font-size: 20px;
+                      display: block;
+                      float: right;
+                    "
+                  >
+                    {{ product.porcentaje_oferta}}% OFF
+                  </span>
+                </h3>
 
-              <h3>{{ product.nombre }}</h3>
-              <h4>{{ product.nombre_marca }}</h4>
-
-              <p class="text-center">
-                <button type="button" class="btn btn-success btn-block mt-5">
-                  Comprar Producto
-                </button>
-              </p>
-              <p class="text-center"></p>
+                <h4 class="text-capitalize">{{ product.nombre }}</h4>
+                <h6 class="text-muted">{{ product.nombre_marca }}</h6>
+              </div>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -64,12 +79,31 @@ export default {
   },
 
   data() {
-    return {};
+    return {
+      storeProducts: [],
+      sortBy: 0,
+    };
   },
   computed: {
+    /*
     products() {
       return this.$store.state.products;
-    },
+    },*/
+    products() {
+      const sortBy = this.sortBy;
+      if (sortBy === '0') {
+        return this.$store.state.products;
+      }
+      else {
+        return this.$store.state.products.sort((a, b) => {
+          if (sortBy === '1') {
+            return b.precio - a.precio;
+          } else if (sortBy === '2') {
+            return a.precio - b.precio;
+          }
+        });
+      }
+    }
   },
 
   mounted() {
@@ -88,40 +122,34 @@ export default {
 img {
   cursor: pointer;
 }
-
-.market {
-  background-color: #f2edd7;
+select {
+  background-color: #898aa6;
+  color: white;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
 }
 
-.input-busq {
-  outline: solid green 2px;
-  border-radius: 10px;
-  padding: 8px;
+.btn-grey {
+  background-color: #898aa6;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
 }
 
-@media only screen and (max-width: 600px) {
-  h2.title1 {
-    font-size: 15px;
-  }
-
-  h2.title2 {
-    font-size: 15px;
-  }
-
-  .top {
-    margin-top: 5px;
-  }
+.btn-grey:hover {
+  background-color: transparent;
+  border: 3px solid #898aa6;
+  color: #898aa6;
 }
 
-@media only screen and (min-width: 600px) {
-  .top {
-    margin-top: 20px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .top {
-    margin-top: 35px;
+@media screen and (min-width: 1000px) {
+  .card:hover {
+    transform: scale(1.05);
+    transition: all 0.5s;
   }
 }
 </style>
