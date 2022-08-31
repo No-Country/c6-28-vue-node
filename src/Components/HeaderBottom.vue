@@ -99,7 +99,7 @@
         class="position-absolute top-0 start-100 translate-middle rounded-5 bg-dark p-1 text-white cart-counter"
         >10</span
       ></button
-    ><router-link 
+    ><router-link
       to="/profile"
       class="d-flex justify-content-center align-items-center flex-shrink-0"
     >

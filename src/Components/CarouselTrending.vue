@@ -1,7 +1,5 @@
 <script setup>
-
-import BannerImage1 from '../assets/images/banner/banner_image1.jpg';
-
+import BannerImage1 from "../assets/images/banner/banner_image1.jpg";
 </script>
 <template>
   <div class="wrapper-content">
