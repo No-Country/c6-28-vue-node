@@ -43,7 +43,7 @@ function validation(value) {
   <div
     id="offCanvas"
     ref="sidebar"
-    class="offcanvas w-100"
+    class="offcanvas"
     :class="[validation(props.position)]"
     tabindex="-1"
     aria-labelledby="offCanvasLabel"

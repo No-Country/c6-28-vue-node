@@ -4,12 +4,14 @@ import Logo from "../assets/Logo.svg";
 import IconBurger from "../assets/icons/IconBurger.svg";
 import OffCanvas from "./ui/OffCanvas/OffCanvas.vue";
 import SidebarOffCanvas from "./ui/OffCanvas/SidebarOffCanvas.vue";
+import CartOffCanvas from "./ui/OffCanvas/CartOffCanvas.vue";
 import { ref, onMounted, onUnmounted } from "vue";
 import * as bootstrap from "bootstrap";
 
 const header = ref();
 const child = ref();
 const sidebar = ref(null);
+const cart = ref(null);
 /**
  * this a callback function to add y remove the header_scrolling class
  */
@@ -26,11 +28,16 @@ function headerScroll() {
 onMounted(() => {
   window.addEventListener("scroll", headerScroll);
   sidebar.value = bootstrap.Offcanvas.getOrCreateInstance(child.value.sidebar);
+  cart.value = bootstrap.Offcanvas.getOrCreateInstance(child.value.sidebar);
 });
 
 // eslint-disable-next-line require-jsdoc
 function handleShowOffCanvas() {
   sidebar.value.show();
+}
+// eslint-disable-next-line require-jsdoc
+function handleShowOffCanvasCart() {
+  cart.value.show();
 }
 
 onUnmounted(() => {
@@ -135,6 +142,7 @@ onUnmounted(() => {
         width="20"
         class="bi bi-cart4 header__cart d-none d-md-flex"
         viewBox="0 0 16 16"
+        @click="handleShowOffCanvasCart()"
       >
         <path
           d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
@@ -146,6 +154,11 @@ onUnmounted(() => {
     <Teleport to="body">
       <OffCanvas ref="child">
         <SidebarOffCanvas></SidebarOffCanvas>
+      </OffCanvas>
+    </Teleport>
+    <Teleport to="body">
+      <OffCanvas ref="child" position="right">
+        <CartOffCanvas></CartOffCanvas>
       </OffCanvas>
     </Teleport>
   </header>
