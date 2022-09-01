@@ -1,9 +1,14 @@
+<script setup></script>
 <template>
   <div
     class="d-md-none position-sticky z-10 bottom-0 d-flex align-items-center justify-content-between shadow-bottomNavigation text-gray-700 body-font bg-white w-100 h-14 sm:h-16 px-2 py-4"
   >
     <button
       aria-label="Menu"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#sidebarOffCanvas"
+      aria-controls="sidebarOffCanvas"
       class="menuBtn d-flex flex-column align-items-center justify-content-center flex-shrink-0"
     >
       <svg
@@ -52,6 +57,8 @@
         height="18px"
         viewBox="0 0 18.942 20"
         class="md:w-4 xl:w-5 md:h-4 xl:h-5"
+        data-bs-toggle="modal"
+        data-bs-target="#searchModal"
       >
         <path
           d="M381.768,385.4l3.583,3.576c.186.186.378.366.552.562a.993.993,
@@ -65,7 +72,7 @@
           fill-rule="evenodd"
         ></path>
       </svg></button
-    ><a class="flex-shrink-0" href="/"
+    ><router-link class="flex-shrink-0" to="/"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         width="18px"
@@ -78,9 +85,13 @@
           fill="currentColor"
           stroke="currentColor"
           stroke-width="0.4"
-        ></path></svg></a
+        ></path></svg></router-link
     ><button
       class="d-flex align-items-center justify-content-center flex-shrink-0 position-relative"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#cartOffCanvas"
+      aria-controls="cartOffCanvas"
       aria-label="cart-button"
     >
       <svg
@@ -99,7 +110,8 @@
         class="position-absolute top-0 start-100 translate-middle rounded-5 bg-dark p-1 text-white cart-counter"
         >10</span
       ></button
-    ><button
+    ><router-link
+      to="/profile"
       class="d-flex justify-content-center align-items-center flex-shrink-0"
     >
       <svg
@@ -116,7 +128,7 @@
           stroke-width="0.6"
         ></path>
       </svg>
-    </button>
+    </router-link>
   </div>
 </template>
 <style scoped>
