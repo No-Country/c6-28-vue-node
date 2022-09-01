@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="back">
     <div>
       <img
         src="https://res.cloudinary.com/dytpump6i/image/upload/v1660593048/Logo_ugs7jt.svg"
@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "FooterView",
+  name: 'FooterView',
 };
 </script>
 
@@ -38,6 +38,23 @@ export default {
 footer {
   /*background-color: #a0937d;*/
   background-color: #898aa6;
+}
+.back {
+  background: 898aa6;
+  /* width: 40%;*/
+  padding: 20px;
+  position: relative;
+}
+.back::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background: url(~@/assets/footer.svg) bottom center;
+  transform: rotate(180deg);
+  background-size: 150%;
 }
 img {
   display: flex;
@@ -62,7 +79,7 @@ img {
 }
 
 .redes :hover {
-  color: #3a6351;
+  color: #d6efed;
 }
 .twiter {
   margin: 5px;
@@ -74,4 +91,5 @@ img {
   margin: 5px;
   margin-left: 4px;
 }
+
 </style>

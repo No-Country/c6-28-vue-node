@@ -1,32 +1,58 @@
 <template>
-  <br />
-  <CarouselTrending class="CarrouselTrending" />
-  <br />
   <div>
+    <SearchBar class="SearchBar" />
+    <br />
+    <CarouselTrending class="CarrouselTrending" />
+    <br />
+
     <div class="categories">
       <h5>Ofertas</h5>
       <div class="categoryImages">
         <div>
-          <img src="https://picsum.photos/id/132/200/200" alt="..." />
+          <img
+            class="imgMascota"
+            src="https://static.miscota.com/media/1/banners/banner_1661853038_ciEUOh9m-mobile.jpg"
+            alt="..."
+          />
         </div>
         <div>
-          <img src="https://picsum.photos/id/137/200/200" alt="..." />
+          <img
+            class="imgMascota"
+            src="https://static.miscota.com/media/1/banners/banner_1661853038_ciy3nAJo-mobile.jpg"
+            alt="..."
+          />
         </div>
         <div>
-          <img src="https://picsum.photos/id/135/200/200" alt="..." />
+          <img
+            class="imgMascota"
+            src="https://static.miscota.com/media/1/banners/banner_1661853037_cimyCCpJ-mobile.jpg"
+            alt="..."
+          />
         </div>
       </div>
       <h5>Mascotas</h5>
 
       <div class="categoryImages">
         <div>
-          <img src="https://picsum.photos/id/232/200/200" alt="..." />
+          <img
+            class="imgMascota"
+            src="https://res.cloudinary.com/dytpump6i/image/upload/v1661902143/pexels-sharath-g-12895170_wfuqbb.jpg"
+            alt="..."
+          />
         </div>
         <div>
-          <img src="https://picsum.photos/id/237/200/200" alt="..." />
+          <img
+            class="imgMascota"
+            src="https://res.cloudinary.com/dytpump6i/image/upload/c_scale,h_3248,w_4608/v1661633424/pexels-mustafa-ezz-979503_tsj2mb.jpg"
+            alt="..."
+          />
         </div>
         <div>
-          <img src="https://picsum.photos/id/235/200/200" alt="..." />
+          <img
+            class="imgMascota"
+            src="https://res.cloudinary.com/dytpump6i/image/upload/c_scale,h_3248,w_4608/v1661901952/pexels-gili-pup-11545918_g60gej.jpg"
+            alt="..."
+          />
         </div>
       </div>
 
@@ -34,13 +60,13 @@
 
       <div class="categoryImages">
         <div>
-          <img src="https://picsum.photos/id/132/200/200" alt="..." />
+          <img class="imgMascota" src="https://static.miscota.com/media/1/banners/banner_1661847325_ciqzs13A.jpg" alt="..." />
         </div>
         <div>
-          <img src="https://picsum.photos/id/137/200/200" alt="..." />
+          <img class="imgMascota" src="https://static.miscota.com/media/1/banners/banner_1661847326_ci8V2B3b.jpg" alt="..." />
         </div>
         <div>
-          <img src="https://picsum.photos/id/135/200/200" alt="..." />
+          <img class="imgMascota" src="https://static.miscota.com/media/1/banners/banner_1661847327_ci6wJvnQ.jpg" alt="..." />
         </div>
       </div>
     </div>
@@ -48,12 +74,11 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 
       <div class="d-grid gap-2 d-md-block">
-        <button type="button" class="btn btn-success btn-md">
-          Registrarse
-        </button>
-        <button type="button" class="btn btn-outline-success btn-md">
-          Contactarnos
-        </button>
+        <router-link to="/register">
+          <button type="button " class="butRegister">Registrarse</button>
+        </router-link>
+
+        <button type="button" class="butContact">Contactarnos</button>
       </div>
     </div>
 
@@ -66,17 +91,25 @@
 </template>
 
 <script>
-import CarouselTrending from "../Components/CarouselTrending.vue";
+import CarouselTrending from '../Components/CarouselTrending.vue';
 
 export default {
-  name: "HomeView",
+  name: 'HomeView',
   components: {
     CarouselTrending,
+  },
+  data() {
+    return {
+      modalShow: false,
+    };
   },
 };
 </script>
 
 <style scoped>
+.imgMascota {
+  width: 270px;
+}
 .titulo {
   display: flex;
   justify-content: center;
@@ -192,8 +225,81 @@ h5 {
   }
 
   .categoryImages :hover {
-    transform: scale(1.1);
+    transform: scale(1.026);
     transition: all 0.9s;
   }
+}
+
+.butRegister {
+  min-width: 130px;
+  height: 40px;
+  color: black;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #898aa6;
+  overflow: hidden;
+  border: 2px solid #adb5bd;
+  color: #adb5bd;
+}
+.butRegister:hover {
+  color: black;
+}
+.butRegister:hover:after {
+  width: 100%;
+}
+.butRegister:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #c9bbcf;
+}
+
+.butContact {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  overflow: hidden;
+  border-radius: 5px;
+  border: none;
+  background-color: #c9bbcf;
+}
+.butContact:hover {
+  border-radius: 5px;
+  padding-right: 24px;
+  padding-left: 8px;
+  color: black;
+}
+.butContact:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+.butContact:after {
+  content: "\00BB";
+  position: absolute;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 40px;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
 }
 </style>

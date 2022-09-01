@@ -111,7 +111,7 @@
 
 <script>
 export default {
-  name: "HeaderItem",
+  name: 'HeaderItem',
   data() {
     return {
       mobileView: false,
@@ -125,11 +125,11 @@ export default {
       this.mobileView = window.innerWidth <= 763;
     },
     toggleMenu() {
-      navMenu.classList.toggle("active");
+      navMenu.classList.toggle('active');
     },
     logOut() {
-      this.$store.dispatch("logout");
-      this.$router.push("login");
+      this.$store.dispatch('logout');
+      this.$router.push('login');
     },
   },
 };

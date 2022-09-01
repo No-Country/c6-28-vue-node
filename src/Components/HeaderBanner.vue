@@ -12,7 +12,7 @@
         placeholder="Busca los mejores productos"
       />
       <div class="input-group-append">
-        <button class="btn btn-success btn-lg py-7" type="button">
+        <button class="butBuscar" type="button">
           Buscar
         </button>
       </div>
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: "HeaderBanner",
+  name: 'HeaderBanner',
   components: {},
   data() {},
 };
@@ -41,9 +41,45 @@ export default {
 }
 
 .input-busq {
-  outline: solid green 2px;
+  outline: solid #898aa6 2px;
   border-radius: 10px;
   padding: 8px;
+}
+
+.butBuscar {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  z-index: 0;
+  background: #d6efed;
+  overflow: hidden;
+  border: 2px solid #898aa6;
+  color: #495057;
+}
+.butBuscar:hover {
+  color: #fff;
+}
+.butBuscar:hover:after {
+  height: 100%;
+}
+.butBuscar:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s ease;
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100%;
+  background: #898aa6;
 }
 
 @media only screen and (max-width: 600px) {
@@ -67,4 +103,6 @@ export default {
     margin-top: 35px;
   }
 }
+
+
 </style>

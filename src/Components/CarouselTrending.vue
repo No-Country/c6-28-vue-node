@@ -74,13 +74,14 @@
 
 <script>
 export default {
-  name: "CarouselTrending",
+  name: 'CarouselTrending',
 };
 </script>
 
 <style>
 .carousel {
-  height: 600px;
+  height: 580px;
+  border-radius: 10px;
 }
 img {
   border-radius: 6px;

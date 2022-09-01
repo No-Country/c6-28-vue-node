@@ -26,7 +26,7 @@
 .button__content {
   width: 100%;
   height: 100%;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 
 .button__icon {

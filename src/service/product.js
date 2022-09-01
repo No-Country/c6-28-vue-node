@@ -1,31 +1,7 @@
-import { ApiRequest } from "@/service/index";
+import {ApiRequest} from '@/service/index';
 
 const get = () => {
-  return ApiRequest.get("/products");
-};
-
-const getCategories = () => {
-  return ApiRequest.get("/products/categories");
-};
-const getPets = () => {
-  return ApiRequest.get("/products/pets");
-};
-const getOffers = () => {
-  return ApiRequest.get("/products/offers");
-};
-const getBrands = () => {
-  return ApiRequest.get("/products/brands");
-};
-
-const Product = () => {
-  return {
-    get,
-    getProduct,
-    getCategories,
-    getPets,
-    getOffers,
-    getBrands,
-  };
+  return ApiRequest.get('https://c6-28.up.railway.app/api/v1/products');
 };
 
 const getProduct = (id) => {
@@ -55,5 +31,4 @@ const getProduct = (id) => {
 export default {
   get,
   getProduct,
-  Product,
 };
