@@ -1,14 +1,14 @@
 <template>
   <footer class="back">
-    <div>
-      <img
-        src="https://res.cloudinary.com/dytpump6i/image/upload/v1660593048/Logo_ugs7jt.svg"
-        alt="logo"
-      />
-    </div>
-
     <div class="container">
-      <div class="row text-center">
+      <div class="row g-3 text-center">
+        <div class="col-12">
+          <img
+            src="../assets/logo.png"
+            alt="logo"
+            style="width: 100px;"
+          />
+        </div>
         <div class="col-4 col-md-4 col-lg-4 col-xl-4">
           <p>Comunidad</p>
           <fa class="redes twiter" :icon="['fab', 'twitter']" />
@@ -57,14 +57,9 @@ footer {
   background-size: 150%;
 }
 img {
-  display: flex;
-  align-items: center;
   padding: 0.6em;
-  color: white;
   position: relative;
-  width: 100%;
   height: 84px;
-  justify-content: center;
 }
 
 .footer-bottom p {
@@ -79,7 +74,7 @@ img {
 }
 
 .redes :hover {
-  color: #3a6351;
+  color: #d6efed;
 }
 .twiter {
   margin: 5px;
@@ -89,5 +84,6 @@ img {
 }
 .facebook {
   margin: 5px;
+  margin-left: 4px;
 }
 </style>

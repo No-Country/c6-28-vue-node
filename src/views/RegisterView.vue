@@ -5,7 +5,7 @@ import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
 // import FooterView from "../Components/FooterView.vue";
 import { ref } from "vue";
 
-const name = ref("");
+// const name = ref("");
 const lastname = ref("");
 const password = ref("");
 const confirmPass = ref("");

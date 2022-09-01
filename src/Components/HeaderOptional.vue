@@ -61,6 +61,18 @@ function sendSearch() {
   router.push({ name: "productos", query: { s: search.value.value } });
 }
 </script>
+<script>
+export default {
+  computed: {
+    cartItems() {
+      return this.$store.getters.cartCount;
+    },
+    userLogged() {
+      return this.$store.state.user.id ? true : false;
+    },
+  },
+};
+</script>
 <template>
   <header
     ref="header"
@@ -127,7 +139,7 @@ function sendSearch() {
           <router-link to="/" class="text-dark">Marcas</router-link>
         </div>
         <div class="header__link-wrapper">
-          <router-link to="/" class="text-dark">ofertas</router-link>
+          <router-link to="/" class="text-dark">Ofertas</router-link>
         </div>
         <div class="header__link-wrapper">
           <router-link to="/" class="text-dark">Servicios</router-link>
@@ -138,7 +150,14 @@ function sendSearch() {
       </ul>
     </nav>
     <div
-      class="d-flex gap-4 header__actions align-items-center justify-content-end w-lg-50"
+      class="
+        d-flex
+        gap-4
+        header__actions
+        align-items-center
+        justify-content-end
+        w-lg-50
+      "
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -152,21 +171,43 @@ function sendSearch() {
           d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
         />
       </svg>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        height="20"
-        width="20"
-        class="bi bi-cart4 header__cart d-none d-md-flex"
-        viewBox="0 0 16 16"
-        @click="handleShowOffCanvasCart()"
+      <div v-if="cartItems === 0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: "
+          @click="handleShowOffCanvasCart()"
+        >
+          <path
+            d="M21 4H2v2h2.3l3.28 9a3 3 0 0 0 2.82 2H19v-2h-8.6a1 1 0 0 1-.94-.66L9 13h9.28a2 2 0 0 0 1.92-1.45L22 5.27A1 1 0 0 0 21.27 4 .84.84 0 0 0 21 4zm-2.75 7h-10L6.43 6h13.24z"
+          ></path>
+          <circle cx="10.5" cy="19.5" r="1.5"></circle>
+          <circle cx="16.5" cy="19.5" r="1.5"></circle>
+        </svg>
+      </div>
+      <div v-if="cartItems !== 0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          style="fill: rgb(0, 200, 0); transform: ; msfilter: "
+          @click="handleShowOffCanvasCart()"
+        >
+          <path
+            d="M21 4H2v2h2.3l3.521 9.683A2.004 2.004 0 0 0 9.7 17H18v-2H9.7l-.728-2H18c.4 0 .762-.238.919-.606l3-7A.998.998 0 0 0 21 4z"
+          ></path>
+          <circle cx="10.5" cy="19.5" r="1.5"></circle>
+          <circle cx="16.5" cy="19.5" r="1.5"></circle>
+        </svg>
+      </div>
+
+      <router-link v-if="userLogged === false" to="/login" class="text-dark"
+        >Login</router-link
       >
-        <path
-          d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
-        />
-      </svg>
-      <router-link to="/login" class="text-dark">Login</router-link>
-      <router-link to="/register" class="text-dark">Registro</router-link>
+      <router-link v-if="userLogged === false" to="/register" class="text-dark"
+        >Registro</router-link
+      >
     </div>
     <Teleport to="body">
       <OffCanvas id="sidebarOffCanvas" ref="child">

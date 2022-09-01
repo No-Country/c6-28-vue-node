@@ -7,6 +7,7 @@ const store = createStore({
     token: null,
     products: [],
     product: {},
+    cart: [],
     newProduct: {
       name: null,
       brand: null,
@@ -19,6 +20,7 @@ const store = createStore({
     brands: [],
     offers: [],
     checkoutTotal: null,
+
     offCanvas: {
       show: false,
       widthAll: false,
@@ -40,6 +42,26 @@ const store = createStore({
     },
     setProduct(state, product) {
       state.product = product;
+    },
+    setProductToCart(state, { product, quantity }) {
+      const productExists = state.cart.find(elem => {
+        return elem.product === product
+      })
+      if (productExists) {
+        productExists.quantity += 1
+        return;
+      }
+      state.cart.push({ product, quantity })
+    },
+    removeProductFromCart(state, product) {
+      state.cart = state.cart.filter(elem => {
+        return elem.product.id !== product.id
+      })
+    },
+    removeAllCartItems(state) {
+      state.cart = state.cart.filter(elem => {
+        return elem === "xxx"
+      })
     },
     setNameNewProduct(state, name) {
       state.newProduct.name = name;
@@ -81,6 +103,15 @@ const store = createStore({
       state.offCanvas.widthAll = payload;
     },
   },
+  getters: {
+    cartCount(state) {
+      return state.cart.length
+
+    },
+
+
+
+  },
 
   actions: {
     getProducts({ commit }) {
@@ -96,6 +127,15 @@ const store = createStore({
       Product.getProduct(id).then((response) => {
         commit("setProduct", response);
       });
+    },
+    addProductToCart({ commit }, { product, quantity }) {
+      commit("setProductToCart", { product, quantity })
+    },
+    removeProductAction({ commit }, product) {
+      commit("removeProductFromCart", product)
+    },
+    removeAllItems({ commit }) {
+      commit("removeAllCartItems")
     },
 
     logout(ctx) {

@@ -1,6 +1,13 @@
 <template>
   <div
-    class="container d-flex justify-content-center align-items-center vh-100 my-5"
+    class="
+      container
+      d-flex
+      justify-content-center
+      align-items-center
+      vh-100
+      my-5
+    "
   >
     <div class="back-div text-center p-5 mt-3 center bg-white">
       <h3>Información Personal</h3>
@@ -17,12 +24,7 @@
         <strong>Contacto: </strong>
         info@mundomascotas.com
       </p>
-      <p class="title-change">
-        <span class="material-icons md-12 orange442 align-middle">
-          password
-        </span>
-        Cambiar Contraseña
-      </p>
+      <p class="title-change"></p>
       <form class="pb-3" action="#" @submit.prevent="">
         <div class="form-group">
           <input
