@@ -33,9 +33,17 @@
         >
           <router-link :to="{ name: 'product', params: { id: product.id } }">
             <div class="card my-5">
+
               <img
+                v-if="product.fotos[0] === 'url'"
                 class="card-img-top"
-                src="https://picsum.photos/id/132/200/200"
+                src="../assets/not-photo.jpg"
+                alt="Card image cap"
+              />
+              <img
+                v-else
+                class="card-img-top"
+                :src="product.fotos[0]"
                 alt="Card image cap"
               />
               <div class="card-body text-dark">
@@ -80,7 +88,6 @@ export default {
 
   data() {
     return {
-      storeProducts: [],
       sortBy: 0,
     };
   },
