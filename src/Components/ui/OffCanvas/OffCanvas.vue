@@ -80,8 +80,8 @@ function validation(value) {
 }
 
 @media (min-width: 600px) {
-  .offcanvas{
+  .offcanvas {
     width: 460px !important;
-  }  
+  }
 }
 </style>

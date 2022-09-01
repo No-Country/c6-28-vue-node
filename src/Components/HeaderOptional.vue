@@ -29,7 +29,9 @@ function headerScroll() {
 onMounted(() => {
   window.addEventListener("scroll", headerScroll);
   sidebar.value = bootstrap.Offcanvas.getOrCreateInstance(child.value.sidebar);
-  cart.value = bootstrap.Offcanvas.getOrCreateInstance(childOther.value.sidebar);
+  cart.value = bootstrap.Offcanvas.getOrCreateInstance(
+    childOther.value.sidebar
+  );
 });
 
 // eslint-disable-next-line require-jsdoc

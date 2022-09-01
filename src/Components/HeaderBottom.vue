@@ -1,14 +1,14 @@
-<script setup>
-
-
-</script>
+<script setup></script>
 <template>
   <div
     class="d-md-none position-sticky z-10 bottom-0 d-flex align-items-center justify-content-between shadow-bottomNavigation text-gray-700 body-font bg-white w-100 h-14 sm:h-16 px-2 py-4"
   >
     <button
       aria-label="Menu"
-      type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffCanvas" aria-controls="sidebarOffCanvas"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#sidebarOffCanvas"
+      aria-controls="sidebarOffCanvas"
       class="menuBtn d-flex flex-column align-items-center justify-content-center flex-shrink-0"
     >
       <svg
@@ -88,7 +88,10 @@
         ></path></svg></router-link
     ><button
       class="d-flex align-items-center justify-content-center flex-shrink-0 position-relative"
-      type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffCanvas" aria-controls="cartOffCanvas"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#cartOffCanvas"
+      aria-controls="cartOffCanvas"
       aria-label="cart-button"
     >
       <svg
