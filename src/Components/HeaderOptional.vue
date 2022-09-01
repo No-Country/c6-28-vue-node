@@ -194,6 +194,9 @@ export default {
       <router-link v-if="userLogged === false" to="/register" class="text-dark"
         >Registro</router-link
       >
+      <router-link v-if="userLogged === true" to="/profile" class="text-dark"
+        >Perfil</router-link
+      >
     </div>
     <Teleport to="body">
       <OffCanvas id="sidebarOffCanvas" ref="child">
