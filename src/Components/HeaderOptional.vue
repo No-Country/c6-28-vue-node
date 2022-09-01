@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, useRouter } from "vue-router";
-import Logo from "../assets/Logo.svg";
+import Logo from "../assets/logo.png";
 import IconBurger from "../assets/icons/IconBurger.svg";
 import OffCanvas from "./ui/OffCanvas/OffCanvas.vue";
 import SidebarOffCanvas from "./ui/OffCanvas/SidebarOffCanvas.vue";
@@ -207,6 +207,9 @@ export default {
       >
       <router-link v-if="userLogged === false" to="/register" class="text-dark"
         >Registro</router-link
+      >
+      <router-link v-if="userLogged === true" to="/profile" class="text-dark"
+        >Perfil</router-link
       >
     </div>
     <Teleport to="body">

@@ -2,7 +2,32 @@
   <div>
     <HeaderBanner />
     <!--Aqui inicia el filtro-->
-    <div class="row g-3 my-2">
+    <!--Aqui inicia los productos-->
+    <div class="container mt-5">
+      <!-- Filtro-->
+      <div v-if="products.length !== 0" class="row">
+        <div class="col-md-6 col-lg-6 col-xl-6">
+          <p style="color: #898aa6">Animales y Mascotas</p>
+        </div>
+        <div
+          class="
+            col-md-6 col-lg-6 col-xl-6
+            text-right
+            d-flex
+            justify-content-end
+            align-items-center
+          "
+        >
+          <label style="color: #898aa6">Ordenar por &nbsp;</label>
+          <select v-model="sortBy" @change="filteredProduct">
+            <option value="0">Más relevantes</option>
+            <option value="1">Mayor Precio</option>
+            <option value="2">Menor Precio</option>
+          </select>
+        </div>
+      </div>
+      <!--Aqui inicia el filtro de Daniel-->
+      <div class="row g-3 my-2">
       <!-- <div class="col-md-6 col-lg-4 col-xl-3">
         <SearchBar class="SearchBar" />
       </div> -->
@@ -48,32 +73,8 @@
           </div>
         </form>
       </div>
-      <button class="btn btn-primary">Filtrar</button>
+      <!--<button class="btn btn-primary">Filtrar</button>-->
     </div>
-    <!--Aqui inicia los productos-->
-    <div class="container mt-5">
-      <!-- Filtro-->
-      <div v-if="products.length !== 0" class="row">
-        <div class="col-md-6 col-lg-6 col-xl-6">
-          <p style="color: #898aa6">Animales y Mascotas</p>
-        </div>
-        <div
-          class="
-            col-md-6 col-lg-6 col-xl-6
-            text-right
-            d-flex
-            justify-content-end
-            align-items-center
-          "
-        >
-          <label style="color: #898aa6">Ordenar por &nbsp;</label>
-          <select v-model="sortBy" @change="filteredProduct">
-            <option value="0">Más relevantes</option>
-            <option value="1">Mayor Precio</option>
-            <option value="2">Menor Precio</option>
-          </select>
-        </div>
-      </div>
       <!-- Card de Productos-->
       <div class="row">
         <div
@@ -117,7 +118,7 @@
                 <div class="text-center">
                   <button
                     type="button"
-                    class="btn btn-grey my-1 d-block mx-auto"
+                    class="btn btn-grey my-3 d-block mx-auto"
                     style="display: block"
                     @click="addToCart(product)"
                   >
@@ -174,6 +175,7 @@ export default {
       if (sortBy === "0") {
         return this.$store.state.products;
       } else {
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         return this.$store.state.products.sort((a, b) => {
           if (sortBy === "1") {
             return b.precio - a.precio;

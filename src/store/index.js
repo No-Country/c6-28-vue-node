@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import Product from "@/service/product";
+import AuthService from "@/service/auth.service";
 
 const store = createStore({
   state: {
@@ -138,9 +139,10 @@ const store = createStore({
       commit("removeAllCartItems")
     },
 
-    logout(ctx) {
-      ctx.commit("setLogout");
-      // authService.deleteAccessToken()
+    logout({ commit }) {
+      commit("setLogout");
+      AuthService.deleteAccessToken()
+
     },
   },
 
