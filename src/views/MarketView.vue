@@ -80,14 +80,12 @@
 
 /* Componentes para MarketView*/
 import HeaderBanner from "../Components/HeaderBanner";
-
 export default {
   name: "MarketView",
   components: {
     // SearchBar,
     HeaderBanner,
   },
-
   data() {
     return {
       storeProducts: [],
@@ -116,11 +114,14 @@ export default {
       }
     },
   },
-
+  computed: {
+    products() {
+      return this.$store.state.products;
+    },
+  },
   mounted() {
     this.$store.dispatch("getProducts");
   },
-
   methods: {
     addToCart(product) {
       if (this.$store.state.cart.find((elem) => elem.product === product)) {
@@ -168,5 +169,25 @@ select {
     transform: scale(1.05);
     transition: all 0.3s;
   }
+}
+
+.butComprar {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 20px;
+  border: 2px solid #898aa6;
+  background: #898aa6;
+}
+.butComprar:hover {
+  background: #d6efed;
+  color: #898aa6;
 }
 </style>

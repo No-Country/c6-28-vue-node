@@ -131,7 +131,6 @@
 <script>
 import Product from "../Components/Product.vue";
 import Starts from "../Components/Starts.vue";
-
 export default {
   name: "ProductView",
   components: {
@@ -139,7 +138,6 @@ export default {
     Starts,
   },
   props: ["id"],
-
   data() {
     return {
       counter: 0,
@@ -184,12 +182,10 @@ export default {
   padding: 10px;
   font-size: 18px;
 }
-
 .btn:hover {
   background-color: #898aa6;
   color: white;
 }
-
 .icon-shape {
   display: inline-flex;
   align-items: center;
@@ -200,7 +196,6 @@ export default {
   color: white;
   border: 0;
 }
-
 .icon-sm {
   width: 2rem;
   height: 2rem;
