@@ -26,6 +26,7 @@ const store = createStore({
       widthAll: false,
       overflowHidden: false,
     },
+    query: null,
   },
 
   mutations: {
@@ -140,6 +141,14 @@ const store = createStore({
     logout(ctx) {
       ctx.commit("setLogout");
       // authService.deleteAccessToken()
+    },
+  },
+
+  getters: {
+    searchProductsByQuery: (state) => (query) => {
+      return state.products.filter(
+        (product) => product.nombre === query || product.nombre_marca === query
+      );
     },
   },
 });
