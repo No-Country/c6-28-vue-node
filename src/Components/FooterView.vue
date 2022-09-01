@@ -74,7 +74,7 @@ img {
 }
 
 .redes :hover {
-  color: #3a6351;
+  color: #d6efed;
 }
 .twiter {
   margin: 5px;
@@ -84,5 +84,6 @@ img {
 }
 .facebook {
   margin: 5px;
+  margin-left: 4px;
 }
 </style>

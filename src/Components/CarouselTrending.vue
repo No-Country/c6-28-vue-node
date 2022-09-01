@@ -30,10 +30,17 @@
           aria-label="Slide 3"
         ></button>
       </div>
-      <div class="carousel-inner">
+      <div class="carousel-inner carousel">
         <div class="carousel-item active">
           <img
-            src="https://picsum.photos/id/550/1600/700"
+            src="https://res.cloudinary.com/dytpump6i/image/upload/v1661633030/pexels-edgar-daniel-hern%C3%A1ndez-cervantes-3628100_oajzda.jpg"
+            class="d-block w-200 img-fluid"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://res.cloudinary.com/dytpump6i/image/upload/v1661633050/pexels-alotrobo-1562983_rqdvoc.jpg"
             class="d-block w-100"
             alt="..."
           />
@@ -47,14 +54,7 @@
         </div>
         <div class="carousel-item">
           <img
-            src="https://picsum.photos/id/200/1600/700"
-            class="d-block w-100"
-            alt="..."
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="https://picsum.photos/id/600/1600/700"
+            src="https://res.cloudinary.com/dytpump6i/image/upload/v1661633330/pexels-pixabay-45170_d5nsct.jpg"
             class="d-block w-100"
             alt="..."
           />
@@ -89,6 +89,10 @@ export default {
 </script>
 
 <style>
+.carousel {
+  height: 580px;
+  border-radius: 10px;
+}
 img {
   border-radius: 6px;
 }

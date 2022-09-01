@@ -21,6 +21,7 @@ const store = createStore({
     brands: [],
     offers: [],
     checkoutTotal: null,
+
     offCanvas: {
       show: false,
       widthAll: false,

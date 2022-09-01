@@ -4,9 +4,17 @@
       <div class="col-md-7 col-lg-7 col-xl-7">
         <div class="d-none d-sm-flex card border-light align-items-center">
           <img
+            v-if="productPhoto[0] === 'url'"
             class="card-img"
             style="width: 28rem"
-            src="../assets/perrarina.webp"
+            src="../assets/not-photo.jpg"
+            alt="Producto"
+          />
+          <img
+            v-else
+            class="card-img"
+            style="width: 28rem"
+            :src="productPhoto[0]"
             alt="Producto"
           />
         </div>
@@ -17,31 +25,40 @@
             <p class="fw-lighter">
               Código: 1500{{ product.id }}
               <span
-                class="material-icons md-48 align-middle orange442"
+                class="material-icons md-48 align-middle bluedf"
                 style="display: block; float: right"
               >
                 favorite
               </span>
             </p>
             <img
+                v-if="productPhoto[0] === 'url'"
+                src="../assets/not-photo.jpg"
+                alt="Producto"
+                class="card-img d-flex d-sm-none"
+            />
+            <img
+              v-else
               class="card-img d-flex d-sm-none"
-              src="../assets/perrarina.webp"
+              :src="productPhoto[0]"
               alt="Producto"
             />
-            <h4 class="card-title">
-              {{ product.nombre_marca }}
-            </h4>
-            <h3 class="card-title">
+            <h4 class="card-title text-capitalize">
               {{ product.nombre }}
-            </h3>
+            </h4>
+            <h5 class="card-title">
+              {{ product.nombre_marca }}
+            </h5>
 
-            <h6 class="card-subtitle mb-2 text-muted">
-              {{ productCategory[0] }}
+            <h6 
+              v-if="product.oferta"
+              class="card-subtitle mb-2 text-success">
+              {{ product.porcentaje_oferta }}% OFF
             </h6>
             <Starts :start="start" />
-            <p class="card-text display-5 mt-3">${{ product.precio }}</p>
-            <p style="color: #f4a442">
-              <span class="material-icons md-12 orange442 align-middle">
+            <p class="card-text display-5 mt-3">${{ product.precio }} </p>
+            <p style="color: #b7d3df" class="font-weight-bold">
+              <span class="material-icons md-12 bluedf align-middle">
                 credit_card
               </span>
               Pago a acordar con el vendedor.
@@ -91,15 +108,15 @@
     <div class="row g-3 px-1">
       <div class="col-md-7 col-lg-7 col-xl-7 p-3">
         <h3 class="text-muted">Descripción</h3>
-        <p class="text-muted">
+        <p class="text-muted text-uppercase">
           {{ product.descripcion }}
         </p>
       </div>
-      <div class="col-md-5 col-lg-5 col-xl-5 p-3">
+      <div class="col-md-5 col-lg-5 col-xl-5 p-3 text-capitalize">
         <dl class="row">
-          <dt class="col-sm-3">Description lists</dt>
+          <dt class="col-sm-3">Marca</dt>
           <dd class="col-sm-9">
-            A description list is perfect for defining terms.
+            {{ product.nombre_marca }}
           </dd>
 
           <dt class="col-sm-3">Euismod</dt>
@@ -131,7 +148,6 @@
 <script>
 import Product from "../Components/Product.vue";
 import Starts from "../Components/Starts.vue";
-
 export default {
   name: "ProductView",
   components: {
@@ -139,7 +155,6 @@ export default {
     Starts,
   },
   props: ["id"],
-
   data() {
     return {
       counter: 0,
@@ -153,6 +168,11 @@ export default {
     productCategory() {
       return this.$store.state.product.categoria
         ? this.$store.state.product.categoria
+        : "";
+    },
+    productPhoto() {
+      return this.$store.state.product.fotos
+        ? this.$store.state.product.fotos
         : "";
     },
   },
@@ -184,12 +204,10 @@ export default {
   padding: 10px;
   font-size: 18px;
 }
-
 .btn:hover {
   background-color: #898aa6;
   color: white;
 }
-
 .icon-shape {
   display: inline-flex;
   align-items: center;
@@ -200,7 +218,6 @@ export default {
   color: white;
   border: 0;
 }
-
 .icon-sm {
   width: 2rem;
   height: 2rem;

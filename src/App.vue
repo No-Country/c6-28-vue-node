@@ -14,7 +14,6 @@
 import FooterView from "./Components/FooterView.vue";
 import HeaderBottomView from "./Components/HeaderBottom.vue";
 import HeaderOptionalView from "./Components/HeaderOptional.vue";
-
 export default {
   components: {
     // HeaderView,
