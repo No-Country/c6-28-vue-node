@@ -53,6 +53,9 @@ export default {
     cartItems() {
       return this.$store.getters.cartCount;
     },
+    userLogged() {
+      return this.$store.state.user.id ? true : false;
+    },
   },
 };
 </script>
@@ -185,8 +188,12 @@ export default {
         </svg>
       </div>
 
-      <router-link to="/login" class="text-dark">Login</router-link>
-      <router-link to="/register" class="text-dark">Registro</router-link>
+      <router-link v-if="userLogged === false" to="/login" class="text-dark"
+        >Login</router-link
+      >
+      <router-link v-if="userLogged === false" to="/register" class="text-dark"
+        >Registro</router-link
+      >
     </div>
     <Teleport to="body">
       <OffCanvas id="sidebarOffCanvas" ref="child">
