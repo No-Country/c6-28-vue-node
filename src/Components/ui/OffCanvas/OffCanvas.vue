@@ -14,6 +14,11 @@ const props = defineProps({
     required: false,
     default: "left",
   },
+  id: {
+    type: String,
+    required: true,
+    default: "offCanvas",
+  },
 });
 
 defineExpose({
@@ -41,9 +46,9 @@ function validation(value) {
 </script>
 <template>
   <div
-    id="offCanvas"
+    :id="id"
     ref="sidebar"
-    class="offcanvas"
+    class="offcanvas w-100"
     :class="[validation(props.position)]"
     tabindex="-1"
     aria-labelledby="offCanvasLabel"
@@ -72,5 +77,11 @@ function validation(value) {
 .offcanvas-title {
   display: block;
   height: 100%;
+}
+
+@media (min-width: 600px) {
+  .offcanvas{
+    width: 460px !important;
+  }  
 }
 </style>

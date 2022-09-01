@@ -10,6 +10,7 @@ import * as bootstrap from "bootstrap";
 
 const header = ref();
 const child = ref();
+const childOther = ref();
 const sidebar = ref(null);
 const cart = ref(null);
 /**
@@ -28,7 +29,7 @@ function headerScroll() {
 onMounted(() => {
   window.addEventListener("scroll", headerScroll);
   sidebar.value = bootstrap.Offcanvas.getOrCreateInstance(child.value.sidebar);
-  cart.value = bootstrap.Offcanvas.getOrCreateInstance(child.value.sidebar);
+  cart.value = bootstrap.Offcanvas.getOrCreateInstance(childOther.value.sidebar);
 });
 
 // eslint-disable-next-line require-jsdoc
@@ -129,7 +130,7 @@ onUnmounted(() => {
         class="bi bi-search header__searchIcon d-none d-md-flex"
         viewBox="0 0 16 16"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
+        data-bs-target="#searchModal"
       >
         <path
           d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
@@ -152,26 +153,26 @@ onUnmounted(() => {
       <router-link to="/register" class="text-dark">Registro</router-link>
     </div>
     <Teleport to="body">
-      <OffCanvas ref="child">
+      <OffCanvas id="sidebarOffCanvas" ref="child">
         <SidebarOffCanvas></SidebarOffCanvas>
       </OffCanvas>
     </Teleport>
     <Teleport to="body">
-      <OffCanvas ref="child" position="right">
+      <OffCanvas id="cartOffCanvas" ref="childOther" position="right">
         <CartOffCanvas></CartOffCanvas>
       </OffCanvas>
     </Teleport>
   </header>
   <div
-    id="exampleModal"
+    id="searchModal"
     class="modal fade"
     tabindex="-1"
-    aria-labelledby="exampleModalLabel"
+    aria-labelledby="searchModalLabel"
     aria-hidden="true"
   >
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header"></div>
+        <!-- <div class="modal-header"></div> -->
         <div class="modal-body d-flex align-items-center gap-2">
           <input
             type="text"
@@ -185,7 +186,7 @@ onUnmounted(() => {
             aria-label="Close"
           ></button>
         </div>
-        <div class="modal-footer"></div>
+        <!-- <div class="modal-footer"></div> -->
       </div>
     </div>
   </div>

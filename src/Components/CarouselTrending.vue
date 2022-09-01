@@ -1,5 +1,5 @@
 <script setup>
-import BannerImage1 from "../assets/images/banner/banner_image1.jpg";
+// import BannerImage1 from "../assets/images/banner/banner_image1.jpg";
 </script>
 <template>
   <div class="wrapper-content">
@@ -32,18 +32,18 @@ import BannerImage1 from "../assets/images/banner/banner_image1.jpg";
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <!-- <img
+          <img
             src="https://picsum.photos/id/550/1600/700"
             class="d-block w-100"
             alt="..."
-          /> -->
-          <img
+          />
+          <!-- <img
             :src="BannerImage1"
             class="d-block w-100"
             alt="..."
             width="1600"
             height="600"
-          />
+          /> -->
         </div>
         <div class="carousel-item">
           <img
