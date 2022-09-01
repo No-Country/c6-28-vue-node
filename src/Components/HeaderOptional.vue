@@ -49,24 +49,9 @@ onUnmounted(() => {
 </script>
 <script>
 export default {
-  data() {
-    return {
-      cartCount: null,
-    };
-  },
   computed: {
     cartItems() {
       return this.$store.getters.cartCount;
-    },
-    cart() {
-      return this.$store.state.cart;
-    },
-    cartTotal() {
-      const total = 0;
-      this.cart.forEach((element) => {
-        total += element.product.precio * element.quantity;
-      });
-      return total;
     },
   },
 };
@@ -169,7 +154,7 @@ export default {
           d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
         />
       </svg>
-      <button v-if="cartItems === 0" class="btn" type="button">
+      <div v-if="cartItems === 0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -183,8 +168,8 @@ export default {
           <circle cx="10.5" cy="19.5" r="1.5"></circle>
           <circle cx="16.5" cy="19.5" r="1.5"></circle>
         </svg>
-      </button>
-      <button v-if="cartItems !== 0" class="btn" type="button">
+      </div>
+      <div v-if="cartItems !== 0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -198,7 +183,7 @@ export default {
           <circle cx="10.5" cy="19.5" r="1.5"></circle>
           <circle cx="16.5" cy="19.5" r="1.5"></circle>
         </svg>
-      </button>
+      </div>
 
       <router-link to="/login" class="text-dark">Login</router-link>
       <router-link to="/register" class="text-dark">Registro</router-link>
