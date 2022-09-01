@@ -86,8 +86,8 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 
       <div class="d-grid gap-2 d-md-block">
-        <router-link class="d-grid gap-2 d-md-block" to="/register">
-          <button type="button " class=" butRegister">Registrarse</button>
+        <router-link  to="/register">
+          <button type="button" class="butRegister">Registrarse</button>
         </router-link>
 
         <button type="button" class="butContact">Contactarnos</button>
@@ -182,12 +182,10 @@ h5 {
 }
 
 @media screen and (max-width: 700px) {
-  .imgMascota{
-
+  .imgMascota {
     height: 80px;
     width: 200px;
   }
-
 }
 
 @media (max-width: 750px) {
@@ -199,7 +197,6 @@ h5 {
     max-width: 50%;
   }
 }
-
 
 @media screen and (min-width: 760px) {
   .categoryImages {
