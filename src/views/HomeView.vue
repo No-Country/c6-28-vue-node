@@ -86,7 +86,7 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 
       <div class="d-grid gap-2 d-md-block">
-        <router-link  to="/register">
+        <router-link to="/register">
           <button type="button" class="butRegister">Registrarse</button>
         </router-link>
 
