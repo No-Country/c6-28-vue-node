@@ -12,6 +12,5 @@
   border-radius: 5px;
   color: white;
   font-size: 1.1rem;
-
 }
 </style>

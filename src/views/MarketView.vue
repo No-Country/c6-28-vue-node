@@ -53,9 +53,9 @@
     <div class="container mt-5">
       <div class="row">
         <div
-          class="col-md-4 col-lg-4 col-xl-3"
           v-for="product in products"
           :key="product.id"
+          class="col-md-4 col-lg-4 col-xl-3"
           :product="product"
         >
           <div class="card mt-5 mb-5">
@@ -111,13 +111,13 @@ export default {
   data() {
     return {};
   },
-  mounted() {
-    this.$store.dispatch('getProducts');
-  },
   computed: {
     products() {
       return this.$store.state.products;
     },
+  },
+  mounted() {
+    this.$store.dispatch('getProducts');
   },
   methods: {
     cardClick() {
@@ -141,8 +141,7 @@ export default {
 img {
   cursor: pointer;
 }
-.botMarket{
-
+.botMarket {
   background-color: #c9bbcf;
 }
 .input-busq {
@@ -189,6 +188,6 @@ img {
 }
 .butComprar:hover {
   background: #d6efed;
-  color: #898aa6
+  color: #898aa6;
 }
 </style>

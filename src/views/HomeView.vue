@@ -60,13 +60,25 @@
 
       <div class="categoryImages">
         <div>
-          <img class="imgMascota" src="https://static.miscota.com/media/1/banners/banner_1661847325_ciqzs13A.jpg" alt="..." />
+          <img
+            class="imgMascota"
+            src="https://static.miscota.com/media/1/banners/banner_1661847325_ciqzs13A.jpg"
+            alt="..."
+          />
         </div>
         <div>
-          <img class="imgMascota" src="https://static.miscota.com/media/1/banners/banner_1661847326_ci8V2B3b.jpg" alt="..." />
+          <img
+            class="imgMascota"
+            src="https://static.miscota.com/media/1/banners/banner_1661847326_ci8V2B3b.jpg"
+            alt="..."
+          />
         </div>
         <div>
-          <img class="imgMascota" src="https://static.miscota.com/media/1/banners/banner_1661847327_ci6wJvnQ.jpg" alt="..." />
+          <img
+            class="imgMascota"
+            src="https://static.miscota.com/media/1/banners/banner_1661847327_ci6wJvnQ.jpg"
+            alt="..."
+          />
         </div>
       </div>
     </div>

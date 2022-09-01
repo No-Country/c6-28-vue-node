@@ -12,9 +12,7 @@
         placeholder="Busca los mejores productos"
       />
       <div class="input-group-append">
-        <button class="butBuscar" type="button">
-          Buscar
-        </button>
+        <button class="butBuscar" type="button">Buscar</button>
       </div>
     </div>
     <br /><br /><br /><br /><br /><br /><br /><br /><br />
@@ -103,6 +101,4 @@ export default {
     margin-top: 35px;
   }
 }
-
-
 </style>
