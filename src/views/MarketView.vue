@@ -33,42 +33,51 @@
           class="col-md-4 col-lg-4 col-xl-3"
           :product="product"
         >
-          <div class="card mt-5 mb-5">
-            <router-link :to="{ name: 'product', params: { id: product.id } }">
+          <router-link :to="{ name: 'product', params: { id: product.id } }">
+            <div class="card my-5">
               <img
+                v-if="product.fotos[0] === 'url'"
                 class="card-img-top"
-                src="https://picsum.photos/id/132/200/200"
-                alt="Card image cap"
+                src="../assets/not-photo.jpg"
+                alt="Producto"
               />
-            </router-link>
-            <div class="card-body text-dark">
-              <h3>
-                {{ product.precio }}$
-                <span
-                  v-if="product.oferta"
-                  style="
-                    color: green;
-                    font-size: 20px;
-                    display: block;
-                    float: right;
-                  "
-                >
-                  {{ product.porcentaje_oferta }}% OFF
-                </span>
-              </h3>
+              <img
+                v-else
+                class="card-img-top"
+                :src="product.fotos[0]"
+                alt="Producto"
+              />
+              <div class="card-body text-dark">
+                <h3>
+                  {{ product.precio }}$
+                  <span
+                    v-if="product.oferta"
+                    style="
+                      color: #b7d3df;
+                      font-size: 20px;
+                      display: block;
+                      float: right;
+                    "
+                  >
+                    {{ product.porcentaje_oferta }}% OFF
+                  </span>
+                </h3>
 
-              <h4 class="text-capitalize">{{ product.nombre }}</h4>
-              <h6 class="text-muted">{{ product.nombre_marca }}</h6>
-              <button
-                type="button"
-                class="btn btn-success mt-4"
-                style="display: block"
-                @click="addToCart(product)"
-              >
-                Agregar al Carrito
-              </button>
+                <h4 class="text-capitalize">{{ product.nombre }}</h4>
+                <h6 class="text-muted">{{ product.nombre_marca }}</h6>
+                <div class="text-center">
+                  <button
+                    type="button"
+                    class="btn btn-grey my-1 d-block mx-auto"
+                    style="display: block"
+                    @click="addToCart(product)"
+                  >
+                    Agregar al Carrito
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -88,7 +97,6 @@ export default {
   },
   data() {
     return {
-      storeProducts: [],
       sortBy: 0,
       quantity: 1,
     };
@@ -103,7 +111,6 @@ export default {
       if (sortBy === "0") {
         return this.$store.state.products;
       } else {
-        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
         return this.$store.state.products.sort((a, b) => {
           if (sortBy === "1") {
             return b.precio - a.precio;
@@ -112,11 +119,6 @@ export default {
           }
         });
       }
-    },
-  },
-  computed: {
-    products() {
-      return this.$store.state.products;
     },
   },
   mounted() {
