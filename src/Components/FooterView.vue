@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: 'FooterView',
+  name: "FooterView",
 };
 </script>
 

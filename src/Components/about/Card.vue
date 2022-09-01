@@ -46,7 +46,7 @@
 
 <script>
 export default {
-  name: 'CardProgrammer',
+  name: "CardProgrammer",
   props: {
     contacts: {
       type: Array,

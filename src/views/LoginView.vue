@@ -59,34 +59,34 @@
 </template>
 
 <script>
-import AuthService from '@/service/auth.service';
-import ButtonGoogle from '@/Components/ui/Button/ButtonGoogle.vue';
-import ButtonBase from '@/Components/ui/Button/ButtonBase.vue';
+import AuthService from "@/service/auth.service";
+import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
+import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
 
 export default {
-  name: 'LoginView',
+  name: "LoginView",
   components: {
     ButtonGoogle,
     ButtonBase,
   },
   data() {
     return {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     };
   },
   methods: {
     handleSubmit() {
       AuthService.login(this.email, this.password)
-          .then((response) => {
-            console.log(response);
-            AuthService.setAccessToken(response.token);
-            this.$store.commit('updateUser', response.user);
-            this.$router.push('/');
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        .then((response) => {
+          console.log(response);
+          AuthService.setAccessToken(response.token);
+          this.$store.commit("updateUser", response.user);
+          this.$router.push("/");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };

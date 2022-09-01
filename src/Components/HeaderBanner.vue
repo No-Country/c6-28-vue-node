@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'HeaderBanner',
+  name: "HeaderBanner",
   components: {},
   data() {},
 };

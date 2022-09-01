@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-parsing-error -->
 <script setup>
-import {useStore} from 'vuex';
-import {ref} from 'vue';
+import { useStore } from "vuex";
+import { ref } from "vue";
 // import * as bootstrap from "bootstrap";
 
 const store = useStore();
@@ -11,7 +11,7 @@ const props = defineProps({
   position: {
     type: String,
     required: false,
-    default: 'left',
+    default: "left",
   },
 });
 
@@ -24,12 +24,12 @@ defineExpose({
  * @param {*} value it's a string
  */
 function validation(value) {
-  let base = 'offcanvas-';
-  if (value == 'left') {
-    base += 'start';
+  let base = "offcanvas-";
+  if (value == "left") {
+    base += "start";
   }
-  if (value == 'right') {
-    base += 'end';
+  if (value == "right") {
+    base += "end";
   }
   return base;
 }

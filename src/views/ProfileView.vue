@@ -64,16 +64,16 @@
 </template>
 
 <script>
-import AuthService from '../service/auth.service';
+import AuthService from "../service/auth.service";
 
 export default {
-  name: 'ProfileView',
+  name: "ProfileView",
   components: {},
   data() {
     return {
-      oldPassword: '',
-      password: '',
-      confirmPassword: '',
+      oldPassword: "",
+      password: "",
+      confirmPassword: "",
     };
   },
   computed: {

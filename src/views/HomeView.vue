@@ -86,8 +86,8 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 
       <div class="d-grid gap-2 d-md-block">
-        <router-link to="/register">
-          <button type="button " class="butRegister">Registrarse</button>
+        <router-link class="d-grid gap-2 d-md-block" to="/register">
+          <button type="button " class=" butRegister">Registrarse</button>
         </router-link>
 
         <button type="button" class="butContact">Contactarnos</button>
@@ -103,10 +103,10 @@
 </template>
 
 <script>
-import CarouselTrending from '../Components/CarouselTrending.vue';
+import CarouselTrending from "../Components/CarouselTrending.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     CarouselTrending,
   },
@@ -181,6 +181,15 @@ h5 {
   margin-right: auto;
 }
 
+@media screen and (max-width: 700px) {
+  .imgMascota{
+
+    height: 80px;
+    width: 200px;
+  }
+
+}
+
 @media (max-width: 750px) {
   #carouselExampleControls {
     width: 70vw;
@@ -190,6 +199,7 @@ h5 {
     max-width: 50%;
   }
 }
+
 
 @media screen and (min-width: 760px) {
   .categoryImages {

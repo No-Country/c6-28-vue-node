@@ -9,11 +9,11 @@
 </template>
 <script>
 export default {
-  name: 'TitleCat',
+  name: "TitleCat",
   props: {
     title: {
       type: String,
-      default: '',
+      default: "",
     },
   },
   data() {
