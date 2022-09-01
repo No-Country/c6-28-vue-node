@@ -3,7 +3,6 @@ import HomeView from "../views/HomeView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import NotFound from "../views/NotFound.vue";
 
-
 const routes = [
   {
     path: "/",

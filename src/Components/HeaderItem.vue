@@ -3,13 +3,13 @@
     <div v-if="mobileView">
       <div class="dropdown">
         <button
+          id="dropdownMenuButton1"
           class="btn"
           type="button"
-          id="dropdownMenuButton1"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          <div @click="toggleMenu()" id="navMenu">
+          <div id="navMenu" @click="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
@@ -77,15 +77,15 @@
     </nav>
     <div class="headerLogo">
       <router-link to="/">
-        <img class="img" src="../assets/Logo.svg" alt="logo icon svg" />
+        <img class="img" src="../assets/logo.png" alt="logo icon svg" />
       </router-link>
     </div>
     <div v-if="mobileView">
       <div>
         <button
+          id="dropdownMenuButton1"
           class="btn"
           type="button"
-          id="dropdownMenuButton1"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
@@ -108,7 +108,6 @@
     </div>
   </header>
 </template>
-
 
 <script>
 export default {
@@ -135,7 +134,6 @@ export default {
   },
 };
 </script>
-
 
 <style scoped>
 .img {

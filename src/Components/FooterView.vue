@@ -1,28 +1,29 @@
 <template>
-  <footer>
-    <div>
-      <img
-        src="https://res.cloudinary.com/dytpump6i/image/upload/v1660593048/Logo_ugs7jt.svg"
-        alt="logo"
-      />
+  <footer class="back">
+    <div class="container">
+      <div class="row g-3 text-center">
+        <div class="col-12">
+          <img
+            src="../assets/logo.png"
+            alt="logo"
+            style="width: 100px;"
+          />
+        </div>
+        <div class="col-4 col-md-4 col-lg-4 col-xl-4">
+          <p>Comunidad</p>
+          <fa class="redes twiter" :icon="['fab', 'twitter']" />
+          <fa class="redes instagram" :icon="['fab', 'instagram']" />
+          <fa class="redes facebook" :icon="['fab', 'facebook']" />
+        </div>
+
+        <div class="col-4 col-md-4 col-lg-4 col-xl-4"><p>Empresa</p></div>
+
+        <div class="col-4 col-md-4 col-lg-4 col-xl-4"><p>Beneficios</p></div>
+      </div>
     </div>
-
-    <ul class="footer01">
-      <li>Comunidad</li>
-      <li>Empresa</li>
-      <li>Beneficios</li>
-    </ul>
-
-    <div class="redes">
-      <fa class="twiter" :icon="['fab', 'twitter']" />
-      <fa class="instagram" :icon="['fab', 'instagram']" />
-      <fa class="facebook" :icon="['fab', 'facebook']" />
-    </div>
-
-    <font-awesome-icon icon="fa-brands fa-instagram" />
 
     <div class="footer-bottom">
-      <p class="m-0">&copy;Mundo mascota, inc.2019</p>
+      <p>&copy;Mundo mascota, inc.2019</p>
     </div>
   </footer>
 </template>
@@ -38,32 +39,27 @@ footer {
   /*background-color: #a0937d;*/
   background-color: #898aa6;
 }
-img {
-  display: flex;
-  align-items: center;
-  padding: 0.6em;
-  color: white;
+.back {
+  background: 898aa6;
+  /* width: 40%;*/
+  padding: 20px;
   position: relative;
+}
+.back::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  height: 20px;
   width: 100%;
+  background: url(~@/assets/footer.svg) bottom center;
+  transform: rotate(180deg);
+  background-size: 150%;
+}
+img {
+  padding: 0.6em;
+  position: relative;
   height: 84px;
-  justify-content: center;
-}
-
-ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  font-family: monserrat;
-  font-style: normal;
-  font-size: 15px;
-  float: left;
-  padding: 1.5em;
-  /*padding-bottom: 1.5em;*/
 }
 
 .footer-bottom p {
@@ -74,51 +70,19 @@ li {
   text-transform: uppercase;
   opacity: 0.4;
   font-weight: 200;
+  margin: 0;
 }
 
-.redes {
-  margin-left: 50px;
-}
 .redes :hover {
   color: #3a6351;
 }
 .twiter {
-  margin-left: 4px;
+  margin: 5px;
 }
 .instagram {
-  margin-left: 4px;
+  margin: 5px;
 }
 .facebook {
-  margin-left: 4px;
-}
-
-@media screen and (min-width: 760px) {
-
-  li{
-  /* padding-inline: 6em;*/
-  }
-  /* .redes {
-    margin-left: 240px;
-  } */
-}
-@media screen and (min-width: 1100px) {
-  li{
-    /*padding-inline: 10em;*/
-  }
-
-  .redes {
-    margin-left: 200px;
-  }
-}
-
-@media screen and (min-width: 1350px) {
-  li{
-    /*padding-inline: 13em;  */
-  }
-
-  .redes {
-    margin-left: 230px;
-  }
+  margin: 5px;
 }
 </style>
-

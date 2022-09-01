@@ -1,15 +1,11 @@
-import { ApiRequest } from '@/service/index';
+import { ApiRequest } from "@/service/index";
 
 const get = () => {
-  return ApiRequest.get(
-    'https://c6-28.up.railway.app/api/v1/products',
-  );
+  return ApiRequest.get("https://c6-28.up.railway.app/api/v1/products");
 };
 
 const getProduct = (id) => {
-  return ApiRequest.get(
-    `https://c6-28.up.railway.app/api/v1/products/${id}`,
-  );
+  return ApiRequest.get(`https://c6-28.up.railway.app/api/v1/products/${id}`);
 };
 // const getCategories = () => {
 //   return ApiRequest.get(
@@ -34,5 +30,5 @@ const getProduct = (id) => {
 
 export default {
   get,
-  getProduct
+  getProduct,
 };

@@ -1,11 +1,11 @@
 <template>
-    <div class="text-center mt-5">
-      <h1>
-        <img src="~@/assets/pata.png" alt="Pata" width="48" height="48">
-        {{ title }}
-        <img src="~@/assets/hueso.png" alt="Hueso" width="48" height="48">
-      </h1>
-    </div>
+  <div class="text-center mt-5">
+    <h1 class="text-dark">
+      <!--<img src="~@/assets/pata.png" alt="Pata" width="48" height="48" />-->
+      {{ title }}
+      <!--<img src="~@/assets/hueso.png" alt="Hueso" width="48" height="48" />-->
+    </h1>
+  </div>
 </template>
 <script>
 export default {
@@ -13,7 +13,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: '',
+      default: "",
     },
   },
   data() {

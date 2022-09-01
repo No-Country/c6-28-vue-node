@@ -1,61 +1,37 @@
 <template>
-  <div class="container">
+  <div>
     <HeaderBanner />
-    <!--Aqui inicia el filtro-->
-    <div class="row g-3 my-2">
-      <div class="col-md-6 col-lg-4 col-xl-3">
-        <SearchBar class="SearchBar" />
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3">
-        <form action="">
-          <div class="form-group">
-            <label for="category">Categorías</label>
-            <select id="category" class="form-control">
-              <option>Producto 1</option>
-              <option>Producto 2</option>
-              <option>Producto 3</option>
-              <option>Producto 4</option>
-              <option>Producto 5</option>
-            </select>
-          </div>
-        </form>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3">
-        <form action="">
-          <div class="form-group">
-            <label for="price" class="form-label">Filtrar por precio</label>
-            <input
-              id="price"
-              type="range"
-              class="form-range"
-              min="0"
-              max="51800"
-            />
-          </div>
-        </form>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3">
-        <form action="">
-          <div class="form-group">
-            <label for="mark">Marcas</label>
-            <select id="mark" class="form-control">
-              <option>Marca 1</option>
-              <option>Marca 2</option>
-              <option>Marca 3</option>
-              <option>Marca 4</option>
-              <option>Marca 5</option>
-            </select>
-          </div>
-        </form>
-      </div>
-    </div>
     <!--Aqui inicia los productos-->
     <div class="container mt-5">
+      <!-- Filtro-->
+      <div v-if="products.length !== 0" class="row">
+        <div class="col-md-6 col-lg-6 col-xl-6">
+          <p style="color: #898aa6">Animales y Mascotas</p>
+        </div>
+        <div
+          class="
+            col-md-6 col-lg-6 col-xl-6
+            text-right
+            d-flex
+            justify-content-end
+            align-items-center
+          "
+        >
+          <label style="color: #898aa6">Ordenar por &nbsp;</label>
+          <select v-model="sortBy" @change="filteredProduct">
+            <option value="0">Más relevantes</option>
+            <option value="1">Mayor Precio</option>
+            <option value="2">Menor Precio</option>
+          </select>
+        </div>
+      </div>
+      <!-- Card de Productos-->
       <div class="row">
         <div
-          class="col-md-4 col-lg-4 col-xl-3"
           v-for="product in products"
           :key="product.id"
+          class="col-md-4 col-lg-4 col-xl-3"
+          :product="product"
         >
           <div class="card mt-5 mb-5">
             <router-link :to="{ name: 'product', params: { id: product.id } }">
@@ -65,10 +41,11 @@
                 alt="Card image cap"
               />
             </router-link>
-            <div class="card-body">
-              <h2>
+            <div class="card-body text-dark">
+              <h3>
                 {{ product.precio }}$
                 <span
+                  v-if="product.oferta"
                   style="
                     color: green;
                     font-size: 20px;
@@ -76,19 +53,20 @@
                     float: right;
                   "
                 >
-                  10% OFF
+                  {{ product.porcentaje_oferta }}% OFF
                 </span>
-              </h2>
+              </h3>
 
-              <h3>{{ product.nombre }}</h3>
-              <h4>{{ product.nombre_marca }}</h4>
-
-              <p class="text-center">
-                <button type="button" class="btn btn-success btn-block mt-5">
-                  Comprar Producto
-                </button>
-              </p>
-              <p class="text-center"></p>
+              <h4 class="text-capitalize">{{ product.nombre }}</h4>
+              <h6 class="text-muted">{{ product.nombre_marca }}</h6>
+              <button
+                type="button"
+                class="btn btn-success mt-4"
+                style="display: block"
+                @click="addToCart(product)"
+              >
+                Agregar al Carrito
+              </button>
             </div>
           </div>
         </div>
@@ -98,90 +76,97 @@
 </template>
 
 <script>
-import SearchBar from "../Components/SearchBar.vue";
+// import SearchBar from "../Components/SearchBar.vue";
 
 /* Componentes para MarketView*/
 import HeaderBanner from "../Components/HeaderBanner";
-import ProductView from "../views/ProductView.vue";
 
 export default {
   name: "MarketView",
   components: {
-    SearchBar,
+    // SearchBar,
     HeaderBanner,
-    ProductView,
   },
 
   data() {
-    return {};
+    return {
+      storeProducts: [],
+      sortBy: 0,
+      quantity: 1,
+    };
+  },
+  computed: {
+    /*
+    products() {
+      return this.$store.state.products;
+    },*/
+    products() {
+      const sortBy = this.sortBy;
+      if (sortBy === "0") {
+        return this.$store.state.products;
+      } else {
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        return this.$store.state.products.sort((a, b) => {
+          if (sortBy === "1") {
+            return b.precio - a.precio;
+          } else if (sortBy === "2") {
+            return a.precio - b.precio;
+          }
+        });
+      }
+    },
   },
 
   mounted() {
     this.$store.dispatch("getProducts");
   },
-  computed: {
-    products() {
-      return this.$store.state.products;
-    },
-  },
 
   methods: {
-    cardClick() {
-      console.log("click");
+    addToCart(product) {
+      if (this.$store.state.cart.find((elem) => elem.product === product)) {
+        this.quantity += 1;
+      }
+      this.$store.dispatch("addProductToCart", {
+        product: product,
+        quantity: this.quantity,
+      });
     },
   },
 };
 </script>
 
 <style scoped>
-.back-image {
-  background-image: url("~@/assets/animals-grey.jpg");
-  /* Full height */
-  height: 100%;
-  width: 100%;
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 img {
   cursor: pointer;
+  margin: auto;
+}
+select {
+  background-color: #898aa6;
+  color: white;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
 }
 
-.market {
-  background-color: #f2edd7;
+.btn-grey {
+  background-color: #898aa6;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
 }
 
-.input-busq {
-  outline: solid green 2px;
-  border-radius: 10px;
-  padding: 8px;
+.btn-grey:hover {
+  background-color: transparent;
+  border: 3px solid #898aa6;
+  color: #898aa6;
 }
 
-@media only screen and (max-width: 600px) {
-  h2.title1 {
-    font-size: 15px;
-  }
-
-  h2.title2 {
-    font-size: 15px;
-  }
-
-  .top {
-    margin-top: 5px;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .top {
-    margin-top: 20px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .top {
-    margin-top: 35px;
+@media screen and (min-width: 1000px) {
+  .card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
   }
 }
 </style>

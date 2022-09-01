@@ -75,7 +75,11 @@
                 @click="counter += 1"
               />
 
-              <button type="button" class="btn rounded mt-4">
+              <button
+                type="button"
+                class="btn rounded mt-4"
+                @click="addToCart()"
+              >
                 Agregar al Carrito
               </button>
             </div>
@@ -142,9 +146,6 @@ export default {
       start: 3,
     };
   },
-  mounted() {
-    this.$store.dispatch("getProduct", this.$route.params.id);
-  },
   computed: {
     product() {
       return this.$store.state.product;
@@ -155,28 +156,37 @@ export default {
         : "";
     },
   },
+  mounted() {
+    this.$store.dispatch("getProduct", this.$route.params.id);
+  },
+
+  methods: {
+    addToCart() {
+      this.$store.dispatch("addProductToCart", {
+        product: this.product,
+        quantity: 1,
+      });
+    },
+  },
 };
 </script>
 
 <style scoped>
-body {
-  background-color: #e8e1d9;
-}
-.material-icons.orange442 {
-  color: #f4a442;
+.material-icons.bluedf {
+  color: #b7d3df;
 }
 .btn {
   background-color: transparent;
-  border: 3px solid #3e7c17;
+  border: 3px solid #898aa6;
   font-weight: bold;
   width: 80%;
-  color: #3e7c17;
+  color: #898aa6;
   padding: 10px;
   font-size: 18px;
 }
 
 .btn:hover {
-  background-color: #3e7c17;
+  background-color: #898aa6;
   color: white;
 }
 
@@ -186,7 +196,7 @@ body {
   justify-content: center;
   text-align: center;
   vertical-align: middle;
-  background-color: #3e7c17;
+  background-color: #898aa6;
   color: white;
   border: 0;
 }

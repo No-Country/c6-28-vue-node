@@ -1,64 +1,64 @@
 <template>
   <div>
-      <SearchBar class="SearchBar" />
-      <br />
-      <CarouselTrending class="CarrouselTrending" />
-      <br />
-      <div class="categories">
-        <h5>Ofertas</h5>
-        <div class="categoryImages">
-          <div>
-            <img src="https://picsum.photos/id/132/200/200" alt="..." />
-          </div>
-          <div>
-            <img src="https://picsum.photos/id/137/200/200" alt="..." />
-          </div>
-          <div>
-            <img src="https://picsum.photos/id/135/200/200" alt="..." />
-          </div>
+    <SearchBar class="SearchBar" />
+    <br />
+    <CarouselTrending class="CarrouselTrending" />
+    <br />
+    <div class="categories">
+      <h5>Ofertas</h5>
+      <div class="categoryImages">
+        <div>
+          <img src="https://picsum.photos/id/132/200/200" alt="..." />
         </div>
-        <h5>Mascotas</h5>
-
-        <div class="categoryImages">
-          <div>
-            <img src="https://picsum.photos/id/232/200/200" alt="..." />
-          </div>
-          <div>
-            <img src="https://picsum.photos/id/237/200/200" alt="..." />
-          </div>
-          <div>
-            <img src="https://picsum.photos/id/235/200/200" alt="..." />
-          </div>
+        <div>
+          <img src="https://picsum.photos/id/137/200/200" alt="..." />
         </div>
-
-        <h5>Categorías Populares</h5>
-
-        <div class="categoryImages">
-          <div>
-            <img src="https://picsum.photos/id/132/200/200" alt="..." />
-          </div>
-          <div>
-            <img src="https://picsum.photos/id/137/200/200" alt="..." />
-          </div>
-          <div>
-            <img src="https://picsum.photos/id/135/200/200" alt="..." />
-          </div>
+        <div>
+          <img src="https://picsum.photos/id/135/200/200" alt="..." />
         </div>
       </div>
-      <div class="container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <h5>Mascotas</h5>
 
-        <div class="d-grid gap-2 d-md-block">
-          <button type="button" class="btn btn-success btn-md">
-            Registrarse
-          </button>
-          <button type="button" class="btn btn-outline-success btn-md">
-            Contactarnos
-          </button>
+      <div class="categoryImages">
+        <div>
+          <img src="https://picsum.photos/id/232/200/200" alt="..." />
+        </div>
+        <div>
+          <img src="https://picsum.photos/id/237/200/200" alt="..." />
+        </div>
+        <div>
+          <img src="https://picsum.photos/id/235/200/200" alt="..." />
         </div>
       </div>
 
-      <!-- <div class="container">
+      <h5>Categorías Populares</h5>
+
+      <div class="categoryImages">
+        <div>
+          <img src="https://picsum.photos/id/132/200/200" alt="..." />
+        </div>
+        <div>
+          <img src="https://picsum.photos/id/137/200/200" alt="..." />
+        </div>
+        <div>
+          <img src="https://picsum.photos/id/135/200/200" alt="..." />
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+
+      <div class="d-grid gap-2 d-md-block">
+        <button type="button" class="btn btn-success btn-md">
+          Registrarse
+        </button>
+        <button type="button" class="btn btn-outline-success btn-md">
+          Contactarnos
+        </button>
+      </div>
+    </div>
+
+    <!-- <div class="container">
         <button type="button" id="backToTop" class="btn btn-secondary">
           Volver Arriba
         </button>
@@ -67,22 +67,21 @@
 </template>
 
 <script>
-import SearchBar from "../Components/SearchBar.vue";
+// import SearchBar from "../Components/SearchBar.vue";
 import CarouselTrending from "../Components/CarouselTrending.vue";
 
 export default {
   name: "HomeView",
   components: {
-    SearchBar,
+    // SearchBar,
     CarouselTrending,
   },
 };
 </script>
 
 <style scoped>
-
-body{
-  background-color: #F2EDD7
+body {
+  background-color: #f2edd7;
 }
 img {
   border-radius: 10px;
@@ -92,11 +91,6 @@ img {
   display: flex;
   justify-content: center;
   margin-top: 2%;
-}
-
-.CarrouselTrending {
-  display: flex;
-  justify-content: center;
 }
 
 .categoryImages {
@@ -146,7 +140,6 @@ h5 {
   img {
     max-width: 50%;
   }
-
 }
 
 @media screen and (min-width: 760px) {
@@ -161,13 +154,12 @@ h5 {
   }
 
   .btn {
-     display: flex;
+    display: flex;
     justify-content: center;
   }
 
   img {
     margin-left: 40px;
-
   }
 }
 
@@ -186,22 +178,18 @@ h5 {
 
   img {
     margin-inline: 70px;
-
   }
 
   .container {
-
     padding: 100px;
   }
-  .d-grid{
+  .d-grid {
     margin-left: 135px;
   }
 
-   .categoryImages  :hover{
-  transform: scale(1.1);
-  transition: all 0.9s
- 
-}
-
+  .categoryImages :hover {
+    transform: scale(1.1);
+    transition: all 0.9s;
+  }
 }
 </style>

@@ -9,7 +9,7 @@
       <h4>
         1000$
         <span
-          style="color: green; font-size: 20px; display: block; float: right"
+          style="color: #b7d3df; font-size: 20px; display: block; float: right"
         >
           10% OFF
         </span>

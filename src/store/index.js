@@ -1,6 +1,5 @@
-import { createStore } from 'vuex';
+import { createStore } from "vuex";
 import Product from "@/service/product";
-
 
 const store = createStore({
   state: {
@@ -8,6 +7,7 @@ const store = createStore({
     token: null,
     products: [],
     product: {},
+    cart: [],
     newProduct: {
       name: null,
       brand: null,
@@ -20,7 +20,11 @@ const store = createStore({
     brands: [],
     offers: [],
     checkoutTotal: null,
-
+    offCanvas: {
+      show: false,
+      widthAll: false,
+      overflowHidden: false,
+    },
   },
 
   mutations: {
@@ -35,7 +39,27 @@ const store = createStore({
       state.products = products;
     },
     setProduct(state, product) {
-      state.product = product
+      state.product = product;
+    },
+    setProductToCart(state, { product, quantity }) {
+      const productExists = state.cart.find(elem => {
+        return elem.product === product
+      })
+      if (productExists) {
+        productExists.quantity += 1
+        return;
+      }
+      state.cart.push({ product, quantity })
+    },
+    removeProductFromCart(state, product) {
+      state.cart = state.cart.filter(elem => {
+        return elem.product.id !== product.id
+      })
+    },
+    removeAllCartItems(state) {
+      state.cart = state.cart.filter(elem => {
+        return elem === "xxx"
+      })
     },
     setNameNewProduct(state, name) {
       state.newProduct.name = name;
@@ -69,25 +93,48 @@ const store = createStore({
       state.user = {};
       state.token = null;
     },
+    setOffCanvasShow(state, payload) {
+      state.offCanvas.show = payload;
+    },
+
+    setOffCanvasWidthAll(state, payload) {
+      state.offCanvas.widthAll = payload;
+    },
+  },
+  getters: {
+    cartCount(state) {
+      return state.cart.length
+
+    },
+
+
 
   },
 
   actions: {
-
     getProducts({ commit }) {
-      Product.get().then(response => {
-        commit("setProducts", response.data.products)
-      }).catch(e => {
-        console.log(e)
-      })
+      Product.get()
+        .then((response) => {
+          commit("setProducts", response.data.products);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     },
     getProduct({ commit }, id) {
-      Product.getProduct(id).then(response => {
-        commit("setProduct", response)
-      })
-
+      Product.getProduct(id).then((response) => {
+        commit("setProduct", response);
+      });
     },
-
+    addProductToCart({ commit }, { product, quantity }) {
+      commit("setProductToCart", { product, quantity })
+    },
+    removeProductAction({ commit }, product) {
+      commit("removeProductFromCart", product)
+    },
+    removeAllItems({ commit }) {
+      commit("removeAllCartItems")
+    },
 
     logout(ctx) {
       ctx.commit("setLogout");

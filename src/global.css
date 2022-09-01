@@ -5,7 +5,7 @@
 }
 
 :root {
-  --container: 2rem;
+  --content: 1rem;
   --container-content: calc(var(--container) - 0.8rem);
   --margin-negative-top: -3.2rem;
   --max-index: 40;
@@ -23,4 +23,15 @@
   --z-index-2: calc(var(--z-index-3) - var(--skip-index));
   --z-index-1: calc(var(--z-index-2) - var(--skip-index));
   --z-index-min: calc(var(--z-index-1) - var(--skip-index));
+}
+
+a,
+a:active {
+  text-decoration: none;
+}
+
+@media (min-width: 760px) {
+  :root {
+    --content: 4rem;
+  }
 }
