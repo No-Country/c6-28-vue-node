@@ -52,7 +52,7 @@
     </div>
     <!--Aqui inicia los productos-->
     <div class="container mt-5">
-      <div  class="row">
+      <div class="row">
         <div
           v-for="product in products"
           :key="product.id"
@@ -123,11 +123,13 @@ export default {
       let result;
       if (this.$route.query.s) {
         if (this.$store.getters.searchProductsByQuery(this.$route.query.s)) {
-          result = this.$store.getters.searchProductsByQuery(this.$route.query.s);
+          result = this.$store.getters.searchProductsByQuery(
+            this.$route.query.s
+          );
         } else {
           result = [];
         }
-      }else{
+      } else {
         result = this.$store.state.products;
       }
       return result;

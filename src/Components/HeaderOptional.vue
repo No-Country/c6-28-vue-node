@@ -38,7 +38,6 @@ onMounted(() => {
   );
   // searchModalInstance.value = bootstrap.Modal.getOrCreateInstance(searchModal.value)
   searchModalInstance.value = new bootstrap.Modal(searchModal.value);
-  
 });
 
 // eslint-disable-next-line require-jsdoc

@@ -24,7 +24,7 @@ const store = createStore({
       widthAll: false,
       overflowHidden: false,
     },
-    query:null
+    query: null,
   },
 
   mutations: {
@@ -106,9 +106,11 @@ const store = createStore({
 
   getters: {
     searchProductsByQuery: (state) => (query) => {
-      return state.products.filter(product => product.nombre === query || product.nombre_marca === query);
-    }
-  }
+      return state.products.filter(
+        (product) => product.nombre === query || product.nombre_marca === query
+      );
+    },
+  },
 });
 
 export default store;
