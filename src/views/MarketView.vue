@@ -3,19 +3,19 @@
     <HeaderBanner />
     <!--Aqui inicia el filtro-->
     <div class="row g-3 my-2">
-      <div class="col-md-6 col-lg-4 col-xl-3">
+      <!-- <div class="col-md-6 col-lg-4 col-xl-3">
         <SearchBar class="SearchBar" />
-      </div>
+      </div> -->
       <div class="col-md-6 col-lg-4 col-xl-3">
         <form action="">
           <div class="form-group">
             <label for="category">Categorías</label>
             <select id="category" class="form-control">
-              <option>Producto 1</option>
-              <option>Producto 2</option>
-              <option>Producto 3</option>
-              <option>Producto 4</option>
-              <option>Producto 5</option>
+              <option>Ropa</option>
+              <option>Alimentos</option>
+              <option>Bebidas</option>
+              <option>Accesorios</option>
+              <option>Utensilios</option>
             </select>
           </div>
         </form>
@@ -48,10 +48,11 @@
           </div>
         </form>
       </div>
+      <button class="btn btn-primary">Filtrar</button>
     </div>
     <!--Aqui inicia los productos-->
     <div class="container mt-5">
-      <div class="row">
+      <div  class="row">
         <div
           v-for="product in products"
           :key="product.id"
@@ -99,7 +100,7 @@
 </template>
 
 <script>
-import SearchBar from "../Components/SearchBar.vue";
+// import SearchBar from "../Components/SearchBar.vue";
 
 /* Componentes para MarketView*/
 import HeaderBanner from "../Components/HeaderBanner";
@@ -107,27 +108,65 @@ import HeaderBanner from "../Components/HeaderBanner";
 export default {
   name: "MarketView",
   components: {
-    SearchBar,
+    // SearchBar,
     HeaderBanner,
   },
 
   data() {
-    return {};
+    return {
+      // query: null,
+      productos: null,
+    };
   },
   computed: {
     products() {
-      return this.$store.state.products;
+      let result;
+      if (this.$route.query.s) {
+        if (this.$store.getters.searchProductsByQuery(this.$route.query.s)) {
+          result = this.$store.getters.searchProductsByQuery(this.$route.query.s);
+        } else {
+          result = [];
+        }
+      }else{
+        result = this.$store.state.products;
+      }
+      return result;
     },
+  },
+
+  watch: {
+    // "this.$route.query.s": {
+    //   inmediate: true,
+    //   handler() {
+    //     // products();
+    //   },
+    // },
   },
 
   mounted() {
     this.$store.dispatch("getProducts");
+    // if (this.$route.query.s) {
+    //   this.query = this.$route.query.s;
+    // }
   },
 
   methods: {
     cardClick() {
       console.log("click");
     },
+
+    // searchProducts() {
+    //   let result;
+    //   console.log(this.query);
+    //   if (this.$store.getters.searchProductsByQuery(this.query)) {
+    //     result = this.$store.getters.searchProductsByQuery(this.query);
+    //   } else {
+    //     result = [];
+    //   }
+
+    //   console.log("pasando:", result);
+    //   return result;
+    // },
   },
 };
 </script>
