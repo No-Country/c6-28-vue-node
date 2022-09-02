@@ -29,12 +29,18 @@
           <form action="">
             <div class="form-group">
               <label for="category">Categorías</label>
-              <select id="category" class="form-control">
-                <option>Ropa</option>
-                <option>Alimentos</option>
-                <option>Bebidas</option>
-                <option>Accesorios</option>
-                <option>Utensilios</option>
+              <select
+                id="category"
+                v-model="category"
+                class="form-control"
+                @changed="filteredProducts()"
+              >
+                <option value="" disabled>Seleccione la categoria</option>
+                <option value="ropa">Ropa</option>
+                <option value="alimentos">Alimentos</option>
+                <option value="bebidas">Bebidas</option>
+                <option value="accesorios">Accesorios</option>
+                <option value="utensilios">Utensilios</option>
               </select>
             </div>
           </form>
@@ -145,6 +151,8 @@ export default {
       productos: null,
       sortBy: 0,
       quantity: 1,
+      category: 0,
+      brand: 0,
     };
   },
   computed: {
@@ -212,6 +220,7 @@ export default {
       }
     },
 
+    filteredProducts() {},
     // searchProducts() {
     //   let result;
     //   console.log(this.query);
