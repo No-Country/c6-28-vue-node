@@ -189,7 +189,7 @@ export default {
             />
           </svg>
           <span
-            class="position-absolute top-0 start-100 translate-middle rounded-5 bg-dark p-1 text-white cart-counter"
+            class="position-absolute top-0 start-100 translate-middle rounded-circle bg-dark p-1 text-white cart-counter"
             >{{ store.getters.cartCount }}</span
           >
         </button>
@@ -403,7 +403,7 @@ button {
 
 .cart-counter {
   font-size: 0.6rem;
-  line-height: 1.2em;
+  line-height: 0.6em;
 }
 
 @media (min-width: 992px) {

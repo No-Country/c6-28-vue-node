@@ -1,5 +1,5 @@
 <script setup>
-import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
+// import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
 import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
 // import HeaderItem from "@/Components/HeaderItem.vue";
 // import FooterView from "../Components/FooterView.vue";
@@ -76,7 +76,7 @@ const email = ref("");
         />
       </div>
     </div>
-    <div class="form-check mb-5">
+    <!-- <div class="form-check mb-5">
       <input
         id="flexCheckChecked"
         class="form-check-input"
@@ -87,9 +87,9 @@ const email = ref("");
       <label class="form-check-label" for="flexCheckChecked">
         Acepto los terminos y condiciones
       </label>
-    </div>
+    </div> -->
     <ButtonBase @submit.prevent="submit">Registrarse</ButtonBase>
-    <ButtonGoogle>
+    <!-- <ButtonGoogle>
       <template #icon>
         <img
           src="../assets/icons/iconGoogle.svg"
@@ -99,7 +99,7 @@ const email = ref("");
         />
       </template>
       <template #content>Registrarse con Google </template>
-    </ButtonGoogle>
+    </ButtonGoogle> -->
   </form>
 </template>
 
