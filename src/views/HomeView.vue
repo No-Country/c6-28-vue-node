@@ -92,7 +92,13 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 
       <div class="d-grid gap-2 d-md-block">
-        <button type="button " class="butRegister" @click="redirectTo('register')">Registrarse</button>
+        <button
+          type="button "
+          class="butRegister"
+          @click="redirectTo('register')"
+        >
+          Registrarse
+        </button>
 
         <button type="button" class="butContact">Contactarnos</button>
       </div>
@@ -120,10 +126,10 @@ export default {
     };
   },
   methods: {
-    redirectTo(path){
+    redirectTo(path) {
       this.$router.push(path);
-    }
-  }
+    },
+  },
 };
 </script>
 

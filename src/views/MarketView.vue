@@ -29,7 +29,12 @@
           <form action="">
             <div class="form-group">
               <label for="category">Categorías</label>
-              <select id="category" v-model="category" class="form-control" @changed="filteredProducts()">
+              <select
+                id="category"
+                v-model="category"
+                class="form-control"
+                @changed="filteredProducts()"
+              >
                 <option value="" disabled>Seleccione la categoria</option>
                 <option value="ropa">Ropa</option>
                 <option value="alimentos">Alimentos</option>
@@ -215,9 +220,7 @@ export default {
       }
     },
 
-    filteredProducts(){
-
-    }
+    filteredProducts() {},
     // searchProducts() {
     //   let result;
     //   console.log(this.query);
