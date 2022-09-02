@@ -148,7 +148,6 @@ export default {
     };
   },
   computed: {
-    
     products() {
       let result;
       if (this.$route.query.s) {
@@ -197,7 +196,7 @@ export default {
       });
     },
 
-    sortProducts(){
+    sortProducts() {
       const sortBy = this.sortBy;
       if (sortBy === "0") {
         return this.$store.state.products;
@@ -211,7 +210,7 @@ export default {
           }
         });
       }
-    }
+    },
 
     // searchProducts() {
     //   let result;

@@ -190,7 +190,7 @@ export default {
           </svg>
           <span
             class="position-absolute top-0 start-100 translate-middle rounded-5 bg-dark p-1 text-white cart-counter"
-            >{{store.getters.cartCount}}</span
+            >{{ store.getters.cartCount }}</span
           >
         </button>
 
