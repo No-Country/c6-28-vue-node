@@ -1,13 +1,6 @@
 <template>
   <div
-    class="
-      container
-      d-flex
-      justify-content-center
-      align-items-center
-      vh-100
-      my-5
-    "
+    class="container d-flex justify-content-center align-items-center vh-100 my-5"
   >
     <div class="back-div text-center p-5 mt-3 center bg-white">
       <h3>Información Personal</h3>

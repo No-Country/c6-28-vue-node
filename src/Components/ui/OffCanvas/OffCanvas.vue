@@ -72,6 +72,10 @@ function validation(value) {
 .offcanvas-header {
   height: 4em;
   padding: 0.5em;
+  background-color: #898aa6;
+}
+.offcanvas-body {
+  background-color: #c9bbcf;
 }
 
 .offcanvas-title {

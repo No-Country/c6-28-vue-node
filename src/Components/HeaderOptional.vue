@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
 import Logo from "../assets/logo.png";
 import IconBurger from "../assets/icons/IconBurger.svg";
 import OffCanvas from "./ui/OffCanvas/OffCanvas.vue";
@@ -13,6 +13,10 @@ const child = ref();
 const childOther = ref();
 const sidebar = ref(null);
 const cart = ref(null);
+const search = ref();
+const searchModal = ref();
+const router = useRouter();
+const searchModalInstance = ref();
 /**
  * this a callback function to add y remove the header_scrolling class
  */
@@ -32,6 +36,8 @@ onMounted(() => {
   cart.value = bootstrap.Offcanvas.getOrCreateInstance(
     childOther.value.sidebar
   );
+  // searchModalInstance.value = bootstrap.Modal.getOrCreateInstance(searchModal.value)
+  searchModalInstance.value = new bootstrap.Modal(searchModal.value);
 });
 
 // eslint-disable-next-line require-jsdoc
@@ -46,6 +52,14 @@ function handleShowOffCanvasCart() {
 onUnmounted(() => {
   window.addEventListener("scroll", headerScroll);
 });
+
+/**
+ * search function to products
+ */
+function sendSearch() {
+  // searchModalInstance.value.hide();
+  router.push({ name: "productos", query: { s: search.value.value } });
+}
 </script>
 <script>
 export default {
@@ -136,14 +150,7 @@ export default {
       </ul>
     </nav>
     <div
-      class="
-        d-flex
-        gap-4
-        header__actions
-        align-items-center
-        justify-content-end
-        w-lg-50
-      "
+      class="d-flex gap-4 header__actions align-items-center justify-content-end w-lg-50"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -209,33 +216,38 @@ export default {
       </OffCanvas>
     </Teleport>
   </header>
-  <div
-    id="searchModal"
-    class="modal fade"
-    tabindex="-1"
-    aria-labelledby="searchModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <!-- <div class="modal-header"></div> -->
-        <div class="modal-body d-flex align-items-center gap-2">
-          <input
-            type="text"
-            class="form-control header__search border border-0"
-            placeholder="Ingrese su búsqueda"
-          />
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
+  <Teleport to="body">
+    <div
+      id="searchModal"
+      ref="searchModal"
+      class="modal fade"
+      tabindex="-1"
+      aria-labelledby="searchModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <!-- <div class="modal-header"></div> -->
+          <div class="modal-body d-flex align-items-center gap-2">
+            <input
+              ref="search"
+              type="text"
+              class="form-control header__search border border-0"
+              placeholder="Ingrese su búsqueda"
+              @keyup.enter="sendSearch()"
+            />
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- <div class="modal-footer"></div> -->
         </div>
-        <!-- <div class="modal-footer"></div> -->
       </div>
     </div>
-  </div>
+  </Teleport>
 </template>
 <style>
 .header {

@@ -2,9 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import NotFound from "../views/NotFound.vue";
-import AuthService from "../service/auth.service"
-import Store from "../store/index"
-
+import AuthService from "../service/auth.service";
+import Store from "../store/index";
 
 const routes = [
   {
@@ -72,15 +71,10 @@ const router = createRouter({
 });
 
 router.beforeEach(() => {
-
   const loggedIn = AuthService.getAccessToken();
   if (Store.state.user.id && !loggedIn) {
-    Store.dispatch("logout")
-
-
-
+    Store.dispatch("logout");
   }
-
 });
 
 export default router;

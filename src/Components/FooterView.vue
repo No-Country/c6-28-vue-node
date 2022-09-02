@@ -3,11 +3,7 @@
     <div class="container">
       <div class="row g-3 text-center">
         <div class="col-12">
-          <img
-            src="../assets/logo.png"
-            alt="logo"
-            style="width: 100px;"
-          />
+          <img src="../assets/logo.png" alt="logo" style="width: 100px" />
         </div>
         <div class="col-4 col-md-4 col-lg-4 col-xl-4">
           <p>Comunidad</p>
