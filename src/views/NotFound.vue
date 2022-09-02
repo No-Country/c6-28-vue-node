@@ -1,28 +1,25 @@
 <template>
-<div>
-  <div class="back">
-    <div class="row g-3 d-flex align-items-center text-center">
-      <div class="col-md-6 col-lg-6 col-xl-6">
-        <h2 class="title1 text-dark">¡Error 404!</h2>
-        <h2 class="title2 text-dark mt-n8">NOT FOUND</h2>
-        <p class="text-dark">¡Ups!, parece que un pequeño rompió esta página
-          <br />
-          <span class="text-muted">Por favor regresa y sigue comprando nuestros productos</span>
-        </p>
-        <a type="button" class="btn rounded" href="/productos">
-          Productos
-        </a>
-      </div>
-      <div class="col-md-6 col-lg-6 col-xl-6">
-        <img
-          class="img-fluid"
-          src="../assets/404.png"
-          alt="Perro y Gato"
-        />
+  <div>
+    <div class="back">
+      <div class="row g-3 d-flex align-items-center text-center">
+        <div class="col-md-6 col-lg-6 col-xl-6">
+          <h2 class="title1 text-dark">¡Error 404!</h2>
+          <h2 class="title2 text-dark mt-n8">NOT FOUND</h2>
+          <p class="text-dark">
+            ¡Ups!, parece que un pequeño rompió esta página
+            <br />
+            <span class="text-muted"
+              >Por favor regresa y sigue comprando nuestros productos</span
+            >
+          </p>
+          <a type="button" class="btn rounded" href="/productos"> Productos </a>
+        </div>
+        <div class="col-md-6 col-lg-6 col-xl-6">
+          <img class="img-fluid" src="../assets/404.png" alt="Perro y Gato" />
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>

@@ -150,14 +150,7 @@ export default {
       </ul>
     </nav>
     <div
-      class="
-        d-flex
-        gap-4
-        header__actions
-        align-items-center
-        justify-content-end
-        w-lg-50
-      "
+      class="d-flex gap-4 header__actions align-items-center justify-content-end w-lg-50"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

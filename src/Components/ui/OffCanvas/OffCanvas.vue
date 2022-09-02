@@ -74,8 +74,7 @@ function validation(value) {
   padding: 0.5em;
   background-color: #898aa6;
 }
-.offcanvas-body{
-
+.offcanvas-body {
   background-color: #c9bbcf;
 }
 

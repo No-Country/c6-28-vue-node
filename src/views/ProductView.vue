@@ -32,10 +32,10 @@
               </span>
             </p>
             <img
-                v-if="productPhoto[0] === 'url'"
-                src="../assets/not-photo.jpg"
-                alt="Producto"
-                class="card-img d-flex d-sm-none"
+              v-if="productPhoto[0] === 'url'"
+              src="../assets/not-photo.jpg"
+              alt="Producto"
+              class="card-img d-flex d-sm-none"
             />
             <img
               v-else
@@ -50,13 +50,11 @@
               {{ product.nombre_marca }}
             </h5>
 
-            <h6 
-              v-if="product.oferta"
-              class="card-subtitle mb-2 text-success">
+            <h6 v-if="product.oferta" class="card-subtitle mb-2 text-success">
               {{ product.porcentaje_oferta }}% OFF
             </h6>
             <Starts :start="start" />
-            <p class="card-text display-5 mt-3">${{ product.precio }} </p>
+            <p class="card-text display-5 mt-3">${{ product.precio }}</p>
             <p class="font-weight-bold text-muted my-0">
               Entrega a acordar con el vendedor.
             </p>
@@ -67,13 +65,7 @@
               Pago a acordar con el vendedor.
             </p>
             <div
-              class="
-                input-group
-                my-2
-                w-auto
-                justify-content-center
-                align-items-center
-              "
+              class="input-group my-2 w-auto justify-content-center align-items-center"
             >
               <input
                 type="button"
@@ -118,14 +110,10 @@
       <div class="col-md-5 col-lg-5 col-xl-5 p-3 text-capitalize">
         <dl class="row">
           <dt class="col-sm-3">Marca</dt>
-          <dd class="col-sm-9">
-            {{ product.nombre_marca }}.
-          </dd>
+          <dd class="col-sm-9">{{ product.nombre_marca }}.</dd>
 
           <dt class="col-sm-3">Especificación</dt>
-          <dd class="col-sm-9">
-            {{ product.technical_specs }}.
-          </dd>
+          <dd class="col-sm-9">{{ product.technical_specs }}.</dd>
 
           <dt class="col-sm-3">Categoria</dt>
           <dd class="col-sm-9">

@@ -10,13 +10,7 @@
           <p style="color: #898aa6">Animales y Mascotas</p>
         </div>
         <div
-          class="
-            col-md-6 col-lg-6 col-xl-6
-            text-right
-            d-flex
-            justify-content-end
-            align-items-center
-          "
+          class="col-md-6 col-lg-6 col-xl-6 text-right d-flex justify-content-end align-items-center"
         >
           <label style="color: #898aa6">Ordenar por &nbsp;</label>
           <select v-model="sortBy" @change="filteredProduct">
@@ -28,53 +22,53 @@
       </div>
       <!--Aqui inicia el filtro de Daniel-->
       <div class="row g-3 my-2">
-      <!-- <div class="col-md-6 col-lg-4 col-xl-3">
+        <!-- <div class="col-md-6 col-lg-4 col-xl-3">
         <SearchBar class="SearchBar" />
       </div> -->
-      <div class="col-md-6 col-lg-4 col-xl-3">
-        <form action="">
-          <div class="form-group">
-            <label for="category">Categorías</label>
-            <select id="category" class="form-control">
-              <option>Ropa</option>
-              <option>Alimentos</option>
-              <option>Bebidas</option>
-              <option>Accesorios</option>
-              <option>Utensilios</option>
-            </select>
-          </div>
-        </form>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <form action="">
+            <div class="form-group">
+              <label for="category">Categorías</label>
+              <select id="category" class="form-control">
+                <option>Ropa</option>
+                <option>Alimentos</option>
+                <option>Bebidas</option>
+                <option>Accesorios</option>
+                <option>Utensilios</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <form action="">
+            <div class="form-group">
+              <label for="price" class="form-label">Filtrar por precio</label>
+              <input
+                id="price"
+                type="range"
+                class="form-range"
+                min="0"
+                max="51800"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <form action="">
+            <div class="form-group">
+              <label for="mark">Marcas</label>
+              <select id="mark" class="form-control">
+                <option>Marca 1</option>
+                <option>Marca 2</option>
+                <option>Marca 3</option>
+                <option>Marca 4</option>
+                <option>Marca 5</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <!--<button class="btn btn-primary">Filtrar</button>-->
       </div>
-      <div class="col-md-6 col-lg-4 col-xl-3">
-        <form action="">
-          <div class="form-group">
-            <label for="price" class="form-label">Filtrar por precio</label>
-            <input
-              id="price"
-              type="range"
-              class="form-range"
-              min="0"
-              max="51800"
-            />
-          </div>
-        </form>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3">
-        <form action="">
-          <div class="form-group">
-            <label for="mark">Marcas</label>
-            <select id="mark" class="form-control">
-              <option>Marca 1</option>
-              <option>Marca 2</option>
-              <option>Marca 3</option>
-              <option>Marca 4</option>
-              <option>Marca 5</option>
-            </select>
-          </div>
-        </form>
-      </div>
-      <!--<button class="btn btn-primary">Filtrar</button>-->
-    </div>
       <!-- Card de Productos-->
       <div class="row">
         <div
