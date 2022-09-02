@@ -7,6 +7,7 @@ import SidebarOffCanvas from "./ui/OffCanvas/SidebarOffCanvas.vue";
 import CartOffCanvas from "./ui/OffCanvas/CartOffCanvas.vue";
 import { ref, onMounted, onUnmounted } from "vue";
 import * as bootstrap from "bootstrap";
+import { useStore } from "vuex";
 
 const header = ref();
 const child = ref();
@@ -17,6 +18,8 @@ const search = ref();
 const searchModal = ref();
 const router = useRouter();
 const searchModalInstance = ref();
+const store = useStore();
+
 /**
  * this a callback function to add y remove the header_scrolling class
  */
@@ -45,9 +48,9 @@ function handleShowOffCanvas() {
   sidebar.value.show();
 }
 // eslint-disable-next-line require-jsdoc
-function handleShowOffCanvasCart() {
-  cart.value.show();
-}
+// function handleShowOffCanvasCart() {
+//   cart.value.show();
+// }
 
 onUnmounted(() => {
   window.addEventListener("scroll", headerScroll);
@@ -150,14 +153,7 @@ export default {
       </ul>
     </nav>
     <div
-      class="
-        d-flex
-        gap-4
-        header__actions
-        align-items-center
-        justify-content-end
-        w-lg-50
-      "
+      class="d-flex gap-4 header__actions align-items-center justify-content-end w-lg-50"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -171,8 +167,34 @@ export default {
           d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
         />
       </svg>
-      <div v-if="cartItems === 0">
-        <svg
+      <div>
+        <button
+          class="d-flex align-items-center justify-content-center flex-shrink-0 position-relative d-none d-md-flex"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#cartOffCanvas"
+          aria-controls="cartOffCanvas"
+          aria-label="cart-button"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            height="20"
+            width="20"
+            class="bi bi-cart4 header__cart"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+            />
+          </svg>
+          <span
+            class="position-absolute top-0 start-100 translate-middle rounded-5 bg-dark p-1 text-white cart-counter"
+            >{{ store.getters.cartCount }}</span
+          >
+        </button>
+
+        <!-- <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -184,9 +206,11 @@ export default {
           ></path>
           <circle cx="10.5" cy="19.5" r="1.5"></circle>
           <circle cx="16.5" cy="19.5" r="1.5"></circle>
-        </svg>
+        </svg> -->
       </div>
-      <div v-if="cartItems !== 0">
+      <!-- <div v-if="cartItems !== 0">
+        
+        
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -201,7 +225,47 @@ export default {
           <circle cx="16.5" cy="19.5" r="1.5"></circle>
         </svg>
       </div>
+      <div v-else>
+        <button
+          class="d-flex align-items-center justify-content-center flex-shrink-0 position-relative"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#cartOffCanvas"
+          aria-controls="cartOffCanvas"
+          aria-label="cart-button"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            height="20"
+            width="20"
+            class=""
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
+            />
+          </svg>
+          <span
+            class="position-absolute top-0 start-100 translate-middle rounded-5 bg-dark p-1 text-white cart-counter"
+            >10</span
+          >
+        </button>
 
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: "
+          @click="handleShowOffCanvasCart()"
+        >
+          <path
+            d="M21 4H2v2h2.3l3.28 9a3 3 0 0 0 2.82 2H19v-2h-8.6a1 1 0 0 1-.94-.66L9 13h9.28a2 2 0 0 0 1.92-1.45L22 5.27A1 1 0 0 0 21.27 4 .84.84 0 0 0 21 4zm-2.75 7h-10L6.43 6h13.24z"
+          ></path>
+          <circle cx="10.5" cy="19.5" r="1.5"></circle>
+          <circle cx="16.5" cy="19.5" r="1.5"></circle>
+        </svg>
+      </div> -->
       <router-link v-if="userLogged === false" to="/login" class="text-dark"
         >Login</router-link
       >
@@ -257,6 +321,11 @@ export default {
   </Teleport>
 </template>
 <style>
+button {
+  border: transparent;
+  background-color: transparent;
+}
+
 .header {
   background-color: #c9bbcf;
   background-image: url("~@/assets/cos.svg");
@@ -330,6 +399,11 @@ export default {
 .header__inner-item:hover {
   background-color: rgba(0, 0, 0, 0.08);
   cursor: pointer;
+}
+
+.cart-counter {
+  font-size: 0.6rem;
+  line-height: 1.2em;
 }
 
 @media (min-width: 992px) {

@@ -4,20 +4,21 @@
       <Header />
     </section>
     <section id="company">
-    <div class="container">
-      <TitleCat title="Nuestro Proyecto" />
-      <p class="text-muted text-center">
-        Ecommerce para la venta de productos para Mascotas
-      </p>
-      <p class="py-5 text-justify">
-        Mundo Mascotas Ecommerce es un proyecto del Cohorte 6 de No-Country.
-        Nosotros, el grupo identificado con el Nº 28 hemos creado, en un periodo
-        de cinco semanas, un Ecommerce con las tecnologías Node.js y Vue.js.
-        Cumpliendo con los requerimientos presentados al inicio del proyecto este
-        Ecommerce permite visualizar productos para nuestras mascotas
-        (aves, gatos y perros), los cuales se podrán visualizar con detalle y
-        además realizar una compra tras agregar el producto al carrito.
-      </p>
+      <div class="container">
+        <TitleCat title="Nuestro Proyecto" />
+        <p class="text-muted text-center">
+          Ecommerce para la venta de productos para Mascotas
+        </p>
+        <p class="py-5 text-justify">
+          Mundo Mascotas Ecommerce es un proyecto del Cohorte 6 de No-Country.
+          Nosotros, el grupo identificado con el Nº 28 hemos creado, en un
+          periodo de cinco semanas, un Ecommerce con las tecnologías Node.js y
+          Vue.js. Cumpliendo con los requerimientos presentados al inicio del
+          proyecto este Ecommerce permite visualizar productos para nuestras
+          mascotas (aves, gatos y perros), los cuales se podrán visualizar con
+          detalle y además realizar una compra tras agregar el producto al
+          carrito.
+        </p>
       </div>
       <div class="container">
         <div class="row justify-content-center align-items-center">

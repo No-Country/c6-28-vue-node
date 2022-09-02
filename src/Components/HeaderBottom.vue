@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+import { useStore } from "vuex";
+
+const store = useStore();
+</script>
 <template>
   <div
     class="d-md-none position-sticky z-10 bottom-0 d-flex align-items-center justify-content-between shadow-bottomNavigation text-gray-700 body-font bg-white w-100 h-14 sm:h-16 px-2 py-4"
@@ -108,7 +112,7 @@
       </svg>
       <span
         class="position-absolute top-0 start-100 translate-middle rounded-5 bg-dark p-1 text-white cart-counter"
-        >10</span
+        >{{ store.getters.cartCount }}</span
       ></button
     ><router-link
       to="/profile"

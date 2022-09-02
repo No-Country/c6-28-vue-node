@@ -45,24 +45,24 @@ const store = createStore({
       state.product = product;
     },
     setProductToCart(state, { product, quantity }) {
-      const productExists = state.cart.find(elem => {
-        return elem.product === product
-      })
+      const productExists = state.cart.find((elem) => {
+        return elem.product === product;
+      });
       if (productExists) {
-        productExists.quantity += 1
+        productExists.quantity += 1;
         return;
       }
-      state.cart.push({ product, quantity })
+      state.cart.push({ product, quantity });
     },
     removeProductFromCart(state, product) {
-      state.cart = state.cart.filter(elem => {
-        return elem.product.id !== product.id
-      })
+      state.cart = state.cart.filter((elem) => {
+        return elem.product.id !== product.id;
+      });
     },
     removeAllCartItems(state) {
-      state.cart = state.cart.filter(elem => {
-        return elem === "xxx"
-      })
+      state.cart = state.cart.filter((elem) => {
+        return elem === "xxx";
+      });
     },
     setNameNewProduct(state, name) {
       state.newProduct.name = name;
@@ -106,12 +106,14 @@ const store = createStore({
   },
   getters: {
     cartCount(state) {
-      return state.cart.length
-
+      return state.cart.length;
     },
 
-
-
+    searchProductsByQuery: (state) => (query) => {
+      return state.products.filter(
+        (product) => product.nombre === query || product.nombre_marca === query
+      );
+    },
   },
 
   actions: {
@@ -130,27 +132,18 @@ const store = createStore({
       });
     },
     addProductToCart({ commit }, { product, quantity }) {
-      commit("setProductToCart", { product, quantity })
+      commit("setProductToCart", { product, quantity });
     },
     removeProductAction({ commit }, product) {
-      commit("removeProductFromCart", product)
+      commit("removeProductFromCart", product);
     },
     removeAllItems({ commit }) {
-      commit("removeAllCartItems")
+      commit("removeAllCartItems");
     },
 
     logout({ commit }) {
       commit("setLogout");
-      AuthService.deleteAccessToken()
-
-    },
-  },
-
-  getters: {
-    searchProductsByQuery: (state) => (query) => {
-      return state.products.filter(
-        (product) => product.nombre === query || product.nombre_marca === query
-      );
+      AuthService.deleteAccessToken();
     },
   },
 });
