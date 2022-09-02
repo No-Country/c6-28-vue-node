@@ -23,7 +23,7 @@ const register = (nameUser, lastname, email, pass, confirmPass) => {
   });
 };
 
-const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000);
+const inFifteenMinutes = new Date(new Date().getTime() + 0.5 * 60 * 1000);
 const setAccessToken = (userLogged) => {
   Cookies.set("userLogged", userLogged, {
     expires: inFifteenMinutes
