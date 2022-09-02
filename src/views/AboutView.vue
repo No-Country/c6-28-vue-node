@@ -4,21 +4,21 @@
       <Header />
     </section>
     <section id="company">
+    <div class="container">
       <TitleCat title="Nuestro Proyecto" />
       <p class="text-muted text-center">
         Ecommerce para la venta de productos para Mascotas
       </p>
-      <p class="p-5">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
+      <p class="py-5 text-justify">
+        Mundo Mascotas Ecommerce es un proyecto del Cohorte 6 de No-Country.
+        Nosotros, el grupo identificado con el Nº 28 hemos creado, en un periodo
+        de cinco semanas, un Ecommerce con las tecnologías Node.js y Vue.js.
+        Cumpliendo con los requerimientos presentados al inicio del proyecto este
+        Ecommerce permite visualizar productos para nuestras mascotas
+        (aves, gatos y perros), los cuales se podrán visualizar con detalle y
+        además realizar una compra tras agregar el producto al carrito.
       </p>
+      </div>
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div
@@ -51,7 +51,7 @@ export default {
       contacts: [
         {
           photo:
-            "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp",
+            "https://res.cloudinary.com/yeniferramirez11/image/upload/v1661896266/cloudinary-demo/yenifer_ramirez-cropped_ovqabr.png",
           name: "Yenifer Ramírez",
           user: "@yeniferrosana",
           position: "FrontEnd Developer",

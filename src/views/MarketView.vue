@@ -1,21 +1,46 @@
 <template>
-  <div class="container">
+  <div>
     <HeaderBanner />
     <!--Aqui inicia el filtro-->
-    <div class="row g-3 my-2">
-      <div class="col-md-6 col-lg-4 col-xl-3">
-        <SearchBar class="SearchBar" />
+    <!--Aqui inicia los productos-->
+    <div class="container mt-5">
+      <!-- Filtro-->
+      <div v-if="products.length !== 0" class="row">
+        <div class="col-md-6 col-lg-6 col-xl-6">
+          <p style="color: #898aa6">Animales y Mascotas</p>
+        </div>
+        <div
+          class="
+            col-md-6 col-lg-6 col-xl-6
+            text-right
+            d-flex
+            justify-content-end
+            align-items-center
+          "
+        >
+          <label style="color: #898aa6">Ordenar por &nbsp;</label>
+          <select v-model="sortBy" @change="filteredProduct">
+            <option value="0">Más relevantes</option>
+            <option value="1">Mayor Precio</option>
+            <option value="2">Menor Precio</option>
+          </select>
+        </div>
       </div>
+      <!--Aqui inicia el filtro de Daniel-->
+      <div class="row g-3 my-2">
+      <!-- <div class="col-md-6 col-lg-4 col-xl-3">
+        <SearchBar class="SearchBar" />
+      </div> -->
       <div class="col-md-6 col-lg-4 col-xl-3">
         <form action="">
           <div class="form-group">
             <label for="category">Categorías</label>
             <select id="category" class="form-control">
-              <option>Producto 1</option>
-              <option>Producto 2</option>
-              <option>Producto 3</option>
-              <option>Producto 4</option>
-              <option>Producto 5</option>
+              <option>Ropa</option>
+              <option>Alimentos</option>
+              <option>Bebidas</option>
+              <option>Accesorios</option>
+              <option>Utensilios</option>
             </select>
           </div>
         </form>
@@ -48,9 +73,9 @@
           </div>
         </form>
       </div>
+      <!--<button class="btn btn-primary">Filtrar</button>-->
     </div>
-    <!--Aqui inicia los productos-->
-    <div class="container mt-5">
+      <!-- Card de Productos-->
       <div class="row">
         <div
           v-for="product in products"
@@ -58,40 +83,51 @@
           class="col-md-4 col-lg-4 col-xl-3"
           :product="product"
         >
-          <div class="card mt-5 mb-5">
-            <router-link :to="{ name: 'product', params: { id: product.id } }">
+          <router-link :to="{ name: 'product', params: { id: product.id } }">
+            <div class="card my-5">
               <img
+                v-if="product.fotos[0] === 'url'"
                 class="card-img-top"
-                src="https://picsum.photos/id/132/200/200"
-                alt="Card image cap"
+                src="../assets/not-photo.jpg"
+                alt="Producto"
               />
-            </router-link>
-            <div class="card-body">
-              <h2>
-                {{ product.precio }}$
-                <span
-                  style="
-                    color: green;
-                    font-size: 20px;
-                    display: block;
-                    float: right;
-                  "
-                >
-                  10% OFF
-                </span>
-              </h2>
+              <img
+                v-else
+                class="card-img-top"
+                :src="product.fotos[0]"
+                alt="Producto"
+              />
+              <div class="card-body text-dark">
+                <h3>
+                  {{ product.precio }}$
+                  <span
+                    v-if="product.oferta"
+                    style="
+                      color: #b7d3df;
+                      font-size: 20px;
+                      display: block;
+                      float: right;
+                    "
+                  >
+                    {{ product.porcentaje_oferta }}% OFF
+                  </span>
+                </h3>
 
-              <h3>{{ product.nombre }}</h3>
-              <h4>{{ product.nombre_marca }}</h4>
-
-              <p class="text-center">
-                <button type="button" class="butComprar">
-                  Comprar Producto
-                </button>
-              </p>
-              <p class="text-center"></p>
+                <h4 class="text-capitalize">{{ product.nombre }}</h4>
+                <h6 class="text-muted">{{ product.nombre_marca }}</h6>
+                <div class="text-center">
+                  <button
+                    type="button"
+                    class="btn btn-grey my-3 d-block mx-auto"
+                    style="display: block"
+                    @click="addToCart(product)"
+                  >
+                    Agregar al Carrito
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
@@ -99,75 +135,122 @@
 </template>
 
 <script>
-import SearchBar from "../Components/SearchBar.vue";
+// import SearchBar from "../Components/SearchBar.vue";
+
 /* Componentes para MarketView*/
 import HeaderBanner from "../Components/HeaderBanner";
 export default {
   name: "MarketView",
   components: {
-    SearchBar,
+    // SearchBar,
     HeaderBanner,
   },
   data() {
-    return {};
+    return {
+      // query: null,
+      productos: null,
+      sortBy: 0,
+      quantity: 1,
+    };
   },
   computed: {
+    /*
     products() {
-      return this.$store.state.products;
+      let result;
+      if (this.$route.query.s) {
+        if (this.$store.getters.searchProductsByQuery(this.$route.query.s)) {
+          result = this.$store.getters.searchProductsByQuery(
+            this.$route.query.s
+          );
+        } else {
+          result = [];
+        }
+      } else {
+        result = this.$store.state.products;
+      }
+      return result;
+    },*/
+    products() {
+      const sortBy = this.sortBy;
+      if (sortBy === "0") {
+        return this.$store.state.products;
+      } else {
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        return this.$store.state.products.sort((a, b) => {
+          if (sortBy === "1") {
+            return b.precio - a.precio;
+          } else if (sortBy === "2") {
+            return a.precio - b.precio;
+          }
+        });
+      }
     },
   },
   mounted() {
     this.$store.dispatch("getProducts");
+    // if (this.$route.query.s) {
+    //   this.query = this.$route.query.s;
+    // }
   },
   methods: {
-    cardClick() {
-      console.log("click");
+    addToCart(product) {
+      if (this.$store.state.cart.find((elem) => elem.product === product)) {
+        this.quantity += 1;
+      }
+      this.$store.dispatch("addProductToCart", {
+        product: product,
+        quantity: this.quantity,
+      });
     },
+
+    // searchProducts() {
+    //   let result;
+    //   console.log(this.query);
+    //   if (this.$store.getters.searchProductsByQuery(this.query)) {
+    //     result = this.$store.getters.searchProductsByQuery(this.query);
+    //   } else {
+    //     result = [];
+    //   }
+
+    //   console.log("pasando:", result);
+    //   return result;
+    // },
   },
 };
 </script>
 
 <style scoped>
-.back-image {
-  background-image: url("~@/assets/animals-grey.jpg");
-  /* Full height */
-  height: 100%;
-  width: 100%;
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 img {
   cursor: pointer;
+  margin: auto;
 }
-.botMarket {
-  background-color: #c9bbcf;
+select {
+  background-color: #898aa6;
+  color: white;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
 }
-.input-busq {
-  outline: solid #898aa6 2px;
-  border-radius: 10px;
-  padding: 8px;
+
+.btn-grey {
+  background-color: #898aa6;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
 }
-@media only screen and (max-width: 600px) {
-  h2.title1 {
-    font-size: 15px;
-  }
-  h2.title2 {
-    font-size: 15px;
-  }
-  .top {
-    margin-top: 5px;
-  }
+
+.btn-grey:hover {
+  background-color: transparent;
+  border: 3px solid #898aa6;
+  color: #898aa6;
 }
-@media only screen and (min-width: 600px) {
-  .top {
-    margin-top: 20px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .top {
-    margin-top: 35px;
+
+@media screen and (min-width: 1000px) {
+  .card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
   }
 }
 

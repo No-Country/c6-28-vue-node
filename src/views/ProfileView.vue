@@ -1,28 +1,34 @@
 <template>
   <div
-    class="container d-flex justify-content-center align-items-center vh-100 my-5"
+    class="
+      container
+      d-flex
+      justify-content-center
+      align-items-center
+      vh-100
+      my-5
+    "
   >
     <div class="back-div text-center p-5 mt-3 center bg-white">
       <h3>Información Personal</h3>
       <img
-        src="https://mdbcdn.b-cdn.net/img/new/avatars/6.webp"
+        :src="user.foto"
         class="rounded-circle shadow-4"
         style="width: 150px"
         alt="Avatar"
       />
       <h5 class="mb-2">
-        <strong>John Doe</strong>
+        <strong>{{ user.nombre }}</strong>
       </h5>
       <p class="text-muted">
         <strong>Contacto: </strong>
-        info@mundomascotas.com
+        {{ user.email }}
       </p>
-      <p class="title-change">
-        <span class="material-icons md-12 orange442 align-middle">
-          password
-        </span>
-        Cambiar Contraseña
+      <p class="text-muted">
+        <strong>Cliente Desde: </strong>
+        {{ user.createdAt }}
       </p>
+      <p class="title-change"></p>
       <form class="pb-3" action="#" @submit.prevent="">
         <div class="form-group">
           <input
@@ -74,17 +80,21 @@ export default {
       oldPassword: "",
       password: "",
       confirmPassword: "",
+      userConfir: null,
     };
   },
   computed: {
     userLogged() {
       return AuthService.getAccessToken();
     },
-    /* user() {
-      if (this.userLogged) {
-        return AuthService.get();
-      }
-    }, */
+    user() {
+      return this.$store.state.user;
+    },
+  },
+  mounted() {
+    if (!this.userLogged) {
+      this.$router.push("login");
+    }
   },
   methods: {
     changePassword() {

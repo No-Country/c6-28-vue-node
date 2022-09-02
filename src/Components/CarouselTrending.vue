@@ -1,3 +1,6 @@
+<script setup>
+// import BannerImage1 from "../assets/images/banner/banner_image1.jpg";
+</script>
 <template>
   <div class="wrapper-content">
     <div
@@ -41,6 +44,13 @@
             class="d-block w-100"
             alt="..."
           />
+          <!-- <img
+            :src="BannerImage1"
+            class="d-block w-100"
+            alt="..."
+            width="1600"
+            height="600"
+          /> -->
         </div>
         <div class="carousel-item">
           <img
@@ -80,7 +90,6 @@ export default {
 
 <style>
 .carousel {
-  height: 580px;
   border-radius: 10px;
 }
 img {

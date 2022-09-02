@@ -4,9 +4,17 @@
       <div class="col-md-7 col-lg-7 col-xl-7">
         <div class="d-none d-sm-flex card border-light align-items-center">
           <img
+            v-if="productPhoto[0] === 'url'"
             class="card-img"
             style="width: 28rem"
-            src="../assets/perrarina.webp"
+            src="../assets/not-photo.jpg"
+            alt="Producto"
+          />
+          <img
+            v-else
+            class="card-img"
+            style="width: 28rem"
+            :src="productPhoto[0]"
             alt="Producto"
           />
         </div>
@@ -17,37 +25,55 @@
             <p class="fw-lighter">
               Código: 1500{{ product.id }}
               <span
-                class="material-icons md-48 align-middle orange442"
+                class="material-icons md-48 align-middle bluedf"
                 style="display: block; float: right"
               >
                 favorite
               </span>
             </p>
             <img
+                v-if="productPhoto[0] === 'url'"
+                src="../assets/not-photo.jpg"
+                alt="Producto"
+                class="card-img d-flex d-sm-none"
+            />
+            <img
+              v-else
               class="card-img d-flex d-sm-none"
-              src="../assets/perrarina.webp"
+              :src="productPhoto[0]"
               alt="Producto"
             />
-            <h4 class="card-title">
-              {{ product.nombre_marca }}
-            </h4>
-            <h3 class="card-title">
+            <h4 class="card-title text-capitalize">
               {{ product.nombre }}
-            </h3>
+            </h4>
+            <h5 class="card-title">
+              {{ product.nombre_marca }}
+            </h5>
 
-            <h6 class="card-subtitle mb-2 text-muted">
-              {{ productCategory[0] }}
+            <h6 
+              v-if="product.oferta"
+              class="card-subtitle mb-2 text-success">
+              {{ product.porcentaje_oferta }}% OFF
             </h6>
             <Starts :start="start" />
-            <p class="card-text display-5 mt-3">${{ product.precio }}</p>
-            <p style="color: #f4a442">
-              <span class="material-icons md-12 orange442 align-middle">
+            <p class="card-text display-5 mt-3">${{ product.precio }} </p>
+            <p class="font-weight-bold text-muted my-0">
+              Entrega a acordar con el vendedor.
+            </p>
+            <p style="color: #898aa6" class="font-weight-bold">
+              <span class="material-icons md-12 bluedf align-middle">
                 credit_card
               </span>
               Pago a acordar con el vendedor.
             </p>
             <div
-              class="input-group my-2 w-auto justify-content-center align-items-center"
+              class="
+                input-group
+                my-2
+                w-auto
+                justify-content-center
+                align-items-center
+              "
             >
               <input
                 type="button"
@@ -69,7 +95,11 @@
                 @click="counter += 1"
               />
 
-              <button type="button" class="btn rounded mt-4">
+              <button
+                type="button"
+                class="btn rounded mt-4"
+                @click="addToCart()"
+              >
                 Agregar al Carrito
               </button>
             </div>
@@ -81,33 +111,30 @@
     <div class="row g-3 px-1">
       <div class="col-md-7 col-lg-7 col-xl-7 p-3">
         <h3 class="text-muted">Descripción</h3>
-        <p class="text-muted">
+        <p class="text-muted text-uppercase">
           {{ product.descripcion }}
         </p>
       </div>
-      <div class="col-md-5 col-lg-5 col-xl-5 p-3">
+      <div class="col-md-5 col-lg-5 col-xl-5 p-3 text-capitalize">
         <dl class="row">
-          <dt class="col-sm-3">Description lists</dt>
+          <dt class="col-sm-3">Marca</dt>
           <dd class="col-sm-9">
-            A description list is perfect for defining terms.
+            {{ product.nombre_marca }}.
           </dd>
 
-          <dt class="col-sm-3">Euismod</dt>
+          <dt class="col-sm-3">Especificación</dt>
           <dd class="col-sm-9">
-            Vestibulum felis euismod semper eget lacinia odio sem nec elit.
-          </dd>
-          <dd class="col-sm-9 offset-sm-3">
-            Donec id elit non mi porta gravida at eget metus.
+            {{ product.technical_specs }}.
           </dd>
 
-          <dt class="col-sm-3">Malesuada porta</dt>
+          <dt class="col-sm-3">Categoria</dt>
           <dd class="col-sm-9">
-            Etiam porta sem malesuada magna mollis euismod.
+            {{ productCategory[0] }}, {{ productCategory[1] }}.
           </dd>
         </dl>
       </div>
     </div>
-    <h4 class="p-3" style="color: #f4a442">
+    <h4 class="p-3" style="color: #898aa6">
       Quienes vieron este producto también compraron
     </h4>
     <div class="row g-3 p-3 justify-content-center">
@@ -143,16 +170,30 @@ export default {
         ? this.$store.state.product.categoria
         : "";
     },
+    productPhoto() {
+      return this.$store.state.product.fotos
+        ? this.$store.state.product.fotos
+        : "";
+    },
   },
   mounted() {
     this.$store.dispatch("getProduct", this.$route.params.id);
+  },
+
+  methods: {
+    addToCart() {
+      this.$store.dispatch("addProductToCart", {
+        product: this.product,
+        quantity: 1,
+      });
+    },
   },
 };
 </script>
 
 <style scoped>
 .material-icons.bluedf {
-  color: #b7d3df;
+  color: #898aa6;
 }
 .btn {
   background-color: transparent;

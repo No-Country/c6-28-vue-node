@@ -24,13 +24,15 @@
           />
         </div>
       </div>
+      <div style="margin-top: 2%">
+        <strong v-if="credencialesInvalidas" style="color: red">
+          Credenciales Invalidas
+        </strong>
+      </div>
 
       <input type="checkbox" class="checkbox" value="" /> recordarme
       <p>olvidaste tu contraseña?</p>
 
-      <div v-if="message" style="color: red; margin-top 5%">
-        Credenciales Invalidas
-      </div>
       <div>
         <ButtonBase>Iniciar sesion</ButtonBase>
       </div>
@@ -73,19 +75,33 @@ export default {
     return {
       email: "",
       password: "",
+      credencialesInvalidas: false,
+      userLogged: false,
     };
   },
+  created() {
+    if (localStorage.getItem("reloaded")) {
+      localStorage.removeItem("reloaded");
+    } else {
+      localStorage.setItem("reloaded", "1");
+      location.reload();
+    }
+  },
+
   methods: {
     handleSubmit() {
       AuthService.login(this.email, this.password)
         .then((response) => {
           console.log(response);
           AuthService.setAccessToken(response.token);
-          this.$store.commit("updateUser", response.user);
+          this.$store.commit("updateUser", response.data.user);
           this.$router.push("/");
         })
         .catch((error) => {
-          console.log(error);
+          if (error.message === "Request failed with status code 500") {
+            this.credencialesInvalidas = true;
+          }
+          console.log(error.message);
         });
     },
   },

@@ -1,5 +1,6 @@
 import { createStore } from "vuex";
 import Product from "@/service/product";
+import AuthService from "@/service/auth.service";
 
 const store = createStore({
   state: {
@@ -7,6 +8,7 @@ const store = createStore({
     token: null,
     products: [],
     product: {},
+    cart: [],
     newProduct: {
       name: null,
       brand: null,
@@ -25,6 +27,7 @@ const store = createStore({
       widthAll: false,
       overflowHidden: false,
     },
+    query: null,
   },
 
   mutations: {
@@ -40,6 +43,26 @@ const store = createStore({
     },
     setProduct(state, product) {
       state.product = product;
+    },
+    setProductToCart(state, { product, quantity }) {
+      const productExists = state.cart.find(elem => {
+        return elem.product === product
+      })
+      if (productExists) {
+        productExists.quantity += 1
+        return;
+      }
+      state.cart.push({ product, quantity })
+    },
+    removeProductFromCart(state, product) {
+      state.cart = state.cart.filter(elem => {
+        return elem.product.id !== product.id
+      })
+    },
+    removeAllCartItems(state) {
+      state.cart = state.cart.filter(elem => {
+        return elem === "xxx"
+      })
     },
     setNameNewProduct(state, name) {
       state.newProduct.name = name;
@@ -81,6 +104,15 @@ const store = createStore({
       state.offCanvas.widthAll = payload;
     },
   },
+  getters: {
+    cartCount(state) {
+      return state.cart.length
+
+    },
+
+
+
+  },
 
   actions: {
     getProducts({ commit }) {
@@ -97,10 +129,28 @@ const store = createStore({
         commit("setProduct", response);
       });
     },
+    addProductToCart({ commit }, { product, quantity }) {
+      commit("setProductToCart", { product, quantity })
+    },
+    removeProductAction({ commit }, product) {
+      commit("removeProductFromCart", product)
+    },
+    removeAllItems({ commit }) {
+      commit("removeAllCartItems")
+    },
 
-    logout(ctx) {
-      ctx.commit("setLogout");
-      // authService.deleteAccessToken()
+    logout({ commit }) {
+      commit("setLogout");
+      AuthService.deleteAccessToken()
+
+    },
+  },
+
+  getters: {
+    searchProductsByQuery: (state) => (query) => {
+      return state.products.filter(
+        (product) => product.nombre === query || product.nombre_marca === query
+      );
     },
   },
 });

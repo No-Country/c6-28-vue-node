@@ -1,5 +1,6 @@
 <!-- eslint-disable vue/no-parsing-error -->
 <script setup>
+import Logo from "../../../assets/Logo.svg";
 import { useStore } from "vuex";
 import { ref } from "vue";
 // import * as bootstrap from "bootstrap";
@@ -12,6 +13,11 @@ const props = defineProps({
     type: String,
     required: false,
     default: "left",
+  },
+  id: {
+    type: String,
+    required: true,
+    default: "offCanvas",
   },
 });
 
@@ -40,7 +46,7 @@ function validation(value) {
 </script>
 <template>
   <div
-    id="offCanvas"
+    :id="id"
     ref="sidebar"
     class="offcanvas w-100"
     :class="[validation(props.position)]"
@@ -48,7 +54,7 @@ function validation(value) {
     aria-labelledby="offCanvasLabel"
   >
     <div class="offcanvas-header">
-      <h5 id="offCanvasLabel" class="offcanvas-title">Offcanvas</h5>
+      <img id="offCanvasLabel" class="offcanvas-title" :src="Logo" />
       <button
         type="button"
         class="btn-close"
@@ -62,3 +68,25 @@ function validation(value) {
     </div>
   </div>
 </template>
+<style scoped>
+.offcanvas-header {
+  height: 4em;
+  padding: 0.5em;
+  background-color: #898aa6;
+}
+.offcanvas-body{
+
+  background-color: #c9bbcf;
+}
+
+.offcanvas-title {
+  display: block;
+  height: 100%;
+}
+
+@media (min-width: 600px) {
+  .offcanvas {
+    width: 460px !important;
+  }
+}
+</style>

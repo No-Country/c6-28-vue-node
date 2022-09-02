@@ -1,9 +1,6 @@
 <template>
   <div>
-    <SearchBar class="SearchBar" />
-    <br />
     <CarouselTrending class="CarrouselTrending" />
-    <br />
 
     <div class="categories">
       <h5>Ofertas</h5>
