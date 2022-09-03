@@ -96,7 +96,7 @@ export default {
       <ul class="d-flex align-items-center gap-5 m-0">
         <div class="header__link-wrapper position-relative">
           <div class="position-absolute header__inner-list-wrapper">
-            <ul class="header__inner-list">
+            <!-- <ul class="header__inner-list">
               <li class="header__inner-item">
                 <router-link
                   to="/productos"
@@ -132,7 +132,7 @@ export default {
                   >Utensilios</router-link
                 >
               </li>
-            </ul>
+            </ul> -->
           </div>
           <router-link to="/productos" class="text-dark header_link"
             >Productos</router-link
@@ -153,7 +153,14 @@ export default {
       </ul>
     </nav>
     <div
-      class="d-flex gap-4 header__actions align-items-center justify-content-end w-lg-50"
+      class="
+        d-flex
+        gap-4
+        header__actions
+        align-items-center
+        justify-content-end
+        w-lg-50
+      "
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +176,14 @@ export default {
       </svg>
       <div>
         <button
-          class="d-flex align-items-center justify-content-center flex-shrink-0 position-relative d-none d-md-flex"
+          class="
+            d-flex
+            align-items-center
+            justify-content-center
+            flex-shrink-0
+            position-relative
+            d-none d-md-flex
+          "
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#cartOffCanvas"
@@ -189,7 +203,17 @@ export default {
             />
           </svg>
           <span
-            class="position-absolute top-0 start-100 translate-middle rounded-circle bg-dark p-1 text-white cart-counter"
+            class="
+              position-absolute
+              top-0
+              start-100
+              translate-middle
+              rounded-circle
+              bg-dark
+              p-1
+              text-white
+              cart-counter
+            "
             >{{ store.getters.cartCount }}</span
           >
         </button>

@@ -5,11 +5,7 @@
     <!--Aqui inicia los productos-->
     <div v-if="products.length !== 0" class="container mt-5">
       <!-- Filtro-->
-      <div class="row">
-        <div class="col-md-6 col-lg-6 col-xl-6">
-          <p style="color: #898aa6">Animales y Mascotas</p>
-        </div>
-      </div>
+      <div class="row"></div>
       <div class="row">
         <div
           class="
@@ -36,20 +32,20 @@
           </select>
         </div>
         <div class="col-md-4 col-lg-4 col-xl-4 d-flex align-items-center my-2">
-          <label style="color: #898aa6">Marcas: &nbsp</label>
-          <select v-model="mark">
+          <!-- <label style="color: #898aa6">Marcas: &nbsp</label> -->
+          <!-- <select v-model="mark">
             <option value="">Ninguna</option>
             <option value="Purina">Purina</option>
             <option value="Al Hueso">Al Hueso</option>
-          </select>
+          </select> -->
         </div>
       </div>
       <!-- Card de Productos-->
       <!-- VIstas Card de Productos-->
       <div class="row">
         <div
-          v-if="category == '' && mark == ''"
           v-for="product in products"
+          v-show="category == '' && mark == ''"
           :key="product.id"
           class="col-md-4 col-lg-4 col-xl-3 card-group"
           :product="product"
@@ -69,7 +65,7 @@
                 alt="Producto"
               />
             </router-link>
-            <div class="card-body text-dark">
+            <div class="card-body">
               <h3>
                 {{ product.precio }}$
                 <span
@@ -104,8 +100,8 @@
       <!---Vista card Categoria--->
       <div class="row">
         <div
-          v-if="mark == ''"
           v-for="product in filteredCategory"
+          v-show="mark == ''"
           :key="product.id"
           class="col-md-4 col-lg-4 col-xl-3 card-group"
           :product="product"
@@ -160,8 +156,8 @@
       <!---Vista card Marca--->
       <div class="row">
         <div
-          v-if="category == ''"
           v-for="product in filteredMark"
+          v-show="category == ''"
           :key="product.id"
           class="col-md-4 col-lg-4 col-xl-3 card-group"
           :product="product"
@@ -348,8 +344,14 @@ export default {
 <style scoped>
 img {
   cursor: pointer;
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+.card {
   margin: auto;
 }
+
 select {
   background-color: #898aa6;
   color: white;

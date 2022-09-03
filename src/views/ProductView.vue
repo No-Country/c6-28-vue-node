@@ -65,7 +65,13 @@
               Pago a acordar con el vendedor.
             </p>
             <div
-              class="input-group my-2 w-auto justify-content-center align-items-center"
+              class="
+                input-group
+                my-2
+                w-auto
+                justify-content-center
+                align-items-center
+              "
             >
               <button
                 type="button"
@@ -133,6 +139,7 @@ export default {
     product() {
       return this.$store.state.product;
     },
+
     productCategory() {
       return this.$store.state.product.categoria
         ? this.$store.state.product.categoria

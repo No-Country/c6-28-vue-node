@@ -70,12 +70,12 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach(() => {
-  const loggedIn = AuthService.getAccessToken();
-  console.log("logged: ", loggedIn);
-  if (Store.state.user.id && !loggedIn) {
-    Store.dispatch("logout");
-  }
-});
+// router.beforeEach(() => {
+//   const loggedIn = AuthService.getAccessToken();
+//   console.log("logged: ", loggedIn);
+//   if (Store.state.user.id && !loggedIn) {
+//     Store.dispatch("logout");
+//   }
+// });
 
 export default router;
