@@ -122,6 +122,7 @@
       <!---Vista card Categoria--->
       <div class="row">
         <div
+          v-if="mark ==''"
           v-for="product in filteredCategory"
           :key="product.id"
           class="col-md-4 col-lg-4 col-xl-3 card-group"
@@ -177,6 +178,7 @@
       <!---Vista card Marca--->
       <div class="row">
         <div
+          v-if="category ==''"
           v-for="product in filteredMark"
           :key="product.id"
           class="col-md-4 col-lg-4 col-xl-3 card-group"
