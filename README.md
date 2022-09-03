@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="140" height="40">
+    <img src="images/logo.png" alt="Logo" width="100" height="100">
   </a>
 
 <h3 align="center">Mundo Mascotas</h3>
@@ -58,10 +58,42 @@ Bienvenido a Mundo Mascotas un ecommerce dedicado netamente a mascotas como perr
 
 Este proyecto nace de la necesidad de encontrar un buen lugar donde comprar las cosas que necesitamos para nuestras mascotas 🐶y tiene como objetivo tener una manera facil de brindar los productos que ofrecemos.
 
+### Diseño UX/UI
+
+El proyecto lo realizamos y lo logramos con la ausencia de un perfil UX/UI porque la mayoria nos desempeñamos bien como backend o frontend, pero aún asi se logró un buen trabajo gracias al excelente equipo que tenemos, aquí una muestra del diseño inicial que teniamos y que se fue puliendo en cada modificación 👌 [Figma](https://www.figma.com/file/DG9GnIsAu7DzHoGLoJBYSO/Mundo-Mascota?node-id=0%3A1)
+
+![Image](/images/figma.PNG)
+
+### Frontend
+
+Aqui algunas de las interfaces que realizamos con el equipo de frontend.
+
+![Image](/images/register.PNG) <br/>
+![Image](/images/productos.PNG) <br/>
+![Image](/images/detalle.PNG) <br/>
+![Image](/images/carrito.PNG) <br/>
+![Image](/images/about.PNG) <br/>
+
+### Backend
+
+Por parte del equipo de backend se realizaron los debidos endpoints para consumirlos desde frontend 
+
+![Image](/images/backend.PNG)
 
 
-### Este proyecto es desarrollado con
+## Este proyecto esta desarrollado con
 
+UX/UI
+
+* [Figma](https://www.figma.com/)
+
+Frontend
+
+* [Vue 3](https://vuejs.org/)
+* [Bootstrap 5](https://getbootstrap.com/)
+* [Vuex](https://vuex.vuejs.org/)
+
+Backend
 
 * [Vue 3](https://vuejs.org/)
 * [Bootstrap 5](https://getbootstrap.com/)
@@ -69,19 +101,26 @@ Este proyecto nace de la necesidad de encontrar un buen lugar donde comprar las 
 
 <p align="right">(<a href="#top">Arriba</a>)</p>
 
+## ROLES DE INTEGRANTES
 
-<!-- USAGE EXAMPLES -->
-## Diseñor UX/UI
+Frontend 
 
-El proyecto lo realizamos y lo logramos con la ausencia de un perfil UX/UI porque la mayoria nos desempeñamos bien como backend o frontend, pero aún asi se logró un buen trabajo gracias al excelente equipo que tenemos, aquí una muestra del diseño inicial que teniamos y que se fue puliendo en cada modificación 👌
+* Yenifer Ramírez | [github](https://github.com/yeniferrosana) | [Linkedin]()
+* Leandro Martini | [github](https://github.com/yeniferrosana) | [Linkedin]()
+* Daniel Aguilar | [github](https://github.com/yeniferrosana) | [Linkedin]()
+* Agustin Prado | [github](https://github.com/yeniferrosana) | [Linkedin]()
 
-### Diseño Figma
-https://www.figma.com/file/DG9GnIsAu7DzHoGLoJBYSO/Mundo-Mascota?node-id=0%3A1
+Backend 
 
-### Información
+* Carolina Quintoman | [github](https://github.com/yeniferrosana) | [Linkedin]()
+* Ariel Cuello | [github](https://github.com/yeniferrosana) | [Linkedin]()
+* James Noria | [github](https://github.com/yeniferrosana) | [Linkedin]()
+* Mikel Diaz | [github](https://github.com/yeniferrosana) | [Linkedin]()
+* Kevin Huaza | [github](https://github.com/yeniferrosana) | [Linkedin]()
 
+UX/UI
 
-<p align="right">(<a href="#top">Arriba</a>)</p>
+* Agustin Prado | [github](https://github.com/yeniferrosana) | [Linkedin]()
 
 <!-- CONTACT -->
 ## Contacto
@@ -94,11 +133,11 @@ Daniel Aguilar - [@github](https://github.com/Onnichan)
 
 Agustin Prado - [@github](https://github.com/subjekt-iv)
 
-Link del proyecto: [https://github.com/No-Country/c6-28-vue-node](https://github.com/No-Country/c6-28-vue-node)
+## Link del deploy 
+
+https://radiant-brushlands-22902.herokuapp.com/
 
 <p align="right">(<a href="#top">Arriba</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Agradecimientos
