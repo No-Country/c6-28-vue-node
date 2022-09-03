@@ -1,6 +1,7 @@
 import { createStore } from "vuex";
 import Product from "@/service/product";
 import AuthService from "@/service/auth.service";
+import axios from "axios";
 
 const store = createStore({
   state: {
@@ -9,6 +10,7 @@ const store = createStore({
     products: [],
     product: {},
     cart: [],
+    developers: [],
     newProduct: {
       name: null,
       brand: null,
@@ -64,6 +66,11 @@ const store = createStore({
         return elem === "xxx";
       });
     },
+    setDevelopers(state, developers) {
+      state.developers = developers
+    },
+
+
     setNameNewProduct(state, name) {
       state.newProduct.name = name;
     },
@@ -139,6 +146,13 @@ const store = createStore({
     },
     removeAllItems({ commit }) {
       commit("removeAllCartItems");
+    },
+
+    getDevelopers({ commit }) {
+      axios.get("https://c6-28.up.railway.app/members").then(response => {
+        commit("setDevelopers", response.data.data.members)
+      })
+
     },
 
     logout({ commit }) {

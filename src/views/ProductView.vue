@@ -65,32 +65,18 @@
               Pago a acordar con el vendedor.
             </p>
             <div
-              class="input-group my-2 w-auto justify-content-center align-items-center"
+              class="
+                input-group
+                my-2
+                w-auto
+                justify-content-center
+                align-items-center
+              "
             >
-              <input
-                type="button"
-                value="-"
-                class="rounded icon-shape icon-sm"
-                @click="counter -= 1"
-              />
-              <input
-                type="number"
-                step="1"
-                max="10"
-                :value="counter"
-                class="quantity-field border-0 text-center w-25"
-              />
-              <input
-                type="button"
-                value="+"
-                class="rounded icon-shape icon-sm"
-                @click="counter += 1"
-              />
-
               <button
                 type="button"
                 class="btn rounded mt-4"
-                @click="addToCart()"
+                @click="addToCart(product)"
               >
                 Agregar al Carrito
               </button>
@@ -169,7 +155,10 @@ export default {
   },
 
   methods: {
-    addToCart() {
+    addToCart(product) {
+      if (this.$store.state.cart.find((elem) => elem.product === product)) {
+        this.quantity += 1 + this.counter;
+      }
       this.$store.dispatch("addProductToCart", {
         product: this.product,
         quantity: 1,

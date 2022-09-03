@@ -3,20 +3,20 @@
     <div class="card-body text-center">
       <div class="mt-3 mb-4">
         <img
-          :src="contacts.photo"
+          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
           class="rounded-circle img-fluid"
           style="width: 100px"
         />
       </div>
-      <h4 class="mb-2">{{ contacts.name }}</h4>
+      <h4 class="mb-2">{{ developers.nombre }}</h4>
       <p class="text-muted mb-4">
-        {{ contacts.user }}
+        {{ developers.apellidos }}
         <br />
-        {{ contacts.position }}
+        <!-- {{ contacts.position }} -->
       </p>
       <div class="mb-4 pb-2">
         <a
-          :href="contacts.linkedin"
+          :href="developers.linkedin"
           type="button"
           class="btn btn-grey px-2 mx-1"
           target="_blank"
@@ -24,7 +24,7 @@
           <i class="bi bi-linkedin"></i>
         </a>
         <a
-          :href="contacts.twitter"
+          :href="developers.twitter"
           type="button"
           class="btn btn-grey px-2 mx-1"
           target="_blank"
@@ -32,7 +32,7 @@
           <i class="bi bi-twitter fa-lg"></i>
         </a>
         <a
-          :href="contacts.github"
+          :href="developers.github"
           type="button"
           class="btn btn-grey px-2 mx-1"
           target="_blank"
@@ -48,7 +48,7 @@
 export default {
   name: "CardProgrammer",
   props: {
-    contacts: {
+    developers: {
       type: Array,
       default: () => [],
     },
