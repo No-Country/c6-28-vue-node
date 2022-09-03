@@ -96,7 +96,7 @@ export default {
       <ul class="d-flex align-items-center gap-5 m-0">
         <div class="header__link-wrapper position-relative">
           <div class="position-absolute header__inner-list-wrapper">
-            <!-- <ul class="header__inner-list">
+            <ul class="header__inner-list">
               <li class="header__inner-item">
                 <router-link
                   to="/productos"
@@ -132,7 +132,7 @@ export default {
                   >Utensilios</router-link
                 >
               </li>
-            </ul> -->
+            </ul>
           </div>
           <router-link to="/productos" class="text-dark header_link"
             >Productos</router-link
