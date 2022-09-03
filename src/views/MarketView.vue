@@ -10,13 +10,7 @@
           <p style="color: #898aa6">Animales y Mascotas</p>
         </div>
         <div
-          class="
-            col-md-6 col-lg-6 col-xl-6
-            text-right
-            d-flex
-            justify-content-end
-            align-items-center
-          "
+          class="col-md-6 col-lg-6 col-xl-6 text-right d-flex justify-content-end align-items-center"
         >
           <label style="color: #898aa6">Ordenar por &nbsp;</label>
           <select v-model="sortBy" @change="sortProducts()">

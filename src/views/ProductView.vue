@@ -65,13 +65,7 @@
               Pago a acordar con el vendedor.
             </p>
             <div
-              class="
-                input-group
-                my-2
-                w-auto
-                justify-content-center
-                align-items-center
-              "
+              class="input-group my-2 w-auto justify-content-center align-items-center"
             >
               <button
                 type="button"

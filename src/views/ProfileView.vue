@@ -22,7 +22,6 @@
         {{ user.createdAt }}
       </p>
       <p class="title-change"></p>
-  
     </div>
   </div>
 </template>
@@ -63,13 +62,12 @@ export default {
 </script>
 
 <style scoped>
-
 .back-div {
   background-color: #e8e1d9;
   padding: 2em;
   border-radius: 5px;
   margin: 4em auto;
-  border:  #898aa6 solid
+  border: #898aa6 solid;
 }
 .material-icons.orange442 {
   color: #f4a442;
