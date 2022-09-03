@@ -1,5 +1,5 @@
 <template>
-  <footer class="back">
+  <footer class="back" style="margin-top: 30%">
     <div class="container">
       <div class="row g-3 text-center">
         <div class="col-12">
