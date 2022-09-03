@@ -38,9 +38,8 @@
           <label style="color: #898aa6">Categorías: &nbsp</label>
           <select
             v-model="category"
-            @change="filteredCategory()"
           >
-            <option value="" disabled>Seleccione la categoria</option>
+            <option value="">Ninguna</option>
             <option value="juguetes">Juguetes</option>
             <option value="comida">Comida</option>
           </select>
@@ -56,19 +55,129 @@
           <label style="color: #898aa6">Marcas: &nbsp</label>
           <select
             v-model="mark"
-            @change="filteredMark()"
           >
-            <option value="" disabled>Seleccione la Marca</option>
+            <option value="">Ninguna</option>
             <option value="Purina">Purina</option>
-            <option value="Juegos Jugosos">Juegos Jugosos</option>
             <option value="Al Hueso">Al Hueso</option>
           </select>
         </div>
       </div>
       <!-- Card de Productos-->
+      <!-- VIstas Card de Productos-->
       <div class="row">
         <div
+          v-if="category == '' && mark ==''"
           v-for="product in products"
+          :key="product.id"
+          class="col-md-4 col-lg-4 col-xl-3 card-group"
+          :product="product"
+        >
+          <div class="card my-5 py-3 px-2">
+            <router-link :to="{ name: 'product', params: { id: product.id } }">
+              <img
+                v-if="product.fotos[0] === 'url'"
+                class="card-img-top"
+                src="../assets/not-photo.jpg"
+                alt="Producto"
+              />
+              <img
+                v-else
+                class="card-img-top"
+                :src="product.fotos[0]"
+                alt="Producto"
+              />
+            </router-link>
+            <div class="card-body text-dark">
+              <h3>
+                {{ product.precio }}$
+                <span
+                  v-if="product.oferta"
+                  style="
+                    color: #b7d3df;
+                    font-size: 20px;
+                    display: block;
+                    float: right;
+                  "
+                >
+                  {{ product.porcentaje_oferta }}% OFF
+                </span>
+              </h3>
+
+              <h4 class="text-capitalize">{{ product.nombre }}</h4>
+              <h6 class="text-muted">{{ product.nombre_marca }}</h6>
+              <div class="text-center">
+                <button
+                  type="button"
+                  class="btn btn-grey mt-3 d-block mx-auto"
+                  style="display: block"
+                  @click="addToCart(product)"
+                >
+                  Agregar al Carrito
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---Vista card Categoria--->
+      <div class="row">
+        <div
+          v-for="product in filteredCategory"
+          :key="product.id"
+          class="col-md-4 col-lg-4 col-xl-3 card-group"
+          :product="product"
+        >
+          <div class="card my-5 py-3 px-2">
+            <router-link :to="{ name: 'product', params: { id: product.id } }">
+              <img
+                v-if="product.fotos[0] === 'url'"
+                class="card-img-top"
+                src="../assets/not-photo.jpg"
+                alt="Producto"
+              />
+              <img
+                v-else
+                class="card-img-top"
+                :src="product.fotos[0]"
+                alt="Producto"
+              />
+            </router-link>
+            <div class="card-body text-dark">
+              <h3>
+                {{ product.precio }}$
+                <span
+                  v-if="product.oferta"
+                  style="
+                    color: #b7d3df;
+                    font-size: 20px;
+                    display: block;
+                    float: right;
+                  "
+                >
+                  {{ product.porcentaje_oferta }}% OFF
+                </span>
+              </h3>
+
+              <h4 class="text-capitalize">{{ product.nombre }}</h4>
+              <h6 class="text-muted">{{ product.nombre_marca }}</h6>
+              <div class="text-center">
+                <button
+                  type="button"
+                  class="btn btn-grey mt-3 d-block mx-auto"
+                  style="display: block"
+                  @click="addToCart(product)"
+                >
+                  Agregar al Carrito
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---Vista card Marca--->
+      <div class="row">
+        <div
+          v-for="product in filteredMark"
           :key="product.id"
           class="col-md-4 col-lg-4 col-xl-3 card-group"
           :product="product"
@@ -155,10 +264,36 @@ export default {
             this.$route.query.s
           );
         } else {
-          result = [];
+          if (this.$store.getters.searchCategory(this.category)) {
+            result = this.$store.getters.searchCategory(this.category)
+          } else {
+            result = [];
+          }
         }
       } else {
         result = this.$store.state.products;
+      }
+      return result;
+    },
+    filteredCategory() {
+      const category = this.category;
+      console.log(category)
+      let result;
+      if (this.$store.getters.searchCategory(category)) {
+        result = this.$store.getters.searchCategory(category)
+      } else {
+        result = [];
+      }
+      return result;
+    },
+    filteredMark() {
+      const mark = this.mark;
+      console.log(mark)
+      let result;
+      if (this.$store.getters.searchMarca(mark)) {
+        result = this.$store.getters.searchMarca(mark)
+      } else {
+        result = [];
       }
       return result;
     },
@@ -209,29 +344,6 @@ export default {
           }
         });
       }
-    },
-
-    filteredCategory() {
-      const category = this.category;
-      console.log(category)
-      let result;
-      if (this.$store.getters.searchCategory(category)) {
-        result = this.$store.getters.searchCategory(category)
-      } else {
-        result = [];
-      }
-      console.log(result);
-    },
-    filteredMark() {
-      const mark = this.mark;
-      console.log(mark)
-      let result;
-      if (this.$store.getters.searchMarca(mark)) {
-        result = this.$store.getters.searchMarca(mark)
-      } else {
-        result = [];
-      }
-      console.log(result);
     },
     // searchProducts() {
     //   let result;
