@@ -1,11 +1,18 @@
 <template>
   <div
-    class="container d-flex justify-content-center align-items-center vh-100 my-5"
+    class="
+      container
+      d-flex
+      justify-content-center
+      align-items-center
+      vh-100
+      my-5
+    "
   >
     <div class="back-div text-center p-5 mt-3 center bg-white">
       <h3>Información Personal</h3>
       <img
-        :src="user.foto"
+        src="https://res.cloudinary.com/dytpump6i/image/upload/v1662176168/49c8e403cd1929e9e7b02126824ff831_ployh5.jpg"
         class="rounded-circle shadow-4"
         style="width: 150px"
         alt="Avatar"
@@ -22,42 +29,6 @@
         {{ user.createdAt }}
       </p>
       <p class="title-change"></p>
-      <form class="pb-3" action="#" @submit.prevent="">
-        <div class="form-group">
-          <input
-            v-model="oldPassword"
-            type="password"
-            class="form-control my-2"
-            name="reg__oldPassword"
-            placeholder="Contraseña Actual"
-            aria-label="Contraseña Actual"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <input
-            v-model="password"
-            type="password"
-            class="form-control my-2"
-            name="reg__password"
-            placeholder="Nueva Contraseña"
-            aria-label="Nueva Contraseña"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <input
-            v-model="confirmPassword"
-            type="password"
-            class="form-control my-2"
-            name="reg__confirmPassword"
-            placeholder="Confirmar Contraseña"
-            aria-label="Confirmar Contraseña"
-            required
-          />
-        </div>
-      </form>
-      <button type="button" class="btn">Cambiar Contraseña</button>
     </div>
   </div>
 </template>
