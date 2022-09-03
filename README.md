@@ -85,7 +85,7 @@ Frontend
 
 Backend 
 
-* Carolina Quintoman | [github](https://github.com/CarolinaQuintoman) | [Linkedin]()
+* Carolina Quintoman | [github](https://github.com/CarolinaQuintoman) | [Linkedin](www.linkedin.com/in/carolina-quintoman-037452148)
 * Ariel Cuello | [github](https://github.com/cuelloariel) | [Linkedin](https://www.linkedin.com/in/cuello-ariel)
 * James Noria | [github](https://github.com/jamesnoria) | [Linkedin](https://www.linkedin.com/in/jamesnoria)
 * Mikel Diaz | [github](https://github.com/SBolivarLoL) | [Linkedin](https://www.linkedin.com/mwlite/in/mikel-diaz-velasquez)
