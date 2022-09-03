@@ -3,14 +3,22 @@
     <HeaderBanner />
     <!--Aqui inicia el filtro-->
     <!--Aqui inicia los productos-->
-    <div class="container mt-5">
+    <div v-if="products.length !== 0" class="container mt-5">
       <!-- Filtro-->
-      <div v-if="products.length !== 0" class="row">
+      <div class="row">
         <div class="col-md-6 col-lg-6 col-xl-6">
           <p style="color: #898aa6">Animales y Mascotas</p>
         </div>
+      </div>
+      <div class="row">
         <div
-          class="col-md-6 col-lg-6 col-xl-6 text-right d-flex justify-content-end align-items-center"
+          class="
+            col-md-6 col-lg-6 col-xl-6
+            text-right
+            d-flex
+            justify-content-end
+            align-items-center
+          "
         >
           <label style="color: #898aa6">Ordenar por &nbsp;</label>
           <select v-model="sortBy" @change="sortProducts()">
@@ -19,71 +27,34 @@
             <option value="2">Menor Precio</option>
           </select>
         </div>
-      </div>
-      <!--Aqui inicia el filtro de Daniel-->
-      <div class="row g-3 my-2">
-        <!-- <div class="col-md-6 col-lg-4 col-xl-3">
-        <SearchBar class="SearchBar" />
-      </div> -->
-        <div class="col-md-6 col-lg-4 col-xl-3">
-          <form action="">
-            <div class="form-group">
-              <label for="category">Categorías</label>
-              <select
-                id="category"
-                v-model="category"
-                class="form-control"
-                @changed="filteredProducts()"
-              >
-                <option value="" disabled>Seleccione la categoria</option>
-                <option value="ropa">Ropa</option>
-                <option value="alimentos">Alimentos</option>
-                <option value="bebidas">Bebidas</option>
-                <option value="accesorios">Accesorios</option>
-                <option value="utensilios">Utensilios</option>
-              </select>
-            </div>
-          </form>
+        <div class="col-md-4 col-lg-4 col-xl-4 d-flex align-items-center my-2">
+          <label style="color: #898aa6">Categorías: &nbsp</label>
+          <select v-model="category">
+            <option value="">Ninguna</option>
+            <option value="juguetes">Juguetes</option>
+            <option value="comida">Comida</option>
+          </select>
         </div>
-        <div class="col-md-6 col-lg-4 col-xl-3">
-          <form action="">
-            <div class="form-group">
-              <label for="price" class="form-label">Filtrar por precio</label>
-              <input
-                id="price"
-                type="range"
-                class="form-range"
-                min="0"
-                max="51800"
-              />
-            </div>
-          </form>
+        <div class="col-md-4 col-lg-4 col-xl-4 d-flex align-items-center my-2">
+          <label style="color: #898aa6">Marcas: &nbsp</label>
+          <select v-model="mark">
+            <option value="">Ninguna</option>
+            <option value="Purina">Purina</option>
+            <option value="Al Hueso">Al Hueso</option>
+          </select>
         </div>
-        <div class="col-md-6 col-lg-4 col-xl-3">
-          <form action="">
-            <div class="form-group">
-              <label for="mark">Marcas</label>
-              <select id="mark" class="form-control">
-                <option>Marca 1</option>
-                <option>Marca 2</option>
-                <option>Marca 3</option>
-                <option>Marca 4</option>
-                <option>Marca 5</option>
-              </select>
-            </div>
-          </form>
-        </div>
-        <!--<button class="btn btn-primary">Filtrar</button>-->
       </div>
       <!-- Card de Productos-->
+      <!-- VIstas Card de Productos-->
       <div class="row">
         <div
+          v-if="category == '' && mark == ''"
           v-for="product in products"
           :key="product.id"
-          class="col-md-4 col-lg-4 col-xl-3"
+          class="col-md-4 col-lg-4 col-xl-3 card-group"
           :product="product"
         >
-          <div class="card my-5">
+          <div class="card my-5 py-3 px-2">
             <router-link :to="{ name: 'product', params: { id: product.id } }">
               <img
                 v-if="product.fotos[0] === 'url'"
@@ -119,7 +90,119 @@
               <div class="text-center">
                 <button
                   type="button"
-                  class="btn btn-grey my-3 d-block mx-auto"
+                  class="btn btn-grey mt-3 d-block mx-auto"
+                  style="display: block"
+                  @click="addToCart(product)"
+                >
+                  Agregar al Carrito
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---Vista card Categoria--->
+      <div class="row">
+        <div
+          v-if="mark == ''"
+          v-for="product in filteredCategory"
+          :key="product.id"
+          class="col-md-4 col-lg-4 col-xl-3 card-group"
+          :product="product"
+        >
+          <div class="card my-5 py-3 px-2">
+            <router-link :to="{ name: 'product', params: { id: product.id } }">
+              <img
+                v-if="product.fotos[0] === 'url'"
+                class="card-img-top"
+                src="../assets/not-photo.jpg"
+                alt="Producto"
+              />
+              <img
+                v-else
+                class="card-img-top"
+                :src="product.fotos[0]"
+                alt="Producto"
+              />
+            </router-link>
+            <div class="card-body text-dark">
+              <h3>
+                {{ product.precio }}$
+                <span
+                  v-if="product.oferta"
+                  style="
+                    color: #b7d3df;
+                    font-size: 20px;
+                    display: block;
+                    float: right;
+                  "
+                >
+                  {{ product.porcentaje_oferta }}% OFF
+                </span>
+              </h3>
+
+              <h4 class="text-capitalize">{{ product.nombre }}</h4>
+              <h6 class="text-muted">{{ product.nombre_marca }}</h6>
+              <div class="text-center">
+                <button
+                  type="button"
+                  class="btn btn-grey mt-3 d-block mx-auto"
+                  style="display: block"
+                  @click="addToCart(product)"
+                >
+                  Agregar al Carrito
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!---Vista card Marca--->
+      <div class="row">
+        <div
+          v-if="category == ''"
+          v-for="product in filteredMark"
+          :key="product.id"
+          class="col-md-4 col-lg-4 col-xl-3 card-group"
+          :product="product"
+        >
+          <div class="card my-5 py-3 px-2">
+            <router-link :to="{ name: 'product', params: { id: product.id } }">
+              <img
+                v-if="product.fotos[0] === 'url'"
+                class="card-img-top"
+                src="../assets/not-photo.jpg"
+                alt="Producto"
+              />
+              <img
+                v-else
+                class="card-img-top"
+                :src="product.fotos[0]"
+                alt="Producto"
+              />
+            </router-link>
+            <div class="card-body text-dark">
+              <h3>
+                {{ product.precio }}$
+                <span
+                  v-if="product.oferta"
+                  style="
+                    color: #b7d3df;
+                    font-size: 20px;
+                    display: block;
+                    float: right;
+                  "
+                >
+                  {{ product.porcentaje_oferta }}% OFF
+                </span>
+              </h3>
+
+              <h4 class="text-capitalize">{{ product.nombre }}</h4>
+              <h6 class="text-muted">{{ product.nombre_marca }}</h6>
+              <div class="text-center">
+                <button
+                  type="button"
+                  class="btn btn-grey mt-3 d-block mx-auto"
                   style="display: block"
                   @click="addToCart(product)"
                 >
@@ -151,7 +234,8 @@ export default {
       productos: null,
       sortBy: 0,
       quantity: 1,
-      category: 0,
+      category: "",
+      mark: "",
       brand: 0,
     };
   },
@@ -164,10 +248,36 @@ export default {
             this.$route.query.s
           );
         } else {
-          result = [];
+          if (this.$store.getters.searchCategory(this.category)) {
+            result = this.$store.getters.searchCategory(this.category);
+          } else {
+            result = [];
+          }
         }
       } else {
         result = this.$store.state.products;
+      }
+      return result;
+    },
+    filteredCategory() {
+      const category = this.category;
+      console.log(category);
+      let result;
+      if (this.$store.getters.searchCategory(category)) {
+        result = this.$store.getters.searchCategory(category);
+      } else {
+        result = [];
+      }
+      return result;
+    },
+    filteredMark() {
+      const mark = this.mark;
+      console.log(mark);
+      let result;
+      if (this.$store.getters.searchMarca(mark)) {
+        result = this.$store.getters.searchMarca(mark);
+      } else {
+        result = [];
       }
       return result;
     },
@@ -219,8 +329,6 @@ export default {
         });
       }
     },
-
-    filteredProducts() {},
     // searchProducts() {
     //   let result;
     //   console.log(this.query);

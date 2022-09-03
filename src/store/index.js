@@ -158,6 +158,27 @@ const store = createStore({
       AuthService.deleteAccessToken();
     },
   },
+
+  getters: {
+    searchProductsByQuery: (state) => (query) => {
+      return state.products.filter(
+        (product) => product.nombre === query || product.nombre_marca === query
+      );
+    },
+
+    // Función para filtrado por marca, solo se usa
+    searchMarca: (state) => (query) => {
+      return state.products.filter(
+        (product) => product.nombre_marca === query
+      );
+    },
+
+    searchCategory: (state) => (query) => {
+      return state.products.filter(
+        (product) => product.categoria[0] === query
+      );
+    },
+  },
 });
 
 export default store;
