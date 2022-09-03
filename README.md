@@ -59,6 +59,7 @@ https://c6-28.up.railway.app/
 ![Image](/images/db-model.png)
 ![Image](/images/db-model-products.png)
 
+
 ## Este proyecto esta desarrollado con
 
 UX/UI
