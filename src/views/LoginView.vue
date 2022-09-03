@@ -37,13 +37,13 @@
         <ButtonBase>Iniciar sesion</ButtonBase>
       </div>
 
-      <div class="hr">
+      <!-- <div class="hr">
         <hr class="hrLinea" />
         o inicia sesion con
         <hr class="hrLinea" />
-      </div>
+      </div> -->
 
-      <div>
+      <!-- <div>
         <ButtonGoogle>
           <template #icon>
             <img
@@ -55,20 +55,20 @@
           </template>
           <template #content>Registrarse con Google </template>
         </ButtonGoogle>
-      </div>
+      </div> -->
     </form>
   </div>
 </template>
 
 <script>
 import AuthService from "@/service/auth.service";
-import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
+// import ButtonGoogle from "@/Components/ui/Button/ButtonGoogle.vue";
 import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
 
 export default {
   name: "LoginView",
   components: {
-    ButtonGoogle,
+    // ButtonGoogle,
     ButtonBase,
   },
   data() {

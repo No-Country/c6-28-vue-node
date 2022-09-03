@@ -35,6 +35,8 @@
             class="imgMascota"
             src="https://res.cloudinary.com/dytpump6i/image/upload/v1661902143/pexels-sharath-g-12895170_wfuqbb.jpg"
             alt="..."
+            role="button"
+            @click="redirectTo('productos')"
           />
         </div>
         <div>
@@ -42,6 +44,8 @@
             class="imgMascota"
             src="https://res.cloudinary.com/dytpump6i/image/upload/c_scale,h_3248,w_4608/v1661633424/pexels-mustafa-ezz-979503_tsj2mb.jpg"
             alt="..."
+            role="button"
+            @click="redirectTo('productos')"
           />
         </div>
         <div>
@@ -49,6 +53,8 @@
             class="imgMascota"
             src="https://res.cloudinary.com/dytpump6i/image/upload/c_scale,h_3248,w_4608/v1661901952/pexels-gili-pup-11545918_g60gej.jpg"
             alt="..."
+            role="button"
+            @click="redirectTo('productos')"
           />
         </div>
       </div>
@@ -83,9 +89,13 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
 
       <div class="d-grid gap-2 d-md-block">
-        <router-link to="/register">
-          <button type="button" class="butRegister">Registrarse</button>
-        </router-link>
+        <button
+          type="button "
+          class="butRegister"
+          @click="redirectTo('register')"
+        >
+          Registrarse
+        </button>
 
         <button type="button" class="butContact">Contactarnos</button>
       </div>
@@ -111,6 +121,11 @@ export default {
     return {
       modalShow: false,
     };
+  },
+  methods: {
+    redirectTo(path) {
+      this.$router.push(path);
+    },
   },
 };
 </script>

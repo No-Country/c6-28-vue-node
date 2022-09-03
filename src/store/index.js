@@ -108,6 +108,12 @@ const store = createStore({
     cartCount(state) {
       return state.cart.length;
     },
+
+    searchProductsByQuery: (state) => (query) => {
+      return state.products.filter(
+        (product) => product.nombre === query || product.nombre_marca === query
+      );
+    },
   },
 
   actions: {

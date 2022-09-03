@@ -10,10 +10,16 @@
           <p style="color: #898aa6">Animales y Mascotas</p>
         </div>
         <div
-          class="col-md-6 col-lg-6 col-xl-6 text-right d-flex justify-content-end align-items-center"
+          class="
+            col-md-6 col-lg-6 col-xl-6
+            text-right
+            d-flex
+            justify-content-end
+            align-items-center
+          "
         >
           <label style="color: #898aa6">Ordenar por &nbsp;</label>
-          <select v-model="sortBy" @change="filteredProduct">
+          <select v-model="sortBy" @change="sortProducts()">
             <option value="0">Más relevantes</option>
             <option value="1">Mayor Precio</option>
             <option value="2">Menor Precio</option>
@@ -29,12 +35,18 @@
           <form action="">
             <div class="form-group">
               <label for="category">Categorías</label>
-              <select id="category" class="form-control">
-                <option>Ropa</option>
-                <option>Alimentos</option>
-                <option>Bebidas</option>
-                <option>Accesorios</option>
-                <option>Utensilios</option>
+              <select
+                id="category"
+                v-model="category"
+                class="form-control"
+                @changed="filteredProducts()"
+              >
+                <option value="" disabled>Seleccione la categoria</option>
+                <option value="ropa">Ropa</option>
+                <option value="alimentos">Alimentos</option>
+                <option value="bebidas">Bebidas</option>
+                <option value="accesorios">Accesorios</option>
+                <option value="utensilios">Utensilios</option>
               </select>
             </div>
           </form>
@@ -145,10 +157,11 @@ export default {
       productos: null,
       sortBy: 0,
       quantity: 1,
+      category: 0,
+      brand: 0,
     };
   },
   computed: {
-    /*
     products() {
       let result;
       if (this.$route.query.s) {
@@ -163,22 +176,22 @@ export default {
         result = this.$store.state.products;
       }
       return result;
-    },*/
-    products() {
-      const sortBy = this.sortBy;
-      if (sortBy === "0") {
-        return this.$store.state.products;
-      } else {
-        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
-        return this.$store.state.products.sort((a, b) => {
-          if (sortBy === "1") {
-            return b.precio - a.precio;
-          } else if (sortBy === "2") {
-            return a.precio - b.precio;
-          }
-        });
-      }
     },
+    // products() {
+    //   const sortBy = this.sortBy;
+    //   if (sortBy === "0") {
+    //     return this.$store.state.products;
+    //   } else {
+    //     // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+    //     return this.$store.state.products.sort((a, b) => {
+    //       if (sortBy === "1") {
+    //         return b.precio - a.precio;
+    //       } else if (sortBy === "2") {
+    //         return a.precio - b.precio;
+    //       }
+    //     });
+    //   }
+    // },
   },
   mounted() {
     this.$store.dispatch("getProducts");
@@ -197,6 +210,23 @@ export default {
       });
     },
 
+    sortProducts() {
+      const sortBy = this.sortBy;
+      if (sortBy === "0") {
+        return this.$store.state.products;
+      } else {
+        // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+        return this.$store.state.products.sort((a, b) => {
+          if (sortBy === "1") {
+            return b.precio - a.precio;
+          } else if (sortBy === "2") {
+            return a.precio - b.precio;
+          }
+        });
+      }
+    },
+
+    filteredProducts() {},
     // searchProducts() {
     //   let result;
     //   console.log(this.query);

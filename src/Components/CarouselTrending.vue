@@ -90,6 +90,7 @@ export default {
 
 <style>
 .carousel {
+  /* height: 580px; */
   border-radius: 10px;
 }
 img {
