@@ -70,9 +70,7 @@ Frontend
 
 Backend
 
-* [Vue 3](https://vuejs.org/)
-* [Bootstrap 5](https://getbootstrap.com/)
-* [Vuex](https://vuex.vuejs.org/)
+* [Nodejs](https://nodejs.dev/en/)
 
 <p align="right">(<a href="#top">Arriba</a>)</p>
 
