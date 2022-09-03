@@ -54,59 +54,26 @@
 [![Current Version](https://img.shields.io/badge/version-1.0-green.svg)](https://github.com/No-Country/c6-28-vue-node) 
 [![Live Demo](https://img.shields.io/badge/demo-online-green.svg)]()
 
-c6-28-vue-node es un repositorio para alojar el Front End del E-commerce Mundo Mascotas, desarrollado como proyecto para el Cohorte 6 de No Country. Aqui encontraras el código fuente del Front End exceptuando los recursos visuales.
+Bienvenido a Mundo Mascotas un ecommerce dedicado netamente a mascotas como perros, gatos y aves, donde encontrarás ropas, accesorios, comidas, etc para tus mascotas que tanto quieres y adoras 🤗.
 
-
-### Desarrollado con
-
-
-* [Vue.js](https://vuejs.org/)
-* [Bootstrap](https://getbootstrap.com/)
-
-<p align="right">(<a href="#top">Arriba</a>)</p>
+Este proyecto nace de la necesidad de encontrar un buen lugar donde comprar las cosas que necesitamos para nuestras mascotas 🐶y tiene como objetivo tener una manera facil de brindar los productos que ofrecemos.
 
 
 
-<!-- GETTING STARTED -->
-## Empezando
+### Este proyecto es desarrollado con
 
-Para obtener una copia local en funcionamiento, siga estos sencillos pasos de ejemplo:
 
-### Prerequisitos
-
-Para la instalación de este proyecto debe instalar los siguientes requisitos
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Instalación
-
-1. Clonar el repositorio
-   ```sh
-   git clone https://github.com/No-Country/c6-28-vue-node.git
-   ```
-2. Acceder al directorio
-   ```sh
-   cd c6-28-vue-node
-   
-3. Acceder a la rama master
-   ```sh
-   git checkout master
-   
-4. Instalar los paquetes con NPM
-   ```sh
-   npm install
-   ```
+* [Vue 3](https://vuejs.org/)
+* [Bootstrap 5](https://getbootstrap.com/)
+* [Vuex](https://vuex.vuejs.org/)
 
 <p align="right">(<a href="#top">Arriba</a>)</p>
-
 
 
 <!-- USAGE EXAMPLES -->
-## E-Commerce
+## Diseñor UX/UI
 
-Actualmente el E-Commerce permite la compra y venta de productos para mascotas como: gatos, perros y aves.
+El proyecto lo realizamos y lo logramos con la ausencia de un perfil UX/UI porque la mayoria nos desempeñamos bien como backend o frontend, pero aún asi se logró un buen trabajo gracias al excelente equipo que tenemos, aquí una muestra del diseño inicial que teniamos y que se fue puliendo en cada modificación 👌
 
 ### Diseño Figma
 https://www.figma.com/file/DG9GnIsAu7DzHoGLoJBYSO/Mundo-Mascota?node-id=0%3A1
