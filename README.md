@@ -46,13 +46,19 @@ Aqui algunas de las interfaces que realizamos con el equipo de frontend.
 ![Image](/images/carrito.PNG) <br/>
 ![Image](/images/about.PNG) <br/>
 
-### Backend
+### BackEnd
 
-Por parte del equipo de backend se realizaron los debidos endpoints para consumirlos desde frontend 
+Por parte del equipo de backend se realizó la configuración para la conexión a la base de datos, el modelado y el codigo referido a manejo de errores, seguridad y endpoints para ser consumidos por el equipo del FronEnd.
+#### Documentación
+https://c6-28.up.railway.app/
 
 ![Image](/images/backend.PNG)
-![Image](/images/db-model-products.png) <br/>
-![Image](/images/db-model.png) <br/>
+
+### Modelado de la Base de Datos
+
+![Image](/images/db-model.png)
+![Image](/images/db-model-products.png)
+
 
 ## Este proyecto esta desarrollado con
 
@@ -72,6 +78,8 @@ Frontend
 Backend
 
 * [Nodejs](https://nodejs.dev/en/)
+* [Express](https://expressjs.com/)
+* [PostgreSQL](https://www.postgresql.org/)
 
 <p align="right">(<a href="#top">Arriba</a>)</p>
 
@@ -86,7 +94,7 @@ Frontend
 
 Backend 
 
-* Carolina Quintoman | [github](https://github.com/CarolinaQuintoman) | [Linkedin](www.linkedin.com/in/carolina-quintoman-037452148)
+* Carolina Quintoman | [github](https://github.com/CarolinaQuintoman) | [Linkedin](https://www.linkedin.com/in/carolina-quintoman-037452148)
 * Ariel Cuello | [github](https://github.com/cuelloariel) | [Linkedin](https://www.linkedin.com/in/cuello-ariel)
 * James Noria | [github](https://github.com/jamesnoria) | [Linkedin](https://www.linkedin.com/in/jamesnoria)
 * Mikel Diaz | [github](https://github.com/SBolivarLoL) | [Linkedin](https://www.linkedin.com/mwlite/in/mikel-diaz-velasquez)
