@@ -1,6 +1,5 @@
 <!-- eslint-disable vue/no-parsing-error -->
 <script setup>
-import Logo from "../../../assets/Logo.svg";
 import { useStore } from "vuex";
 import { ref } from "vue";
 // import * as bootstrap from "bootstrap";
@@ -54,7 +53,6 @@ function validation(value) {
     aria-labelledby="offCanvasLabel"
   >
     <div class="offcanvas-header">
-      <img id="offCanvasLabel" class="offcanvas-title" :src="Logo" />
       <button
         type="button"
         class="btn-close"

@@ -89,8 +89,8 @@
           class="col-md-4 col-lg-4 col-xl-3"
           :product="product"
         >
-          <router-link :to="{ name: 'product', params: { id: product.id } }">
-            <div class="card my-5">
+          <div class="card my-5">
+            <router-link :to="{ name: 'product', params: { id: product.id } }">
               <img
                 v-if="product.fotos[0] === 'url'"
                 class="card-img-top"
@@ -103,37 +103,37 @@
                 :src="product.fotos[0]"
                 alt="Producto"
               />
-              <div class="card-body text-dark">
-                <h3>
-                  {{ product.precio }}$
-                  <span
-                    v-if="product.oferta"
-                    style="
-                      color: #b7d3df;
-                      font-size: 20px;
-                      display: block;
-                      float: right;
-                    "
-                  >
-                    {{ product.porcentaje_oferta }}% OFF
-                  </span>
-                </h3>
+            </router-link>
+            <div class="card-body text-dark">
+              <h3>
+                {{ product.precio }}$
+                <span
+                  v-if="product.oferta"
+                  style="
+                    color: #b7d3df;
+                    font-size: 20px;
+                    display: block;
+                    float: right;
+                  "
+                >
+                  {{ product.porcentaje_oferta }}% OFF
+                </span>
+              </h3>
 
-                <h4 class="text-capitalize">{{ product.nombre }}</h4>
-                <h6 class="text-muted">{{ product.nombre_marca }}</h6>
-                <div class="text-center">
-                  <button
-                    type="button"
-                    class="btn btn-grey my-3 d-block mx-auto"
-                    style="display: block"
-                    @click="addToCart(product)"
-                  >
-                    Agregar al Carrito
-                  </button>
-                </div>
+              <h4 class="text-capitalize">{{ product.nombre }}</h4>
+              <h6 class="text-muted">{{ product.nombre_marca }}</h6>
+              <div class="text-center">
+                <button
+                  type="button"
+                  class="btn btn-grey my-3 d-block mx-auto"
+                  style="display: block"
+                  @click="addToCart(product)"
+                >
+                  Agregar al Carrito
+                </button>
               </div>
             </div>
-          </router-link>
+          </div>
         </div>
       </div>
     </div>
