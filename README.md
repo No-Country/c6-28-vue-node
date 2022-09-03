@@ -34,6 +34,10 @@ El proyecto lo realizamos y lo logramos con la ausencia de un perfil UX/UI porqu
 
 ### Frontend
 
+Con respecta al frontend el team encargado de ese trabajo es excelente una pasada formar parte de ese grupo, el proyecto en frontend lo tratamos de realizar siguiendo un estilo de código generado por [eslint](https://eslint.org/) y para tener todo formateado utilizamos [prettier](https://prettier.io/docs/en/install.html) y automatizamos el proceso con [husky](https://typicode.github.io/husky/#/) para el precommit y el prepush
+
+Realizamos para cada interfaz un componente y tratamos de desacoplar algunos componentes haciendo micro componentes reutilizables para ahorrar código y tiempo. 
+
 Aqui algunas de las interfaces que realizamos con el equipo de frontend.
 
 ![Image](/images/register.PNG) <br/>
@@ -60,6 +64,9 @@ Frontend
 * [Vue 3](https://vuejs.org/)
 * [Bootstrap 5](https://getbootstrap.com/)
 * [Vuex](https://vuex.vuejs.org/)
+* [prettier](https://prettier.io/docs/en/install.html)
+* [eslint](https://eslint.org/)
+* [husky](https://typicode.github.io/husky/#/)
 
 Backend
 
