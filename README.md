@@ -16,38 +16,6 @@
   </p>
 </div>
 
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Tabla de Contenido</summary>
-  <ol>
-    <li>
-      <a href="#sobre-el-proyecto">Sobre el Proyecto</a>
-      <ul>
-        <li><a href="#desarrollado-con">Desarrollado con</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#empezando">Empezando</a>
-      <ul>
-        <li><a href="#prerequisitos">Prerequisitos</a></li>
-        <li><a href="#instalación">Instalación</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#sitio">Sitio</a>
-      <ul>
-        <li><a href="#información">Información</a></li>
-      </ul>
-    </li>
-    <li><a href="#contacto">Contacto</a></li>
-    <li><a href="#agradecimientos">Agradecimientos</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## Sobre el Proyecto
 
@@ -105,33 +73,22 @@ Backend
 
 Frontend 
 
-* Yenifer Ramírez | [github](https://github.com/yeniferrosana) | [Linkedin]()
-* Leandro Martini | [github](https://github.com/yeniferrosana) | [Linkedin]()
-* Daniel Aguilar | [github](https://github.com/yeniferrosana) | [Linkedin]()
-* Agustin Prado | [github](https://github.com/yeniferrosana) | [Linkedin]()
+* Yenifer Ramírez | [github](https://github.com/yeniferrosana) | [Linkedin](https://www.linkedin.com/in/yeniferrosana/)
+* Leandro Martini | [github](https://github.com/manrique1986) | [Linkedin](https://www.linkedin.com/in/leandro-martini-developer/)
+* Daniel Aguilar | [github](https://github.com/Onnichan) | [Linkedin](https://www.linkedin.com/in/wdanielaguilar/)
+* Agustin Prado | [github](https://github.com/subjekt-iv) | [Linkedin](https://www.linkedin.com/in/agust%C3%ADn-prado-64b1371b7/)
 
 Backend 
 
-* Carolina Quintoman | [github](https://github.com/yeniferrosana) | [Linkedin]()
-* Ariel Cuello | [github](https://github.com/yeniferrosana) | [Linkedin]()
-* James Noria | [github](https://github.com/yeniferrosana) | [Linkedin]()
-* Mikel Diaz | [github](https://github.com/yeniferrosana) | [Linkedin]()
-* Kevin Huaza | [github](https://github.com/yeniferrosana) | [Linkedin]()
+* Carolina Quintoman | [github](https://github.com/CarolinaQuintoman) | [Linkedin]()
+* Ariel Cuello | [github](https://github.com/cuelloariel) | [Linkedin](https://www.linkedin.com/in/cuello-ariel)
+* James Noria | [github](https://github.com/jamesnoria) | [Linkedin](https://www.linkedin.com/in/jamesnoria)
+* Mikel Diaz | [github](https://github.com/SBolivarLoL) | [Linkedin](https://www.linkedin.com/mwlite/in/mikel-diaz-velasquez)
+* Kevin Huaza | [github](https://github.com/khuaza9612) | [Linkedin](https://www.linkedin.com/in/kevin-huaza-navia-a59b61225)
 
 UX/UI
 
 * Agustin Prado | [github](https://github.com/yeniferrosana) | [Linkedin]()
-
-<!-- CONTACT -->
-## Contacto
-
-Yenifer Ramírez - [@github](https://github.com/yeniferrosana)
-
-Leandro Martini - [@github](https://github.com/manrique1986)
-
-Daniel Aguilar - [@github](https://github.com/Onnichan)
-
-Agustin Prado - [@github](https://github.com/subjekt-iv)
 
 ## Link del deploy 
 
