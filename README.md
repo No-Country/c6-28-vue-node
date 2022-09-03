@@ -88,7 +88,7 @@ Backend
 
 UX/UI
 
-* Agustin Prado | [github](https://github.com/yeniferrosana) | [Linkedin]()
+* Agustin Prado | [github](https://github.com/subjekt-iv) | [Linkedin](https://www.linkedin.com/in/agust%C3%ADn-prado-64b1371b7/)
 
 ## Link del deploy 
 
