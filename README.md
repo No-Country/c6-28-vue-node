@@ -13,8 +13,6 @@
     E-Commerce
     <br />
     <a href="https://radiant-brushlands-22902.herokuapp.com/">Ver Demo</a>
-    ·
-    <a href="https://github.com/No-Country/c6-28-vue-node/issues">Reportar Bug</a>
   </p>
 </div>
 
