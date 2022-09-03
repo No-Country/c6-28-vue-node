@@ -51,7 +51,8 @@ Aqui algunas de las interfaces que realizamos con el equipo de frontend.
 Por parte del equipo de backend se realizaron los debidos endpoints para consumirlos desde frontend 
 
 ![Image](/images/backend.PNG)
-
+![Image](/images/db-model-products.png) <br/>
+![Image](/images/db-model.png) <br/>
 
 ## Este proyecto esta desarrollado con
 
