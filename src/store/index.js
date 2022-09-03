@@ -67,9 +67,8 @@ const store = createStore({
       });
     },
     setDevelopers(state, developers) {
-      state.developers = developers
+      state.developers = developers;
     },
-
 
     setNameNewProduct(state, name) {
       state.newProduct.name = name;
@@ -149,10 +148,9 @@ const store = createStore({
     },
 
     getDevelopers({ commit }) {
-      axios.get("https://c6-28.up.railway.app/members").then(response => {
-        commit("setDevelopers", response.data.data.members)
-      })
-
+      axios.get("https://c6-28.up.railway.app/members").then((response) => {
+        commit("setDevelopers", response.data.data.members);
+      });
     },
 
     logout({ commit }) {

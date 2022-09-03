@@ -1,6 +1,5 @@
 import { ApiRequest } from "@/service/index";
 
-
 const get = () => {
   return ApiRequest.get("/users");
 };
@@ -10,15 +9,14 @@ const getUser = (id) => {
 };
 
 const getDevelopers = () => {
-  return ApiRequest.get("/members")
-
-}
+  return ApiRequest.get("/members");
+};
 
 const User = () => {
   return {
     get,
     getUser,
-    getDevelopers
+    getDevelopers,
   };
 };
 
