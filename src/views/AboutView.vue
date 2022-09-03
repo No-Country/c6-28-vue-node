@@ -23,11 +23,11 @@
       <div class="container">
         <div class="row justify-content-center align-items-center">
           <div
-            v-for="(contact, i) in contacts"
+            v-for="(developer, i) in developers"
             :key="i"
             class="col-md-6 col-lg-4 col-xl-3"
           >
-            <Card :contacts="contact" />
+            <Card :developers="developer" />
           </div>
         </div>
       </div>
@@ -49,89 +49,97 @@ export default {
   },
   data() {
     return {
-      contacts: [
-        {
-          photo:
-            "https://res.cloudinary.com/yeniferramirez11/image/upload/v1661896266/cloudinary-demo/yenifer_ramirez-cropped_ovqabr.png",
-          name: "Yenifer Ramírez",
-          user: "@yeniferrosana",
-          position: "FrontEnd Developer",
-          linkedin: "https://www.linkedin.com/in/yeniferrosana/",
-          twitter: "https://twitter.com/yeniferrosana",
-          github: "https://github.com/yeniferrosana",
-        },
-        {
-          photo:
-            "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp",
-          name: "Leandro Martini",
-          user: "@manrique1986",
-          position: "FrontEnd Developer",
-          linkedin: "https://www.linkedin.com/in/leandro-martini-developer",
-          twitter: "/#",
-          github: "https://github.com/manrique1986",
-        },
-        {
-          photo:
-            "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp",
-          name: "Carolina Quintoman",
-          user: "@carolinaquintoman",
-          position: "BackEnd Developer",
-          linkedin: "/#",
-          twitter: "/#",
-          github: "https://github.com/CarolinaQuintoman",
-        },
-        {
-          photo:
-            "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp",
-          name: "Ariel Cuello",
-          user: "@cuelloariel",
-          position: "BackEnd Developer",
-          linkedin: "/#",
-          twitter: "/#",
-          github: "https://github.com/cuelloariel",
-        },
-        {
-          photo:
-            "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp",
-          name: "James Noria",
-          user: "@jamesnoria",
-          position: "BackEnd Developer",
-          linkedin: "/#",
-          twitter: "/#",
-          github: "https://github.com/jamesnoria",
-        },
-        {
-          photo:
-            "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp",
-          name: "Daniel Aguilar",
-          user: "@Onnichan",
-          position: "FrontEnd Developer",
-          linkedin: "/#",
-          twitter: "/#",
-          github: "https://github.com/Onnichan",
-        },
-        {
-          photo:
-            "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp",
-          name: "Mikel Diaz",
-          user: "@SBolivarLoL",
-          position: "BackEnd Developer",
-          linkedin: "/#",
-          twitter: "/#",
-          github: "https://github.com/SBolivarLoL",
-        },
-        {
-          photo:
-            "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp",
-          name: "Agustin Prado",
-          user: "@subjekt-iv",
-          position: "FrontEnd Developer",
-          linkedin: "/#",
-          twitter: "/#",
-          github: "https://github.com/subjekt-iv",
-        },
-      ],
+      // contacts: [
+      //   {
+      //     photo:
+      //       "https://res.cloudinary.com/yeniferramirez11/image/upload/v1661896266/cloudinary-demo/yenifer_ramirez-cropped_ovqabr.png",
+      //     name: "Yenifer Ramírez",
+      //     user: "@yeniferrosana",
+      //     position: "FrontEnd Developer",
+      //     linkedin: "https://www.linkedin.com/in/yeniferrosana/",
+      //     twitter: "https://twitter.com/yeniferrosana",
+      //     github: "https://github.com/yeniferrosana",
+      //   },
+      //   {
+      //     photo:
+      //       "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp",
+      //     name: "Leandro Martini",
+      //     user: "@manrique1986",
+      //     position: "FrontEnd Developer",
+      //     linkedin: "https://www.linkedin.com/in/leandro-martini-developer",
+      //     twitter: "/#",
+      //     github: "https://github.com/manrique1986",
+      //   },
+      //   {
+      //     photo:
+      //       "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp",
+      //     name: "Carolina Quintoman",
+      //     user: "@carolinaquintoman",
+      //     position: "BackEnd Developer",
+      //     linkedin: "/#",
+      //     twitter: "/#",
+      //     github: "https://github.com/CarolinaQuintoman",
+      //   },
+      //   {
+      //     photo:
+      //       "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp",
+      //     name: "Ariel Cuello",
+      //     user: "@cuelloariel",
+      //     position: "BackEnd Developer",
+      //     linkedin: "/#",
+      //     twitter: "/#",
+      //     github: "https://github.com/cuelloariel",
+      //   },
+      //   {
+      //     photo:
+      //       "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp",
+      //     name: "James Noria",
+      //     user: "@jamesnoria",
+      //     position: "BackEnd Developer",
+      //     linkedin: "/#",
+      //     twitter: "/#",
+      //     github: "https://github.com/jamesnoria",
+      //   },
+      //   {
+      //     photo:
+      //       "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp",
+      //     name: "Daniel Aguilar",
+      //     user: "@Onnichan",
+      //     position: "FrontEnd Developer",
+      //     linkedin: "/#",
+      //     twitter: "/#",
+      //     github: "https://github.com/Onnichan",
+      //   },
+      //   {
+      //     photo:
+      //       "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp",
+      //     name: "Mikel Diaz",
+      //     user: "@SBolivarLoL",
+      //     position: "BackEnd Developer",
+      //     linkedin: "/#",
+      //     twitter: "/#",
+      //     github: "https://github.com/SBolivarLoL",
+      //   },
+      //   {
+      //     photo:
+      //       "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp",
+      //     name: "Agustin Prado",
+      //     user: "@subjekt-iv",
+      //     position: "FrontEnd Developer",
+      //     linkedin: "/#",
+      //     twitter: "/#",
+      //     github: "https://github.com/subjekt-iv",
+      //   },
+      // ],
     };
+  },
+  computed: {
+    developers() {
+      return this.$store.state.developers;
+    },
+  },
+  mounted() {
+    this.$store.dispatch("getDevelopers");
   },
 };
 </script>
