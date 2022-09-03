@@ -72,6 +72,7 @@ const router = createRouter({
 
 router.beforeEach(() => {
   const loggedIn = AuthService.getAccessToken();
+  console.log("logged: ", loggedIn);
   if (Store.state.user.id && !loggedIn) {
     Store.dispatch("logout");
   }

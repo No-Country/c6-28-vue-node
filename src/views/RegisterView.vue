@@ -5,7 +5,7 @@ import ButtonBase from "@/Components/ui/Button/ButtonBase.vue";
 // import FooterView from "../Components/FooterView.vue";
 import { ref } from "vue";
 
-// const name = ref("");
+const name = ref("");
 const lastname = ref("");
 const password = ref("");
 const confirmPass = ref("");
@@ -13,7 +13,6 @@ const email = ref("");
 </script>
 <template>
   <form
-    action=""
     class="register__form bg-white"
     @submit.prevent="handleSubmit"
   >
@@ -48,7 +47,7 @@ const email = ref("");
           class="form-control"
           name="reg__email"
           placeholder="Correo"
-          aria-label="First name"
+          aria-label="email"
         />
       </div>
     </div>
@@ -60,7 +59,7 @@ const email = ref("");
           class="form-control"
           name="reg__password"
           placeholder="Contraseña"
-          aria-label="First name"
+          aria-label="password"
         />
       </div>
     </div>
@@ -72,7 +71,7 @@ const email = ref("");
           class="form-control"
           name="reg__confirmar"
           placeholder="Confirmar contraseña"
-          aria-label="First name"
+          aria-label="cofirm-password"
         />
       </div>
     </div>
@@ -88,7 +87,7 @@ const email = ref("");
         Acepto los terminos y condiciones
       </label>
     </div> -->
-    <ButtonBase @submit.prevent="submit">Registrarse</ButtonBase>
+    <ButtonBase>Registrarse</ButtonBase>
     <!-- <ButtonGoogle>
       <template #icon>
         <img
